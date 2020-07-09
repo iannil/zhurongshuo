@@ -8,7 +8,7 @@ hasCJKLanguage = true
 summaryLength = 100
 paginate = 10
 enableEmoji = true
-googleAnalytics = "223510064"
+googleAnalytics = "UA-70243492-1"
 disqusShortname = ""
 
 pygmentsUseClasses = true
