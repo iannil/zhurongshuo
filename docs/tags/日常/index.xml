@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>日常 on 祝融说。</title>
+    <link>http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/</link>
+    <description>Recent content in 日常 on 祝融说。</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <lastBuildDate>Sat, 27 Jun 2020 17:49:41 +0800</lastBuildDate>
+    
+	<atom:link href="http://localhost:1313/tags/%E6%97%A5%E5%B8%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>「日常」与「非日常」的节奏。</title>
+      <link>http://localhost:1313/posts/2020062701/</link>
+      <pubDate>Sat, 27 Jun 2020 17:49:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/2020062701/</guid>
+      <description>一、节奏感 「日常」与「非日常」的节奏，要根据目标人群对「产品/内容/服务」的了解程度有意识的设计。 做一个粗略的分类，可以分4类：不知道、听说过、知道、很了解。（此分类不唯一，仅用来介绍如何去设计节奏）</description>
+    </item>
+    
+    <item>
+      <title>人类对以某种节奏在「日常中遭遇一些非日常」欲罢不能。</title>
+      <link>http://localhost:1313/posts/2020062603/</link>
+      <pubDate>Fri, 26 Jun 2020 17:49:41 +0800</pubDate>
+      
+      <guid>http://localhost:1313/posts/2020062603/</guid>
+      <description>一、综述 人类的认知是有倾向的，无论是做产品、做品牌、做营销、做运营，乃至讲故事，甚至PUA，皆是如此。 一句话概括：人类对以某种节奏在「日常中遭遇一些非日常」欲罢不能。 二、产品 做产品，大部分功能特性，要</description>
+    </item>
+    
+  </channel>
+</rss>
