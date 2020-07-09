@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>想法 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E6%83%B3%E6%B3%95/</link>
+    <link>https://zhurongshuo.com/tags/%E6%83%B3%E6%B3%95/</link>
     <description>Recent content in 想法 on 祝融说。</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Thu, 25 Jun 2020 17:49:40 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/%E6%83%B3%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zhurongshuo.com/tags/%E6%83%B3%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>营销是对尽可能多的人说话。</title>
-      <link>http://localhost:1313/posts/2020062501/</link>
+      <link>https://zhurongshuo.com/posts/2020062501/</link>
       <pubDate>Thu, 25 Jun 2020 17:49:40 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/2020062501/</guid>
+      <guid>https://zhurongshuo.com/posts/2020062501/</guid>
       <description>&lt;p&gt;&lt;em&gt;营销是对尽可能多的人说话。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;无论是传统媒体，还是现在的社交网络，接触到尽可能多的人的方法变了，但本质没变。&lt;/p&gt;</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>节点 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E8%8A%82%E7%82%B9/</link>
+    <link>https://zhurongshuo.com/tags/%E8%8A%82%E7%82%B9/</link>
     <description>Recent content in 节点 on 祝融说。</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 24 Jun 2020 17:49:40 +0800</lastBuildDate>
     
-	<atom:link href="http://localhost:1313/tags/%E8%8A%82%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://zhurongshuo.com/tags/%E8%8A%82%E7%82%B9/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>所有产品本质上都是对内容分发的再构建。</title>
-      <link>http://localhost:1313/posts/2020062403/</link>
+      <link>https://zhurongshuo.com/posts/2020062403/</link>
       <pubDate>Wed, 24 Jun 2020 17:49:40 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/2020062403/</guid>
+      <guid>https://zhurongshuo.com/posts/2020062403/</guid>
       <description>&lt;p&gt;&lt;em&gt;所有产品本质上都是对内容分发的再构建。&lt;/em&gt;&lt;/p&gt;
 &lt;p&gt;互联网是交通网的线上版本。
 任意产品，其要么更偏节点，要么更偏网络，要么两者皆是。&lt;/p&gt;</description>
@@ -24,10 +24,10 @@
     
     <item>
       <title>节点的生坏住灭</title>
-      <link>http://localhost:1313/posts/2020062402/</link>
+      <link>https://zhurongshuo.com/posts/2020062402/</link>
       <pubDate>Wed, 24 Jun 2020 17:49:40 +0800</pubDate>
       
-      <guid>http://localhost:1313/posts/2020062402/</guid>
+      <guid>https://zhurongshuo.com/posts/2020062402/</guid>
       <description>节点承载生产者、消费者与信息，促进支持三者的发展，也通过这三者的发展而壮大自身。 服务于某个品类的节点，只要没有最大化生产力/生产效率，就会有动力产生新节点。 同品类的节点相互竞争，最后生存下来的节点将获</description>
     </item>
     
