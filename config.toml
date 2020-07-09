@@ -1,4 +1,5 @@
-baseURL = "http://localhost:1313/"
+baseURL = "https://zhurongshuo.com/"
+publishDir= "docs"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "祝融说。"
