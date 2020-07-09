@@ -37,8 +37,13 @@ pygmentscodefencesguesssyntax = true
   identifier = "tags"
   url = "/tags/"
 [[menu.main]]
-  name = "关于"
+  name = "核心"
   weight = 40
+  identifier = "core"
+  url = "/core/"
+[[menu.main]]
+  name = "关于"
+  weight = 50
   identifier = "about"
   url = "/about/"
 
