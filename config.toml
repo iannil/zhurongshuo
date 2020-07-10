@@ -68,11 +68,8 @@ pygmentscodefencesguesssyntax = true
 
 # Your socail's url
 [social]
-  bilibili = " "
-  mini-program = " "
-  wechat = " "
-  weibo = " "
-  zhihu = " "
+  mail = "/about/"
+  wechat = "/about/"
 
 [markup]
 [markup.goldmark]
