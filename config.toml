@@ -27,6 +27,11 @@ pygmentscodefencesguesssyntax = true
   identifier = "home"
   url = "/"
 [[menu.main]]
+  name = "核心"
+  weight = 40
+  identifier = "core"
+  url = "/core/"
+[[menu.main]]
   name = "归档"
   weight = 20
   identifier = "archive"
@@ -36,11 +41,6 @@ pygmentscodefencesguesssyntax = true
   weight = 30
   identifier = "tags"
   url = "/tags/"
-[[menu.main]]
-  name = "核心"
-  weight = 40
-  identifier = "core"
-  url = "/core/"
 [[menu.main]]
   name = "关于"
   weight = 50
