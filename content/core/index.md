@@ -45,4 +45,4 @@ draft: false
 
 ## 脑图
 
-![脑图](/straem.png)
+![脑图](/core.png)
