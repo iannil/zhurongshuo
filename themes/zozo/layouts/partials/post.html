@@ -9,7 +9,7 @@
     {{ if .Site.Params.enableSummary }}
     <div class="list">
         <div class="post_content markdown">
-            <p>{{ .Summary }}{{ if ne (len .Summary) 0 }}......{{ end }}</p>
+            <p>{{ .Summary }}</p>
         </div>
     </div>
     {{ end }}
