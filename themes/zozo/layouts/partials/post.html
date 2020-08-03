@@ -1,9 +1,11 @@
 {{ $paginator := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 {{ range $paginator.Pages }}
 <div class="post animated fadeInDown">
+    {{ if ne (len .Title) 0 }}
     <div class="post_title">
         <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
     </div>
+    {{ end }}
     {{ if .Site.Params.enableSummary }}
     <div class="list">
         <div class="post_content markdown">
