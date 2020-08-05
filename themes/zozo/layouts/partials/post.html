@@ -3,13 +3,19 @@
 <div class="post animated fadeInDown">
     {{ if ne (len .Title) 0 }}
     <div class="post_title">
-        <h2><a href='{{ .RelPermalink }}'>{{ .Title }}</a></h2>
+        <h2>
+            {{ if ne (hasPrefix .Summary "<blockquote>") true }}
+            <a href='{{ .RelPermalink }}'>{{ .Title }}</a>
+            {{ else }}
+            <a href='javascript:void(0)'>{{ .Title }}</a>
+            {{ end }}
+        </h2>
     </div>
     {{ end }}
     {{ if .Site.Params.enableSummary }}
     <div class="list">
         <div class="post_content markdown">
-            <p>{{ .Summary }}{{ if ne (len .Summary) 0 }}......{{ end }}</p>
+            <p>{{ .Summary }}{{ if ne (hasPrefix .Summary "<blockquote>") true }}......{{ end }}</p>
         </div>
     </div>
     {{ end }}
