@@ -242,6 +242,10 @@ hr {
   padding-bottom: 0 !important;
 }
 
+.post .list blockquote {
+  margin: 1.5em 0;
+}
+
 .post .post_content {
   word-break: normal;
   margin-top: 20px;
@@ -545,7 +549,7 @@ hr {
           box-sizing: border-box;
   margin: 2.5em 0;
   padding: 0 0 0 50px;
-  font-style: italic;
+  font-style: normal;
   color: #555555;
   border-left: none;
 }
