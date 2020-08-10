@@ -4,11 +4,7 @@
     {{ if ne (len .Title) 0 }}
     <div class="post_title">
         <h2>
-            {{ if ne (hasPrefix .Summary "<blockquote>") true }}
             <a href='{{ .RelPermalink }}'>{{ .Title }}</a>
-            {{ else }}
-            <a href='javascript:void(0)'>{{ .Title }}</a>
-            {{ end }}
         </h2>
     </div>
     {{ end }}

@@ -50,8 +50,8 @@ pygmentscodefencesguesssyntax = true
 [params]
   subTitle = "法不净空，觉无性也。"
   footerSlogan = "法不净空，觉无性也。"
-  keywords = ["祝融","zhurong","说"]
-  description = "祝融说。法不净空，觉无性也。"
+  keywords = ["祝融","祝融说"]
+  description = "祝融说：法不净空，觉无性也。"
   enableMathJax = true
   enableSummary = true
   mainSections = ["posts","post"]
