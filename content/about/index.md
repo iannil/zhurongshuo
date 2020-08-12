@@ -9,5 +9,4 @@ draft: false
 ## 联系方式
 * 微信个人号：xunyux
 * 微信公众号：祝融说
-* 知识星球：祝融说
 * 邮箱：zhurongx@gmail.com
