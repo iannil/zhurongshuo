@@ -45,4 +45,4 @@ draft: false
 
 ## 脑图
 
-![脑图](/core.png)
+![脑图](https://zhurongshuo.oss-cn-beijing.aliyuncs.com/gp/images/core.png)
