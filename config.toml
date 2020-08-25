@@ -1,4 +1,4 @@
-baseURL = "https://www.zhurongshuo.com/"
+baseURL = "https://zhurongshuo.com/"
 publishDir= "docs"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
