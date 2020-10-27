@@ -3,12 +3,32 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zhurongshuo.com/posts/</loc>
-    <lastmod>2020-10-25T21:21:31+08:00</lastmod>
+    <loc>https://zhurongshuo.com/guan/01/</loc>
+    <lastmod>2020-10-28T01:38:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/guan/</loc>
+    <lastmod>2020-10-28T01:38:27+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zhurongshuo.com/tags/</loc>
+    <lastmod>2020-10-28T01:38:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/tags/%E4%B8%80%E8%A7%82/</loc>
+    <lastmod>2020-10-28T01:38:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/</loc>
+    <lastmod>2020-10-28T01:38:27+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/posts/</loc>
     <lastmod>2020-10-25T21:21:31+08:00</lastmod>
   </url>
   
@@ -19,11 +39,6 @@
   
   <url>
     <loc>https://zhurongshuo.com/posts/2020/10/2504/</loc>
-    <lastmod>2020-10-25T21:21:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zhurongshuo.com/</loc>
     <lastmod>2020-10-25T21:21:31+08:00</lastmod>
   </url>
   
