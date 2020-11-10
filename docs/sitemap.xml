@@ -3,12 +3,37 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://zhurongshuo.com/posts/</loc>
-    <lastmod>2020-11-09T11:31:33+08:00</lastmod>
+    <loc>https://zhurongshuo.com/kachuai/</loc>
+    <lastmod>2020-11-10T10:13:10+08:00</lastmod>
   </url>
   
   <url>
     <loc>https://zhurongshuo.com/tags/</loc>
+    <lastmod>2020-11-10T10:13:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/kachuai/dao/12/</loc>
+    <lastmod>2020-11-10T10:13:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/tags/%E5%8D%A1%E6%8F%A3/</loc>
+    <lastmod>2020-11-10T10:13:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/</loc>
+    <lastmod>2020-11-10T10:13:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/tags/%E8%80%81%E5%AD%90/</loc>
+    <lastmod>2020-11-10T10:13:10+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://zhurongshuo.com/posts/</loc>
     <lastmod>2020-11-09T11:31:33+08:00</lastmod>
   </url>
   
@@ -23,11 +48,6 @@
   </url>
   
   <url>
-    <loc>https://zhurongshuo.com/</loc>
-    <lastmod>2020-11-09T11:31:33+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zhurongshuo.com/tags/%E8%A7%82%E7%82%B9/</loc>
     <lastmod>2020-11-09T11:31:33+08:00</lastmod>
   </url>
@@ -38,22 +58,7 @@
   </url>
   
   <url>
-    <loc>https://zhurongshuo.com/kachuai/</loc>
-    <lastmod>2020-11-09T11:23:14+08:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://zhurongshuo.com/kachuai/dao/11/</loc>
-    <lastmod>2020-11-09T11:23:14+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zhurongshuo.com/tags/%E5%8D%A1%E6%8F%A3/</loc>
-    <lastmod>2020-11-09T11:23:14+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://zhurongshuo.com/tags/%E8%80%81%E5%AD%90/</loc>
     <lastmod>2020-11-09T11:23:14+08:00</lastmod>
   </url>
   
