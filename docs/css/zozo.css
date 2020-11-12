@@ -634,6 +634,7 @@ a.back_to_top:hover span {
   font-family:"webfont" !important;
   font-size:28px;
   font-style: normal;
+  font-weight: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
