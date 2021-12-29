@@ -3,7 +3,7 @@ title: "读书记录"
 date: 2021-12-29T21:45:32+08:00
 hidden: true
 draft: false
-tags: ["读书", "耕田"]
+tags: ["读书与耕田", "记录"]
 slug: "history"
 ---
 
