@@ -20,4 +20,4 @@ draft: false
 - 微信个人号：iannil
 - 微信公众号：祝融说
 - 邮箱：zhurongx@gmail.com
-- 比特币：bc1quqyadpd4fmtkwemz90wwcg38fpkekv650w9wpq
+<!-- - 比特币：bc1quqyadpd4fmtkwemz90wwcg38fpkekv650w9wpq -->
