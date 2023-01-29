@@ -10,23 +10,33 @@
     {{ $title := ( .Title ) }}
     {{ $siteTitle := ( .Site.Title ) }}
     {{ if .IsHome }}
-    <title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }} {{ .Site.Params.Subtitle }}{{ end }} </title>
+    <title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }} {{ .Site.Params.Subtitle }}{{ end }}</title>
+    <meta content='{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }} {{ .Site.Params.Subtitle }}{{ end }}' property="og:title">
     {{ else }}
     <title>{{ $siteTitle }} {{ $title }}</title>
+    <meta content="{{ $siteTitle }} {{ $title }}" property="og:title">
     {{ end }}
+
     <!-- description & keywords -->
     {{ if .Description }}
     <meta name="description" content="{{ .Description | safeHTML }}" />
+    <meta content="{{ .Description | safeHTML }}" property="og:description">
     {{ else if .IsPage }}
     <meta name="description" content="{{ .Summary | plainify }}" />
+    <meta content="{{ .Summary | plainify }}" property="og:description">
     {{ else if .Site.Params.description }}
     <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
+    <meta content="{{ .Site.Params.description | safeHTML }}" property="og:description">
     {{ end }}
 
     {{ if .Keywords }}
     {{ $length := len .Keywords | add -1 }}
     <meta name="keywords"
         content="{{ range $index, $element := .Keywords }}{{ $element | safeHTML }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
+    {{ else if .IsHome }}
+    {{ $length := len .Site.Taxonomies.tags }}
+    <meta name="keywords"
+        content="{{ $index := 0 }}{{ range $tag, $element := .Site.Taxonomies.tags }}{{ if ($tag) }}{{ $tag | safeHTML }}{{ end }}{{ $index = $index | add 1 }}{{ if ne $index $length }}, {{ end }}{{ end }}" />
     {{ else if .Site.Params.keywords }}
     {{ $length := len .Site.Params.keywords | add -1 }}
     <meta name="keywords"
