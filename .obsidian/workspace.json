@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/2023/08/2203.md",
+                "file": "content/posts/2023/08/2801.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": false
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/2023/08/2203.md",
+                "file": "content/posts/2023/08/2801.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/2023/08/2203.md",
+                "file": "content/posts/2023/08/2801.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/2023/08/2203.md"
+                "file": "content/posts/2023/08/2801.md"
               }
             }
           }
@@ -146,26 +146,28 @@
   },
   "left-ribbon": {
     "hiddenItems": {
-      "switcher:Open quick switcher": false,
-      "canvas:Create new canvas": false,
-      "command-palette:Open command palette": false,
-      "graph:Open graph view": false
+      "switcher:打开快速切换": false,
+      "graph:查看关系图谱": false,
+      "canvas:新建白板": false,
+      "command-palette:打开命令面板": false
     }
   },
   "active": "cadca6c37187a4d7",
   "lastOpenFiles": [
+    "docs/tags/爱情/index.xml",
+    "docs/tags/爱情/index.html",
+    "docs/tags/爱情",
+    "docs/posts/2023/08/2801/index.html",
+    "docs/posts/2023/08/2801",
+    "content/posts/2023/08/2203.md",
+    "content/posts/2023/08/2801.md",
     "docs/tags/答案/index.xml",
     "docs/page/28/index.html",
     "docs/page/28",
     "docs/tags/答案/index.html",
     "docs/tags/答案",
     "docs/posts/2023/08/2203/index.html",
-    "docs/posts/2023/08/2203",
     "content/posts/2023/08/2202.md",
-    "docs/tags/方法/index.xml",
-    "docs/tags/方法/index.html",
-    "docs/tags/方法",
-    "docs/posts/2023/08/2202/index.html",
     "content/posts/2023/08/2201.md",
     "content/posts/2023/08/1501.md",
     "content/posts/2023/08/0502.md",
@@ -188,8 +190,6 @@
     "content/posts/2023/04/2801.md",
     "content/posts/2023/04/1401.md",
     "content/posts/2023/02/1202.md",
-    "content/posts/2023/01/1801.md",
-    "content/kachuai/dao/8.md",
     "Untitled.canvas"
   ]
 }
