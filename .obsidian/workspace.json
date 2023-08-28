@@ -1,0 +1,195 @@
+{
+  "main": {
+    "id": "b311b685ffe6825e",
+    "type": "split",
+    "children": [
+      {
+        "id": "e1fe0829b0a0f08e",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "cadca6c37187a4d7",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/posts/2023/08/2203.md",
+                "mode": "source",
+                "backlinks": false,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "ebd62b7819873259",
+    "type": "split",
+    "children": [
+      {
+        "id": "75ba0b4af274972f",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "3ba514d166f16916",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "e4d1843498a2f56c",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "tag:#观点",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4906db65c3388104",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          },
+          {
+            "id": "0a925d597b3cdcbc",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "1c0bd68d7e509c47",
+    "type": "split",
+    "children": [
+      {
+        "id": "bb30caf73e558538",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "f97fdf02482a9e29",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/posts/2023/08/2203.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "037798fbc490d9bf",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/posts/2023/08/2203.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "6f3f7c91f9f51736",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "d4e9bbab95fc88c2",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/posts/2023/08/2203.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "canvas:Create new canvas": false,
+      "command-palette:Open command palette": false,
+      "graph:Open graph view": false
+    }
+  },
+  "active": "cadca6c37187a4d7",
+  "lastOpenFiles": [
+    "docs/tags/答案/index.xml",
+    "docs/page/28/index.html",
+    "docs/page/28",
+    "docs/tags/答案/index.html",
+    "docs/tags/答案",
+    "docs/posts/2023/08/2203/index.html",
+    "docs/posts/2023/08/2203",
+    "content/posts/2023/08/2202.md",
+    "docs/tags/方法/index.xml",
+    "docs/tags/方法/index.html",
+    "docs/tags/方法",
+    "docs/posts/2023/08/2202/index.html",
+    "content/posts/2023/08/2201.md",
+    "content/posts/2023/08/1501.md",
+    "content/posts/2023/08/0502.md",
+    "content/tangge/fanfan/2023/0724.md",
+    "content/posts/2023/08/0301.md",
+    "content/posts/2023/08/0501.md",
+    "content/posts/2023/07/1402.md",
+    "content/posts/2023/07/1401.md",
+    "content/posts/2023/07/0701.md",
+    "README.md",
+    "themes/zozo/exampleSite/content/about/index.md",
+    "content/posts/2023/06/1701.md",
+    "content/posts/2023/05/2603.md",
+    "content/posts/2023/05/2602.md",
+    "content/posts/2023/05/2601.md",
+    "content/posts/2023/05/2501.md",
+    "content/posts/2023/05/0701.md",
+    "content/posts/2023/05/0501.md",
+    "content/posts/2023/04/1402.md",
+    "content/posts/2023/04/2801.md",
+    "content/posts/2023/04/1401.md",
+    "content/posts/2023/02/1202.md",
+    "content/posts/2023/01/1801.md",
+    "content/kachuai/dao/8.md",
+    "Untitled.canvas"
+  ]
+}
