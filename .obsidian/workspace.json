@@ -13,10 +13,10 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/about/index.md",
+                "file": "content/posts/2023/09/0601.md",
                 "mode": "source",
                 "backlinks": false,
-                "source": false
+                "source": true
               }
             }
           }
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/about/index.md",
+                "file": "content/posts/2023/09/0601.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/about/index.md",
+                "file": "content/posts/2023/09/0601.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/about/index.md"
+                "file": "content/posts/2023/09/0601.md"
               }
             }
           }
@@ -154,19 +154,22 @@
   },
   "active": "cadca6c37187a4d7",
   "lastOpenFiles": [
-    "themes/zozo/images/screenshot.png",
+    "docs/tags/当下/index.xml",
+    "docs/tags/当下/index.html",
+    "docs/tags/当下",
+    "docs/posts/2023/09/0601/index.html",
+    "docs/posts/2023/09/0601",
+    "docs/posts/2023/09",
+    "content/posts/2023/08/2203.md",
+    "content/posts/2023/09/0601.md",
     "content/posts/2023/08/2801.md",
+    "content/about/index.md",
+    "themes/zozo/images/screenshot.png",
     "docs/tags/爱情/index.xml",
     "docs/tags/爱情/index.html",
     "docs/tags/爱情",
     "docs/posts/2023/08/2801/index.html",
     "docs/posts/2023/08/2801",
-    "content/posts/2023/08/2203.md",
-    "docs/tags/答案/index.xml",
-    "docs/page/28/index.html",
-    "docs/page/28",
-    "docs/tags/答案/index.html",
-    "docs/tags/答案",
     "content/posts/2023/08/2202.md",
     "content/posts/2023/08/2201.md",
     "content/posts/2023/08/1501.md",
@@ -188,8 +191,6 @@
     "content/posts/2023/05/0501.md",
     "content/posts/2023/04/1402.md",
     "content/posts/2023/04/2801.md",
-    "content/posts/2023/04/1401.md",
-    "content/posts/2023/02/1202.md",
     "Untitled.canvas"
   ]
 }
