@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/posts/2023/08/2801.md",
+                "file": "content/posts/2023/10/2901.md",
                 "mode": "source",
                 "backlinks": false,
                 "source": true
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/posts/2023/08/2801.md",
+                "file": "content/posts/2023/10/2901.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -111,7 +111,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/posts/2023/08/2801.md",
+                "file": "content/posts/2023/10/2901.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -134,7 +134,17 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/posts/2023/08/2801.md"
+                "file": "content/posts/2023/10/2901.md"
+              }
+            }
+          },
+          {
+            "id": "51c197020ad27323",
+            "type": "leaf",
+            "state": {
+              "type": "all-properties",
+              "state": {
+                "sortOrder": "frequency"
               }
             }
           }
@@ -154,23 +164,24 @@
   },
   "active": "cadca6c37187a4d7",
   "lastOpenFiles": [
+    "docs/tags/反应/index.xml",
+    "docs/tags/反应/index.html",
+    "docs/tags/反应",
+    "docs/posts/2023/10/2901/index.html",
+    "docs/posts/2023/10/2901",
+    "content/posts/2023/10/1201.md",
+    "content/posts/2023/08/2801.md",
     "docs/tags/节选/index.xml",
     "docs/tags/节选/index.html",
     "docs/tags/节选",
     "content/posts/2023/08/2203.md",
     "content/posts/2023/09/0601.md",
     "content/posts/2023/08/2202.md",
-    "content/posts/2023/08/2801.md",
     "docs/tags/当下/index.xml",
     "docs/tags/当下/index.html",
     "docs/tags/当下",
-    "docs/posts/2023/09/0601/index.html",
-    "docs/posts/2023/09/0601",
-    "docs/posts/2023/09",
     "content/about/index.md",
     "themes/zozo/images/screenshot.png",
-    "docs/tags/爱情/index.xml",
-    "docs/tags/爱情/index.html",
     "content/posts/2023/08/2201.md",
     "content/posts/2023/08/1501.md",
     "content/posts/2023/08/0502.md",
@@ -190,7 +201,6 @@
     "content/posts/2023/05/0701.md",
     "content/posts/2023/05/0501.md",
     "content/posts/2023/04/1402.md",
-    "content/posts/2023/04/2801.md",
     "Untitled.canvas"
   ]
 }
