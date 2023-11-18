@@ -19,8 +19,19 @@
                 "source": true
               }
             }
+          },
+          {
+            "id": "5da34ff9ed94fcbe",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.4.16"
+              }
+            }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -162,22 +173,21 @@
       "command-palette:打开命令面板": false
     }
   },
-  "active": "cadca6c37187a4d7",
+  "active": "5da34ff9ed94fcbe",
   "lastOpenFiles": [
-    "docs/tags/词汇量/index.xml",
-    "docs/page/31/index.html",
-    "docs/page/31",
-    "docs/tags/词汇量/index.html",
-    "docs/tags/词汇量",
-    "docs/posts/2023/11/0401/index.html",
-    "docs/posts/2023/11/0401",
-    "docs/posts/2023/11",
+    "docs/tags/物理/index.xml",
+    "docs/tags/思想/index.xml",
+    "docs/tags/化学/index.xml",
+    "docs/tags/物理/index.html",
+    "docs/tags/物理",
+    "docs/tags/思想/index.html",
+    "docs/tags/思想",
+    "docs/tags/化学/index.html",
+    "docs/tags/化学",
+    "docs/posts/2023/11/1801/index.html",
+    "docs/posts/2023/11/1801",
+    "content/posts/2023/11/1801.md",
     "content/posts/2023/11/1601.md",
-    "content/posts/2023/10/0401.md",
-    "content/posts/2023/10/2901.md",
-    "docs/tags/反应/index.xml",
-    "docs/tags/反应/index.html",
-    "docs/tags/反应",
     "content/posts/2023/10/1201.md",
     "content/posts/2023/08/2801.md",
     "content/posts/2023/08/2203.md",
@@ -201,6 +211,7 @@
     "content/posts/2023/05/2602.md",
     "content/posts/2023/05/2601.md",
     "content/posts/2023/05/2501.md",
+    "content/posts/2023/05/0701.md",
     "Untitled.canvas"
   ]
 }
