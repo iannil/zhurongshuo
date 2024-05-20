@@ -48,7 +48,6 @@ pygmentscodefencesguesssyntax = true
   url = "/about/"
 
 [params]
-  author.name = "祝融"
   subTitle = "法不净空，觉无性也。"
   footerSlogan = "法不净空，觉无性也。"
   keywords = ["祝融", "祝融说"]
@@ -57,6 +56,9 @@ pygmentscodefencesguesssyntax = true
   enableMathJax = true
   enableSummary = true
   mainSections = ["posts","post"]
+
+[params.author]
+  name = "祝融"
 
 # Valine.
 # You can get your appid and appkey from https://leancloud.cn
