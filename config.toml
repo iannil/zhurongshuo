@@ -71,7 +71,7 @@ pygmentscodefencesguesssyntax = true
   visitor = true
 
 # Your socail's url
-[social]
+[params.social]
   mail = "/about/"
   wechat = "/about/"
 
