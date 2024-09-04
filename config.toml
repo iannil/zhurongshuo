@@ -6,7 +6,6 @@ title = "祝融说。"
 theme = "zozo"
 hasCJKLanguage = true
 summaryLength = 100
-paginate = 10
 enableEmoji = true
 googleAnalytics = ""
 disqusShortname = ""
@@ -14,6 +13,9 @@ disqusShortname = ""
 pygmentsUseClasses = true
 pygmentCodeFences = true
 pygmentscodefencesguesssyntax = true
+
+[pagination]
+  pagerSize = 10
 
 [author]
   name = "祝融"
