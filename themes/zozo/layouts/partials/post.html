@@ -11,7 +11,7 @@
     {{ if .Site.Params.enableSummary }}
     <div class="list">
         <div class="post_content markdown">
-            {{ .Summary }}{{ if and (ne (hasPrefix .Summary "<blockquote>") true) .Truncated }}......{{ end }}
+            {{ .Summary }}
         </div>
     </div>
     {{ end }}
