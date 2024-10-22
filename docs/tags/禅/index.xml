@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>禅 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E7%A6%85/</link>
+    <link>http://localhost:1313/tags/%E7%A6%85/</link>
     <description>Recent content in 禅 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 04 Mar 2022 20:21:11 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E7%A6%85/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%A6%85/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>沩仰自然，临济尖锋，曹洞细密，云门妙古，法眼言实。</title>
-      <link>https://zhurongshuo.com/posts/2022/03/0401/</link>
+      <link>http://localhost:1313/posts/2022/03/0401/</link>
       <pubDate>Fri, 04 Mar 2022 20:21:11 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2022/03/0401/</guid>
+      <guid>http://localhost:1313/posts/2022/03/0401/</guid>
       <description>&lt;p&gt;沩仰自然，临济尖锋，曹洞细密，云门妙古，法眼言实。&lt;/p&gt;</description>
     </item>
   </channel>

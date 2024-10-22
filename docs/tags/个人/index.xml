@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>个人 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E4%B8%AA%E4%BA%BA/</link>
+    <link>http://localhost:1313/tags/%E4%B8%AA%E4%BA%BA/</link>
     <description>Recent content in 个人 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 27 Nov 2021 16:22:15 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E4%B8%AA%E4%BA%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E4%B8%AA%E4%BA%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>个人性与集体性哪个更被强调，依赖于个人与集体达成了怎样的共识。</title>
-      <link>https://zhurongshuo.com/posts/2021/11/2702/</link>
+      <link>http://localhost:1313/posts/2021/11/2702/</link>
       <pubDate>Sat, 27 Nov 2021 16:22:15 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/11/2702/</guid>
+      <guid>http://localhost:1313/posts/2021/11/2702/</guid>
       <description>&lt;p&gt;个人性与集体性哪个更被强调，依赖于个人与集体达成了怎样的共识。共识的一致性越强，个人性越能够被宽松的表达；反之，共识的一致性越弱，个人性就越被泯灭，转化为多个群体之间的对抗。&lt;/p&gt;&#xA;&lt;p&gt;强一致性带来的个人性的绽放会迅速的在各个领域各个层面创新，并带来璀璨的发展。而后个人的冲突开始出现，类似的个人性聚集成小范围的集体。此时，或许能重新达成小范围的一致，进而继续前行；也或许无法达成小范围的一致，范围就会扩大，最终变成大集体的对抗，强一致性衰退成弱一致性。&lt;/p&gt;</description>
     </item>
   </channel>

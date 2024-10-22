@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>奇迹 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%A5%87%E8%BF%B9/</link>
+    <link>http://localhost:1313/tags/%E5%A5%87%E8%BF%B9/</link>
     <description>Recent content in 奇迹 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 02 Jun 2022 01:42:06 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%A5%87%E8%BF%B9/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%A5%87%E8%BF%B9/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>人类拥有着几乎无限的愚蠢，然而奇迹又往往被这些愚蠢所孕育。</title>
-      <link>https://zhurongshuo.com/posts/2022/06/0201/</link>
+      <link>http://localhost:1313/posts/2022/06/0201/</link>
       <pubDate>Thu, 02 Jun 2022 01:42:06 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2022/06/0201/</guid>
+      <guid>http://localhost:1313/posts/2022/06/0201/</guid>
       <description>&lt;p&gt;人类拥有着几乎无限的愚蠢，然而奇迹又往往被这些愚蠢所孕育。可以说，是一种「愚蠢二象性」了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>每天发生的奇迹会被视为日常。</title>
-      <link>https://zhurongshuo.com/posts/2022/05/1403/</link>
+      <link>http://localhost:1313/posts/2022/05/1403/</link>
       <pubDate>Sat, 14 May 2022 17:47:15 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2022/05/1403/</guid>
+      <guid>http://localhost:1313/posts/2022/05/1403/</guid>
       <description>&lt;p&gt;每天发生的奇迹会被视为日常。&lt;/p&gt;</description>
     </item>
   </channel>

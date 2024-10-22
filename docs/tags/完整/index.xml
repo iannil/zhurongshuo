@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>完整 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%AE%8C%E6%95%B4/</link>
+    <link>http://localhost:1313/tags/%E5%AE%8C%E6%95%B4/</link>
     <description>Recent content in 完整 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 Mar 2024 17:08:04 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%AE%8C%E6%95%B4/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%AE%8C%E6%95%B4/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>内在的完整性无法被愚弄且快活的永远在场。</title>
-      <link>https://zhurongshuo.com/posts/2024/03/2001/</link>
+      <link>http://localhost:1313/posts/2024/03/2001/</link>
       <pubDate>Wed, 20 Mar 2024 17:08:04 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/03/2001/</guid>
+      <guid>http://localhost:1313/posts/2024/03/2001/</guid>
       <description>&lt;p&gt;内在的完整性无法被愚弄且快活的永远在场。&lt;/p&gt;</description>
     </item>
   </channel>

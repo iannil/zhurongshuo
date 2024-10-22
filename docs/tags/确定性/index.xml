@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>确定性 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E7%A1%AE%E5%AE%9A%E6%80%A7/</link>
+    <link>http://localhost:1313/tags/%E7%A1%AE%E5%AE%9A%E6%80%A7/</link>
     <description>Recent content in 确定性 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 24 Jan 2023 11:26:58 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E7%A1%AE%E5%AE%9A%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%A1%AE%E5%AE%9A%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>确定性或许只是一种过拟合。</title>
-      <link>https://zhurongshuo.com/posts/2023/01/2403/</link>
+      <link>http://localhost:1313/posts/2023/01/2403/</link>
       <pubDate>Tue, 24 Jan 2023 11:26:58 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/01/2403/</guid>
+      <guid>http://localhost:1313/posts/2023/01/2403/</guid>
       <description>&lt;p&gt;确定性或许只是一种过拟合。&lt;/p&gt;</description>
     </item>
   </channel>
