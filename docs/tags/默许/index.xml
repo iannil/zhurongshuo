@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>默许 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E9%BB%98%E8%AE%B8/</link>
+    <link>https://zhurongshuo.com/tags/%E9%BB%98%E8%AE%B8/</link>
     <description>Recent content in 默许 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 19 Sep 2023 16:46:34 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E9%BB%98%E8%AE%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E9%BB%98%E8%AE%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>团体的情况总是包含全体成员的默许。</title>
-      <link>http://localhost:1313/posts/2023/09/1902/</link>
+      <link>https://zhurongshuo.com/posts/2023/09/1902/</link>
       <pubDate>Tue, 19 Sep 2023 16:46:34 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2023/09/1902/</guid>
+      <guid>https://zhurongshuo.com/posts/2023/09/1902/</guid>
       <description>&lt;p&gt;团体的情况总是包含全体成员的默许。&lt;/p&gt;</description>
     </item>
   </channel>

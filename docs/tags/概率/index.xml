@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>概率 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E6%A6%82%E7%8E%87/</link>
+    <link>https://zhurongshuo.com/tags/%E6%A6%82%E7%8E%87/</link>
     <description>Recent content in 概率 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 19 Dec 2021 11:56:18 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%A6%82%E7%8E%87/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E6%A6%82%E7%8E%87/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>过多的变量会模糊因果，使得结果最终呈现为一种概率。</title>
-      <link>http://localhost:1313/posts/2021/12/1901/</link>
+      <link>https://zhurongshuo.com/posts/2021/12/1901/</link>
       <pubDate>Sun, 19 Dec 2021 11:56:18 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2021/12/1901/</guid>
+      <guid>https://zhurongshuo.com/posts/2021/12/1901/</guid>
       <description>&lt;p&gt;过多的变量会模糊因果，使得结果最终呈现为一种概率。&lt;/p&gt;</description>
     </item>
   </channel>
