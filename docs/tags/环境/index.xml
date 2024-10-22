@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>环境 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E7%8E%AF%E5%A2%83/</link>
+    <link>http://localhost:1313/tags/%E7%8E%AF%E5%A2%83/</link>
     <description>Recent content in 环境 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 19 Dec 2020 12:59:59 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E7%8E%AF%E5%A2%83/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%8E%AF%E5%A2%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>人始终在追寻认同，追寻与环境一致。在被认同的环境中，人更容易做出认同环境的行为。</title>
-      <link>https://zhurongshuo.com/posts/2020/12/1901/</link>
+      <link>http://localhost:1313/posts/2020/12/1901/</link>
       <pubDate>Sat, 19 Dec 2020 12:59:59 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/12/1901/</guid>
+      <guid>http://localhost:1313/posts/2020/12/1901/</guid>
       <description>&lt;p&gt;人始终在追寻认同，追寻与环境一致。在被认同的环境中，人更容易做出认同环境的行为。例如某个群体里某人是公认的营销专家，这个人会更倾向于做出最好的营销，以保持这种认同。又例如两个人的相似点越多，互相的影响就越大，哪怕这个相似点是有意识的寻找或制造出来的。&lt;/p&gt;</description>
     </item>
   </channel>

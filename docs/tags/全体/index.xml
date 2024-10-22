@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>全体 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%85%A8%E4%BD%93/</link>
+    <link>http://localhost:1313/tags/%E5%85%A8%E4%BD%93/</link>
     <description>Recent content in 全体 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 04 Oct 2023 13:42:59 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%85%A8%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%85%A8%E4%BD%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自我牺牲不是美德，那意味着全体的失败。</title>
-      <link>https://zhurongshuo.com/posts/2023/10/0401/</link>
+      <link>http://localhost:1313/posts/2023/10/0401/</link>
       <pubDate>Wed, 04 Oct 2023 13:42:59 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/10/0401/</guid>
+      <guid>http://localhost:1313/posts/2023/10/0401/</guid>
       <description>&lt;p&gt;自我牺牲不是美德，那意味着全体的失败。&lt;/p&gt;</description>
     </item>
     <item>
       <title>团体的情况总是包含全体成员的默许。</title>
-      <link>https://zhurongshuo.com/posts/2023/09/1902/</link>
+      <link>http://localhost:1313/posts/2023/09/1902/</link>
       <pubDate>Tue, 19 Sep 2023 16:46:34 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/09/1902/</guid>
+      <guid>http://localhost:1313/posts/2023/09/1902/</guid>
       <description>&lt;p&gt;团体的情况总是包含全体成员的默许。&lt;/p&gt;</description>
     </item>
   </channel>

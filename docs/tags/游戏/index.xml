@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>游戏 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E6%B8%B8%E6%88%8F/</link>
+    <link>http://localhost:1313/tags/%E6%B8%B8%E6%88%8F/</link>
     <description>Recent content in 游戏 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 20 Mar 2024 17:38:12 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%B8%B8%E6%88%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>创造是游戏，除了玩本身，没有其他路径通向它。</title>
-      <link>https://zhurongshuo.com/posts/2024/03/2002/</link>
+      <link>http://localhost:1313/posts/2024/03/2002/</link>
       <pubDate>Wed, 20 Mar 2024 17:38:12 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/03/2002/</guid>
+      <guid>http://localhost:1313/posts/2024/03/2002/</guid>
       <description>&lt;p&gt;创造是游戏，除了玩本身，没有其他路径通向它。&lt;/p&gt;</description>
     </item>
     <item>
       <title>不确定性游戏四原则：保持存活、极低投入、多多益善、东边不亮西边亮。</title>
-      <link>https://zhurongshuo.com/posts/2023/11/2902/</link>
+      <link>http://localhost:1313/posts/2023/11/2902/</link>
       <pubDate>Wed, 29 Nov 2023 13:57:54 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/11/2902/</guid>
+      <guid>http://localhost:1313/posts/2023/11/2902/</guid>
       <description>&lt;p&gt;不确定性游戏四原则：保持存活、极低投入、多多益善、东边不亮西边亮。&lt;/p&gt;</description>
     </item>
     <item>
       <title>三维世界本质上是一种时间与空间以不同形式不断交换的游戏。</title>
-      <link>https://zhurongshuo.com/posts/2021/12/1701/</link>
+      <link>http://localhost:1313/posts/2021/12/1701/</link>
       <pubDate>Fri, 17 Dec 2021 16:02:57 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/12/1701/</guid>
+      <guid>http://localhost:1313/posts/2021/12/1701/</guid>
       <description>&lt;p&gt;三维世界本质上是一种时间与空间以不同形式不断交换的游戏。&lt;/p&gt;</description>
     </item>
     <item>
       <title>从「真心认同」让位于「以为认同」开始，人类共同玩了一个游戏，叫「比谁声量大」。</title>
-      <link>https://zhurongshuo.com/posts/2021/08/1203/</link>
+      <link>http://localhost:1313/posts/2021/08/1203/</link>
       <pubDate>Thu, 12 Aug 2021 16:15:11 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/08/1203/</guid>
+      <guid>http://localhost:1313/posts/2021/08/1203/</guid>
       <description>&lt;p&gt;从「真心认同」让位于「以为认同」开始，人类共同玩了一个游戏，叫 &lt;em&gt;「比谁声量大」&lt;/em&gt;。&lt;/p&gt;&#xA;&lt;p&gt;理想情况下，所有人都尊重事实，不夸张，不扩大，不撒谎，不隐瞒，做到就事论事——当然实际情况远非如此。网络时代，声量大的就是会占据更多的注意力，并有更大概率获得认同——一个人是否真的理解并认同我传达的东西不重要——只要让他以为他认同、让他以为别人认同他最好也认同、让他以为别人认同他不认同显得他很蠢就可以了。&lt;/p&gt;</description>
     </item>
   </channel>

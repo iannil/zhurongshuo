@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>名相 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%90%8D%E7%9B%B8/</link>
+    <link>http://localhost:1313/tags/%E5%90%8D%E7%9B%B8/</link>
     <description>Recent content in 名相 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 15 Aug 2024 13:36:16 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%90%8D%E7%9B%B8/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%90%8D%E7%9B%B8/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>重要的不在于名相，而在于与名相的关系。</title>
-      <link>https://zhurongshuo.com/posts/2024/08/1501/</link>
+      <link>http://localhost:1313/posts/2024/08/1501/</link>
       <pubDate>Thu, 15 Aug 2024 13:36:16 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/08/1501/</guid>
+      <guid>http://localhost:1313/posts/2024/08/1501/</guid>
       <description>&lt;p&gt;重要的不在于名相，而在于与名相的关系。知识、方法、理论等，其本身并不重要，都只是一种「途径」。真正重要的是，通过这种「途径」可 &lt;em&gt;获得怎样的「确定性」又否定了哪些「可能性」&lt;/em&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>一切问题本质上都是观念问题。重要的不是名相，而是你对名相秉持的观念。</title>
-      <link>https://zhurongshuo.com/posts/2020/12/0801/</link>
+      <link>http://localhost:1313/posts/2020/12/0801/</link>
       <pubDate>Tue, 08 Dec 2020 02:36:13 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/12/0801/</guid>
+      <guid>http://localhost:1313/posts/2020/12/0801/</guid>
       <description>&lt;p&gt;一切问题本质上都是观念问题。重要的不是名相，而是你对名相秉持的观念。&lt;/p&gt;</description>
     </item>
   </channel>
