@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>管理 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E7%AE%A1%E7%90%86/</link>
+    <link>https://zhurongshuo.com/tags/%E7%AE%A1%E7%90%86/</link>
     <description>Recent content in 管理 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 29 Apr 2023 23:20:37 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E7%AE%A1%E7%90%86/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>管理风险是管理预期的前提。</title>
-      <link>http://localhost:1313/posts/2023/04/2902/</link>
+      <link>https://zhurongshuo.com/posts/2023/04/2902/</link>
       <pubDate>Sat, 29 Apr 2023 23:20:37 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2023/04/2902/</guid>
+      <guid>https://zhurongshuo.com/posts/2023/04/2902/</guid>
       <description>&lt;p&gt;管理风险是管理预期的前提，预期的失控往往是从风险的失控开始的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>预期管理。</title>
-      <link>http://localhost:1313/posts/2023/02/1202/</link>
+      <link>https://zhurongshuo.com/posts/2023/02/1202/</link>
       <pubDate>Sun, 12 Feb 2023 15:35:48 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2023/02/1202/</guid>
+      <guid>https://zhurongshuo.com/posts/2023/02/1202/</guid>
       <description>&lt;p&gt;预期管理，预期管理，还是预期管理。&lt;/p&gt;</description>
     </item>
   </channel>

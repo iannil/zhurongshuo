@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>市场 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E5%B8%82%E5%9C%BA/</link>
+    <link>https://zhurongshuo.com/tags/%E5%B8%82%E5%9C%BA/</link>
     <description>Recent content in 市场 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 17 May 2022 20:38:45 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%B8%82%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E5%B8%82%E5%9C%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>完美市场犹如经典力学，是一种对现实粗糙简化的模型。</title>
-      <link>http://localhost:1313/posts/2022/05/1702/</link>
+      <link>https://zhurongshuo.com/posts/2022/05/1702/</link>
       <pubDate>Tue, 17 May 2022 20:38:45 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2022/05/1702/</guid>
+      <guid>https://zhurongshuo.com/posts/2022/05/1702/</guid>
       <description>&lt;p&gt;完美市场犹如经典力学，是一种对现实粗糙简化的模型。随着社会的发展，粗糙的模型会越来越难以正确反应现实，就像当初的经典力学—— &lt;em&gt;他有效，但并非总是有效&lt;/em&gt; 。&lt;/p&gt;</description>
     </item>
     <item>
       <title>市场不完美。</title>
-      <link>http://localhost:1313/posts/2022/05/1701/</link>
+      <link>https://zhurongshuo.com/posts/2022/05/1701/</link>
       <pubDate>Tue, 17 May 2022 20:37:47 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2022/05/1701/</guid>
+      <guid>https://zhurongshuo.com/posts/2022/05/1701/</guid>
       <description>&lt;p&gt;市场不完美。&lt;/p&gt;</description>
     </item>
     <item>
       <title>市场是有效的，但没有那么有效。</title>
-      <link>http://localhost:1313/posts/2021/12/1904/</link>
+      <link>https://zhurongshuo.com/posts/2021/12/1904/</link>
       <pubDate>Sun, 19 Dec 2021 13:30:18 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2021/12/1904/</guid>
+      <guid>https://zhurongshuo.com/posts/2021/12/1904/</guid>
       <description>&lt;p&gt;市场是有效的，但没有那么有效。&lt;/p&gt;</description>
     </item>
   </channel>

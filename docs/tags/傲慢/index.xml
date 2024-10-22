@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>傲慢 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E5%82%B2%E6%85%A2/</link>
+    <link>https://zhurongshuo.com/tags/%E5%82%B2%E6%85%A2/</link>
     <description>Recent content in 傲慢 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 07 Aug 2021 19:12:42 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%82%B2%E6%85%A2/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E5%82%B2%E6%85%A2/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>傲慢是世界上最愚蠢的愚蠢。</title>
-      <link>http://localhost:1313/posts/2021/08/0702/</link>
+      <link>https://zhurongshuo.com/posts/2021/08/0702/</link>
       <pubDate>Sat, 07 Aug 2021 19:12:42 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2021/08/0702/</guid>
+      <guid>https://zhurongshuo.com/posts/2021/08/0702/</guid>
       <description>&lt;p&gt;傲慢是世界上最愚蠢的愚蠢。&lt;/p&gt;</description>
     </item>
   </channel>

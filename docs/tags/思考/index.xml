@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>思考 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E6%80%9D%E8%80%83/</link>
+    <link>https://zhurongshuo.com/tags/%E6%80%9D%E8%80%83/</link>
     <description>Recent content in 思考 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Tue, 22 Aug 2023 13:51:07 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E6%80%9D%E8%80%83/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>理性思考对每个人都是稀缺品，因此人往往倾向于只在必要的时候理性思考。</title>
-      <link>http://localhost:1313/posts/2023/08/2201/</link>
+      <link>https://zhurongshuo.com/posts/2023/08/2201/</link>
       <pubDate>Tue, 22 Aug 2023 13:51:07 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2023/08/2201/</guid>
+      <guid>https://zhurongshuo.com/posts/2023/08/2201/</guid>
       <description>&lt;p&gt;理性思考对每个人都是稀缺品，因此人倾向于只在必要时理性思考。其余时候，则凭借经验和习惯行动。&lt;/p&gt;</description>
     </item>
     <item>
       <title>思考是奢侈的，内容在传播的过程中，如果不能被瞬间理解，就会被忽略。</title>
-      <link>http://localhost:1313/posts/2020/10/2501/</link>
+      <link>https://zhurongshuo.com/posts/2020/10/2501/</link>
       <pubDate>Sun, 25 Oct 2020 18:46:32 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2020/10/2501/</guid>
+      <guid>https://zhurongshuo.com/posts/2020/10/2501/</guid>
       <description>&lt;p&gt;&lt;em&gt;思考是奢侈的，内容在传播的过程中，如果不能被瞬间理解，就会被忽略。&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
