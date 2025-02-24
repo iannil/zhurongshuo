@@ -34,6 +34,11 @@ pygmentscodefencesguesssyntax = true
   identifier = "core"
   url = "/core/"
 [[menu.main]]
+  name = "进阶"
+  weight = 25
+  identifier = ""
+  url = "/advanced/"
+[[menu.main]]
   name = "归档"
   weight = 30
   identifier = "archive"
