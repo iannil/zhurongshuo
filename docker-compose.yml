@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  main:
+    build: 
+      context: .              
+      dockerfile: Dockerfile  
+    ports:
+      - "80:80"               
+      - "443:443"             
+      # - "1313:1313"  
+    volumes:
+      - caddy_data:/data      
+      - caddy_config:/config  
+      - ./Caddyfile:/etc/caddy/Caddyfile
+    restart: unless-stopped   
+    environment:
+      - HUGO_ENV=production   
+      # - HUGO_ENV=development
+    command: ["caddy", "run", "--access-log", "--config", "/etc/caddy/Caddyfile"]
+  monitoring:
+    image: grafana/grafana
+    ports:
+      - "3000:3000"
+    depends_on:
+      - main
+
+volumes:
+  caddy_data:
+  caddy_config:
+
+# 可选网络配置（多服务协同时使用）
+# networks:
+#   frontend:
+#     driver: bridge
