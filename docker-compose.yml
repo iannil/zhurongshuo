@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
   main:
     build: 
@@ -17,13 +15,13 @@ services:
     environment:
       - HUGO_ENV=production   
       # - HUGO_ENV=development
-    command: ["caddy", "run", "--access-log", "--config", "/etc/caddy/Caddyfile"]
-  monitoring:
-    image: grafana/grafana
-    ports:
-      - "3000:3000"
-    depends_on:
-      - main
+    command: ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
+  # monitoring:
+  #   image: grafana/grafana
+  #   ports:
+  #     - "3000:3000"
+  #   depends_on:
+  #     - main
 
 volumes:
   caddy_data:
