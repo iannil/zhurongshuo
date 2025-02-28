@@ -1,13 +1,13 @@
-FROM klakegg/hugo:0.107.0-extended AS builder
+FROM hugomods/hugo:nightly AS builder
 
 WORKDIR /src
 COPY . .
 
 RUN hugo --minify --gc
 
-FROM caddy:2.7.5-alpine
+FROM caddy:2.9.1-alpine
 # COPY Caddyfile /etc/caddy/Caddyfile
-COPY --from=builder /src/public /usr/share/caddy
+COPY --from=builder /src/docs /usr/share/caddy
 EXPOSE 80 443
 
 # CMD ["caddy", "file-server", "--access-log", "--listen", ":80"]
