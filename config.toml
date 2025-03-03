@@ -62,7 +62,7 @@ pygmentscodefencesguesssyntax = true
   copyrights = "Copyright © 2010-2025 祝融说 zhurongshuo.com All Rights Reserved."
   enableMathJax = true
   enableSummary = true
-  mainSections = ["posts","post"]
+  mainSections = ["posts", "post"]
 
 [params.author]
   name = "祝融"
