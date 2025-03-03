@@ -1,4 +1,4 @@
-blog.iannil.net {
+t.iannil.net {
     root * /usr/share/caddy
     encode gzip
     file_server
