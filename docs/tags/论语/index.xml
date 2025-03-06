@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>论语 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E8%AE%BA%E8%AF%AD/</link>
+    <link>https://zhurongshuo.com/tags/%E8%AE%BA%E8%AF%AD/</link>
     <description>Recent content in 论语 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 10 Jan 2025 12:59:43 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E8%AE%BA%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E8%AE%BA%E8%AF%AD/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>子曰：「君子不器。」</title>
-      <link>http://localhost:1313/posts/2025/01/1001/</link>
+      <link>https://zhurongshuo.com/posts/2025/01/1001/</link>
       <pubDate>Fri, 10 Jan 2025 12:59:43 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2025/01/1001/</guid>
+      <guid>https://zhurongshuo.com/posts/2025/01/1001/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;子曰：「君子不器。」&#xA;——《论语·为政》&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
   </channel>

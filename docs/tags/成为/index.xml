@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>成为 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E6%88%90%E4%B8%BA/</link>
+    <link>https://zhurongshuo.com/tags/%E6%88%90%E4%B8%BA/</link>
     <description>Recent content in 成为 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 10 Feb 2025 00:02:29 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E6%88%90%E4%B8%BA/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E6%88%90%E4%B8%BA/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自始至终都正在成为。</title>
-      <link>http://localhost:1313/posts/2025/02/1001/</link>
+      <link>https://zhurongshuo.com/posts/2025/02/1001/</link>
       <pubDate>Mon, 10 Feb 2025 00:02:29 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2025/02/1001/</guid>
+      <guid>https://zhurongshuo.com/posts/2025/02/1001/</guid>
       <description>&lt;p&gt;&lt;em&gt;自始至终都正在成为。&lt;/em&gt;&lt;/p&gt;</description>
     </item>
   </channel>
