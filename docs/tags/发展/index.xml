@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>发展 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%8F%91%E5%B1%95/</link>
+    <link>http://localhost:1313/tags/%E5%8F%91%E5%B1%95/</link>
     <description>Recent content in 发展 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 10 Feb 2025 00:02:29 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%8F%91%E5%B1%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%8F%91%E5%B1%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>自始至终都正在成为。</title>
-      <link>https://zhurongshuo.com/posts/2025/02/1001/</link>
+      <link>http://localhost:1313/posts/2025/02/1001/</link>
       <pubDate>Mon, 10 Feb 2025 00:02:29 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/02/1001/</guid>
+      <guid>http://localhost:1313/posts/2025/02/1001/</guid>
       <description>&lt;p&gt;&lt;em&gt;自始至终都正在成为。&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>灵魂通过体验发展自己。</title>
-      <link>https://zhurongshuo.com/posts/2024/10/1702/</link>
+      <link>http://localhost:1313/posts/2024/10/1702/</link>
       <pubDate>Thu, 17 Oct 2024 13:36:52 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/10/1702/</guid>
+      <guid>http://localhost:1313/posts/2024/10/1702/</guid>
       <description>&lt;p&gt;灵魂通过 &lt;em&gt;体验&lt;/em&gt; 发展自己。&lt;/p&gt;</description>
     </item>
     <item>
       <title>有选择权才有发展权。</title>
-      <link>https://zhurongshuo.com/posts/2023/04/1401/</link>
+      <link>http://localhost:1313/posts/2023/04/1401/</link>
       <pubDate>Fri, 14 Apr 2023 12:34:42 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/04/1401/</guid>
+      <guid>http://localhost:1313/posts/2023/04/1401/</guid>
       <description>&lt;p&gt;有选择权才有发展权。&lt;/p&gt;</description>
     </item>
   </channel>

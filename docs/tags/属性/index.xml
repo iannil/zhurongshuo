@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>属性 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%B1%9E%E6%80%A7/</link>
+    <link>http://localhost:1313/tags/%E5%B1%9E%E6%80%A7/</link>
     <description>Recent content in 属性 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 08 Jan 2025 13:45:58 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%B1%9E%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%B1%9E%E6%80%A7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>物质存在其物理属性表面的不变性，来自观察者、被观察者在测量过程中，相互之间共同的协调和改变。</title>
-      <link>https://zhurongshuo.com/posts/2025/01/0801/</link>
+      <link>http://localhost:1313/posts/2025/01/0801/</link>
       <pubDate>Wed, 08 Jan 2025 13:45:58 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/01/0801/</guid>
+      <guid>http://localhost:1313/posts/2025/01/0801/</guid>
       <description>&lt;p&gt;物质存在其物理属性表面的&lt;em&gt;不变性&lt;/em&gt;，来自观察者、被观察者在测量过程中，&lt;em&gt;相互之间共同的协调和改变&lt;/em&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>欲望不是人的属性，是关系的属性。</title>
-      <link>https://zhurongshuo.com/posts/2023/07/1501/</link>
+      <link>http://localhost:1313/posts/2023/07/1501/</link>
       <pubDate>Sat, 15 Jul 2023 17:45:57 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/07/1501/</guid>
+      <guid>http://localhost:1313/posts/2023/07/1501/</guid>
       <description>&lt;p&gt;欲望不是人的属性，是关系的属性。&lt;/p&gt;</description>
     </item>
   </channel>

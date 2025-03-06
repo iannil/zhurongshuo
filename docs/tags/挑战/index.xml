@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>挑战 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E6%8C%91%E6%88%98/</link>
+    <link>http://localhost:1313/tags/%E6%8C%91%E6%88%98/</link>
     <description>Recent content in 挑战 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 14 Aug 2022 12:08:11 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E6%8C%91%E6%88%98/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%8C%91%E6%88%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>溢价来源于对主流的合理挑战。</title>
-      <link>https://zhurongshuo.com/posts/2022/08/1404/</link>
+      <link>http://localhost:1313/posts/2022/08/1404/</link>
       <pubDate>Sun, 14 Aug 2022 12:08:11 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2022/08/1404/</guid>
+      <guid>http://localhost:1313/posts/2022/08/1404/</guid>
       <description>&lt;p&gt;溢价来源于对主流的合理挑战。既要能与主流形成差异，又要能合理化这种差异。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>意外 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E6%84%8F%E5%A4%96/</link>
+    <link>http://localhost:1313/tags/%E6%84%8F%E5%A4%96/</link>
     <description>Recent content in 意外 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 30 Apr 2023 22:11:10 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E6%84%8F%E5%A4%96/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%84%8F%E5%A4%96/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>信息的效率由已知、预期、意外和重复共同完成。</title>
-      <link>https://zhurongshuo.com/posts/2023/04/3003/</link>
+      <link>http://localhost:1313/posts/2023/04/3003/</link>
       <pubDate>Sun, 30 Apr 2023 22:11:10 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/04/3003/</guid>
+      <guid>http://localhost:1313/posts/2023/04/3003/</guid>
       <description>&lt;p&gt;信息的效率由 &lt;em&gt;已知、预期、意外和重复&lt;/em&gt; 共同完成。正向的效率促使信息向相同方向强化，反向的效率则是促使信息向不同方向强化。&lt;/p&gt;</description>
     </item>
   </channel>

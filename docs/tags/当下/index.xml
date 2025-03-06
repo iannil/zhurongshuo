@@ -2,38 +2,38 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>当下 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%BD%93%E4%B8%8B/</link>
+    <link>http://localhost:1313/tags/%E5%BD%93%E4%B8%8B/</link>
     <description>Recent content in 当下 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Feb 2025 11:14:10 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%BD%93%E4%B8%8B/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%BD%93%E4%B8%8B/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>没有所谓最初或最后的意识或物质，只有当下可能的意识或物质。</title>
-      <link>https://zhurongshuo.com/posts/2025/02/2201/</link>
+      <link>http://localhost:1313/posts/2025/02/2201/</link>
       <pubDate>Sat, 22 Feb 2025 11:14:10 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/02/2201/</guid>
+      <guid>http://localhost:1313/posts/2025/02/2201/</guid>
       <description>&lt;p&gt;没有所谓最初或最后的意识或物质，只有&lt;em&gt;当下可能的&lt;/em&gt;意识或物质。&lt;/p&gt;</description>
     </item>
     <item>
       <title>昨天的自我与今日的自我无干，刚才的自我与当下的自我无干。</title>
-      <link>https://zhurongshuo.com/posts/2024/12/2501/</link>
+      <link>http://localhost:1313/posts/2024/12/2501/</link>
       <pubDate>Wed, 25 Dec 2024 09:52:46 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/12/2501/</guid>
+      <guid>http://localhost:1313/posts/2024/12/2501/</guid>
       <description>&lt;p&gt;昨天的自我与今日的自我无干，刚才的自我与当下的自我无干。 &lt;em&gt;我既是我，我亦非我。&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>不做假设，判断是当下的。</title>
-      <link>https://zhurongshuo.com/posts/2024/07/2502/</link>
+      <link>http://localhost:1313/posts/2024/07/2502/</link>
       <pubDate>Thu, 25 Jul 2024 17:45:50 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/07/2502/</guid>
+      <guid>http://localhost:1313/posts/2024/07/2502/</guid>
       <description>&lt;p&gt;不做假设， &lt;em&gt;判断是当下的&lt;/em&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>永远相信美好的事物正在发生。</title>
-      <link>https://zhurongshuo.com/posts/2023/09/0601/</link>
+      <link>http://localhost:1313/posts/2023/09/0601/</link>
       <pubDate>Wed, 06 Sep 2023 11:43:52 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/09/0601/</guid>
+      <guid>http://localhost:1313/posts/2023/09/0601/</guid>
       <description>&lt;p&gt;永远相信美好的事物正在发生。&lt;/p&gt;</description>
     </item>
   </channel>

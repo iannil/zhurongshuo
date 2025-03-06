@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>测量 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E6%B5%8B%E9%87%8F/</link>
+    <link>http://localhost:1313/tags/%E6%B5%8B%E9%87%8F/</link>
     <description>Recent content in 测量 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 08 Jan 2025 13:45:58 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E6%B5%8B%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%B5%8B%E9%87%8F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>物质存在其物理属性表面的不变性，来自观察者、被观察者在测量过程中，相互之间共同的协调和改变。</title>
-      <link>https://zhurongshuo.com/posts/2025/01/0801/</link>
+      <link>http://localhost:1313/posts/2025/01/0801/</link>
       <pubDate>Wed, 08 Jan 2025 13:45:58 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/01/0801/</guid>
+      <guid>http://localhost:1313/posts/2025/01/0801/</guid>
       <description>&lt;p&gt;物质存在其物理属性表面的&lt;em&gt;不变性&lt;/em&gt;，来自观察者、被观察者在测量过程中，&lt;em&gt;相互之间共同的协调和改变&lt;/em&gt;。&lt;/p&gt;</description>
     </item>
   </channel>

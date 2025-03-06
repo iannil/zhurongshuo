@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>偶然 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%81%B6%E7%84%B6/</link>
+    <link>http://localhost:1313/tags/%E5%81%B6%E7%84%B6/</link>
     <description>Recent content in 偶然 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 19 Nov 2023 12:12:07 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%81%B6%E7%84%B6/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%81%B6%E7%84%B6/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从来就没有偶然，有的都是显性或隐性的合作。</title>
-      <link>https://zhurongshuo.com/posts/2023/11/1901/</link>
+      <link>http://localhost:1313/posts/2023/11/1901/</link>
       <pubDate>Sun, 19 Nov 2023 12:12:07 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/11/1901/</guid>
+      <guid>http://localhost:1313/posts/2023/11/1901/</guid>
       <description>&lt;p&gt;从来就没有偶然，有的都是显性或隐性的合作。&lt;/p&gt;</description>
     </item>
     <item>
       <title>必然得之于效率而失之于新意，偶然则相反，得之于新意而失之于效率。</title>
-      <link>https://zhurongshuo.com/posts/2021/01/0102/</link>
+      <link>http://localhost:1313/posts/2021/01/0102/</link>
       <pubDate>Fri, 01 Jan 2021 16:46:45 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/01/0102/</guid>
+      <guid>http://localhost:1313/posts/2021/01/0102/</guid>
       <description>&lt;p&gt;必然得之于效率而失之于新意，偶然则相反，得之于新意而失之于效率。&lt;/p&gt;</description>
     </item>
     <item>
       <title>人热衷于在必然中寻找偶然，也热衷于在偶然中寻找必然。</title>
-      <link>https://zhurongshuo.com/posts/2021/01/0101/</link>
+      <link>http://localhost:1313/posts/2021/01/0101/</link>
       <pubDate>Fri, 01 Jan 2021 16:46:45 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/01/0101/</guid>
+      <guid>http://localhost:1313/posts/2021/01/0101/</guid>
       <description>&lt;p&gt;人热衷于在必然中寻找偶然，也热衷于在偶然中寻找必然。例如观看悬疑电影，大家都知道最终正义会战胜邪恶（必然），但却不知道会如何战胜（偶然）。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>重楼 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E9%87%8D%E6%A5%BC/</link>
+    <link>http://localhost:1313/tags/%E9%87%8D%E6%A5%BC/</link>
     <description>Recent content in 重楼 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 03 Aug 2020 23:25:04 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E9%87%8D%E6%A5%BC/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E9%87%8D%E6%A5%BC/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>重楼</title>
-      <link>https://zhurongshuo.com/posts/2020/08/0303/</link>
+      <link>http://localhost:1313/posts/2020/08/0303/</link>
       <pubDate>Mon, 03 Aug 2020 23:25:04 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/08/0303/</guid>
+      <guid>http://localhost:1313/posts/2020/08/0303/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;花开树下你正忧，离别秋，两相愁。&#xA;衣绯白雪，不胜娇羞。&#xA;三十轮回苦，是分时，悔未说。&#xA;恍然十年月下烛，忘忧。&#xA;清泪画月沟，伊人笑，心纠。&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
   </channel>

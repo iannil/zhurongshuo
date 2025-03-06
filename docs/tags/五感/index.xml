@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>五感 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E4%BA%94%E6%84%9F/</link>
+    <link>http://localhost:1313/tags/%E4%BA%94%E6%84%9F/</link>
     <description>Recent content in 五感 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 06 Oct 2023 11:04:45 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E4%BA%94%E6%84%9F/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E4%BA%94%E6%84%9F/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>五感是体验物质世界的一种有效方式，但不是唯一方式。</title>
-      <link>https://zhurongshuo.com/posts/2023/10/0601/</link>
+      <link>http://localhost:1313/posts/2023/10/0601/</link>
       <pubDate>Fri, 06 Oct 2023 11:04:45 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/10/0601/</guid>
+      <guid>http://localhost:1313/posts/2023/10/0601/</guid>
       <description>&lt;p&gt;五感是体验物质世界的一种有效方式，但 &lt;em&gt;不是唯一方式&lt;/em&gt;。&lt;/p&gt;</description>
     </item>
   </channel>

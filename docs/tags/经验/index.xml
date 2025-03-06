@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>经验 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E7%BB%8F%E9%AA%8C/</link>
+    <link>http://localhost:1313/tags/%E7%BB%8F%E9%AA%8C/</link>
     <description>Recent content in 经验 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 16 Dec 2024 10:52:51 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%BB%8F%E9%AA%8C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「道」无法被定义，只能被经验。</title>
-      <link>https://zhurongshuo.com/posts/2024/12/1601/</link>
+      <link>http://localhost:1313/posts/2024/12/1601/</link>
       <pubDate>Mon, 16 Dec 2024 10:52:51 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/12/1601/</guid>
+      <guid>http://localhost:1313/posts/2024/12/1601/</guid>
       <description>&lt;p&gt;「道」无法被定义，只能被 &lt;em&gt;经验&lt;/em&gt; 。如果一定要下一个定义，那么首先要确认的是，以谁的说法？或者借用一个物理名词，参照系是什么？&lt;/p&gt;</description>
     </item>
     <item>
       <title>积极的共同经验塑造共识，反之亦然。</title>
-      <link>https://zhurongshuo.com/posts/2020/10/0101/</link>
+      <link>http://localhost:1313/posts/2020/10/0101/</link>
       <pubDate>Thu, 01 Oct 2020 15:19:01 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/10/0101/</guid>
+      <guid>http://localhost:1313/posts/2020/10/0101/</guid>
       <description>&lt;p&gt;&lt;em&gt;积极的共同经验塑造共识，反之亦然。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;「积极的」既可以是情绪，如快乐、感动，又可以是结果，如利益、好处。「共同经验」既可以是实际的，也可以是想象中的。&lt;/p&gt;&#xA;&lt;p&gt;例如弹幕，就是一种塑造共同经验的机制。&lt;/p&gt;&#xA;&lt;p&gt;某个视频表达了某个观念或某个态度，如果没有太大争议，参与弹幕的每个人都互相加强了对方对该观念的认可程度，少数不同的声音会没湮没。这种认可程度其典型表现形式就是满屏刷一样的语言——重复是极具力量的，于是又再一次的加强了这种体验。如果有争议，那么弹幕会迅速的分为两种乃至多种态度，每个参与者都会自然的找到符合自己观念的一边，将群体分为我们和他们。&lt;/p&gt;</description>
     </item>
   </channel>

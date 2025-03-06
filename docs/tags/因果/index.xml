@@ -2,45 +2,45 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>因果 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%9B%A0%E6%9E%9C/</link>
+    <link>http://localhost:1313/tags/%E5%9B%A0%E6%9E%9C/</link>
     <description>Recent content in 因果 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 22 Feb 2025 18:10:10 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%9B%A0%E6%9E%9C/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%9B%A0%E6%9E%9C/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>微观上粒子层面的确定因果，宏观上物质层面的确定因果，即自然科学所研究的规律。</title>
-      <link>https://zhurongshuo.com/posts/2025/02/2202/</link>
+      <link>http://localhost:1313/posts/2025/02/2202/</link>
       <pubDate>Sat, 22 Feb 2025 18:10:10 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/02/2202/</guid>
+      <guid>http://localhost:1313/posts/2025/02/2202/</guid>
       <description>&lt;p&gt;微观上粒子层面的确定因果，宏观上物质层面的确定因果，即自然科学所研究的规律。&lt;/p&gt;</description>
     </item>
     <item>
       <title>某种意识以某种方式持续观察物质会得到某种确定的结果，即为「因果」。</title>
-      <link>https://zhurongshuo.com/posts/2025/02/2202/</link>
+      <link>http://localhost:1313/posts/2025/02/2202/</link>
       <pubDate>Sat, 22 Feb 2025 12:36:10 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/02/2202/</guid>
+      <guid>http://localhost:1313/posts/2025/02/2202/</guid>
       <description>&lt;p&gt;某种意识以某种方式持续观察物质会得到某种确定的结果，即为 &lt;em&gt;「因果」&lt;/em&gt;。&lt;/p&gt;</description>
     </item>
     <item>
       <title>「物质」、「意识」与「时间」都是一种「确定的因果」，不同层级以不同的观察得到不同的确定因果。</title>
-      <link>https://zhurongshuo.com/posts/2025/02/1501/</link>
+      <link>http://localhost:1313/posts/2025/02/1501/</link>
       <pubDate>Sat, 15 Feb 2025 11:29:39 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/02/1501/</guid>
+      <guid>http://localhost:1313/posts/2025/02/1501/</guid>
       <description>&lt;p&gt;「物质」、「意识」与「时间」都是一种 &lt;em&gt;「确定的因果」&lt;/em&gt;，不同层级以不同的观察得到不同的确定因果。&lt;/p&gt;</description>
     </item>
     <item>
       <title>因果和时空一样，都是基本假设/共识。</title>
-      <link>https://zhurongshuo.com/posts/2021/12/1902/</link>
+      <link>http://localhost:1313/posts/2021/12/1902/</link>
       <pubDate>Sun, 19 Dec 2021 11:57:40 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/12/1902/</guid>
+      <guid>http://localhost:1313/posts/2021/12/1902/</guid>
       <description>&lt;p&gt;因果和时空一样，都是基本假设/共识。&lt;/p&gt;</description>
     </item>
     <item>
       <title>过多的变量会模糊因果，使得结果最终呈现为一种概率。</title>
-      <link>https://zhurongshuo.com/posts/2021/12/1901/</link>
+      <link>http://localhost:1313/posts/2021/12/1901/</link>
       <pubDate>Sun, 19 Dec 2021 11:56:18 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/12/1901/</guid>
+      <guid>http://localhost:1313/posts/2021/12/1901/</guid>
       <description>&lt;p&gt;过多的变量会模糊因果，使得结果最终呈现为一种概率。&lt;/p&gt;</description>
     </item>
   </channel>

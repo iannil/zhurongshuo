@@ -3,7 +3,7 @@ FROM hugomods/hugo:nightly AS builder
 WORKDIR /src
 COPY . .
 
-RUN hugo --minify --gc --enableGitInfo
+RUN hugo --minify --gc
 
 FROM caddy:2.9.1-alpine
 WORKDIR /srv

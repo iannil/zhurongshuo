@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>道 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E9%81%93/</link>
+    <link>http://localhost:1313/tags/%E9%81%93/</link>
     <description>Recent content in 道 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 16 Dec 2024 10:52:51 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E9%81%93/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E9%81%93/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>「道」无法被定义，只能被经验。</title>
-      <link>https://zhurongshuo.com/posts/2024/12/1601/</link>
+      <link>http://localhost:1313/posts/2024/12/1601/</link>
       <pubDate>Mon, 16 Dec 2024 10:52:51 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/12/1601/</guid>
+      <guid>http://localhost:1313/posts/2024/12/1601/</guid>
       <description>&lt;p&gt;「道」无法被定义，只能被 &lt;em&gt;经验&lt;/em&gt; 。如果一定要下一个定义，那么首先要确认的是，以谁的说法？或者借用一个物理名词，参照系是什么？&lt;/p&gt;</description>
     </item>
     <item>
       <title>楹联——白玉山长春观老君洞</title>
-      <link>https://zhurongshuo.com/posts/2024/02/2901/</link>
+      <link>http://localhost:1313/posts/2024/02/2901/</link>
       <pubDate>Thu, 29 Feb 2024 12:23:35 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/02/2901/</guid>
+      <guid>http://localhost:1313/posts/2024/02/2901/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;存心邪僻，任尔烧香无点益；&#xA;扶身正大，见吾不拜又何妨。&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
     <item>
       <title>极乐亦空，觉悟亦空，唯有道常在。</title>
-      <link>https://zhurongshuo.com/posts/2023/09/1901/</link>
+      <link>http://localhost:1313/posts/2023/09/1901/</link>
       <pubDate>Tue, 19 Sep 2023 13:40:28 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/09/1901/</guid>
+      <guid>http://localhost:1313/posts/2023/09/1901/</guid>
       <description>&lt;p&gt;极乐亦空，觉悟亦空，唯有道常在。&lt;/p&gt;</description>
     </item>
   </channel>

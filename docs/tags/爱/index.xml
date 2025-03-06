@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>爱 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E7%88%B1/</link>
+    <link>http://localhost:1313/tags/%E7%88%B1/</link>
     <description>Recent content in 爱 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 04 Oct 2023 13:56:45 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E7%88%B1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E7%88%B1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>因为你爱它，所以你恨它配不上你的爱。</title>
-      <link>https://zhurongshuo.com/posts/2023/10/0405/</link>
+      <link>http://localhost:1313/posts/2023/10/0405/</link>
       <pubDate>Wed, 04 Oct 2023 13:56:45 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/10/0405/</guid>
+      <guid>http://localhost:1313/posts/2023/10/0405/</guid>
       <description>&lt;p&gt;因为你爱它，所以你恨它配不上你的爱。&lt;/p&gt;</description>
     </item>
     <item>
       <title>《面纱》节选——毛姆</title>
-      <link>https://zhurongshuo.com/posts/2023/08/2801/</link>
+      <link>http://localhost:1313/posts/2023/08/2801/</link>
       <pubDate>Mon, 28 Aug 2023 19:28:40 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/08/2801/</guid>
+      <guid>http://localhost:1313/posts/2023/08/2801/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;我对你根本没抱幻想。&lt;br&gt;&#xA;我知道你愚蠢、轻佻、头脑空虚，然而我爱你。&lt;br&gt;&#xA;我知道你的企图、你的理想，你的势利，你的庸俗，然而我爱你。&lt;br&gt;&#xA;我知道你是个二流货色，然而我爱你。&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
   </channel>
