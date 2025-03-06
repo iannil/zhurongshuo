@@ -1,5 +1,10 @@
-t.iannil.net {
-    root * /usr/share/caddy
-    encode gzip
+header {
+    Content-Security-Policy "default-src 'self'"
+    X-Frame-Options DENY
+}
+
+:80 {
+    root * /srv/public
+    try_files {path} {path}/ /404.html
     file_server
 }

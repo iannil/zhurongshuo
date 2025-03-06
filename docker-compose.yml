@@ -1,33 +1,51 @@
 services:
-  main:
+  # 开发环境服务（带实时热重载）
+  dev:
     build: 
-      context: .              
-      dockerfile: Dockerfile  
+      context: .
+      target: builder  # 复用Dockerfile的构建阶段
     ports:
-      - "80:80"               
-      - "443:443"             
-      # - "1313:1313"  
+      - "1313:1313"
     volumes:
-      - caddy_data:/data      
-      - caddy_config:/config  
-      - ./Caddyfile:/etc/caddy/Caddyfile
-    restart: unless-stopped   
+      - ./:/src         # 源码热加载
+      - ./Caddyfile.dev:/etc/caddy/Caddyfile
+      - hugo_cache:/src/resources/_gen
+    command: ["hugo", "server", "--bind=0.0.0.0", "-D", "-E", "-F", "--watch"]
     environment:
-      - HUGO_ENV=production   
-      # - HUGO_ENV=development
-    command: ["caddy", "run", "--config", "/etc/caddy/Caddyfile"]
-  # monitoring:
-  #   image: grafana/grafana
-  #   ports:
-  #     - "3000:3000"
-  #   depends_on:
-  #     - main
+      - HUGO_ENV=development
+
+  # 生产环境服务
+  prod:
+    build: .
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data   # 证书持久化
+      - caddy_config:/config
+      - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    deploy:
+      resources:
+        limits:
+          memory: 256m
+          cpus: '0.5'
+    user: caddy
+    read_only: true
+    restart: unless-stopped
 
 volumes:
+  hugo_cache:
   caddy_data:
   caddy_config:
 
-# 可选网络配置（多服务协同时使用）
-# networks:
-#   frontend:
-#     driver: bridge
+# # 启动开发环境（带文件监视）
+# docker-compose up dev
+
+# # 构建并启动生产环境（首次运行需要build）
+# docker-compose up -d prod
+
+# # 查看容器日志
+# docker-compose logs -f prod
+
+# # 停机清理（危险指数：⚠️ 会删除卷数据）
+# docker-compose down -v
