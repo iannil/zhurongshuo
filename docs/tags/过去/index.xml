@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>过去 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E8%BF%87%E5%8E%BB/</link>
+    <link>https://zhurongshuo.com/tags/%E8%BF%87%E5%8E%BB/</link>
     <description>Recent content in 过去 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 21 Sep 2023 13:31:41 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E8%BF%87%E5%8E%BB/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E8%BF%87%E5%8E%BB/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>过去未去，未来已来，一切可能都「正在发生」。</title>
-      <link>http://localhost:1313/posts/2023/09/2102/</link>
+      <link>https://zhurongshuo.com/posts/2023/09/2102/</link>
       <pubDate>Thu, 21 Sep 2023 13:31:41 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2023/09/2102/</guid>
+      <guid>https://zhurongshuo.com/posts/2023/09/2102/</guid>
       <description>&lt;p&gt;过去未去，未来已来，一切可能都 &lt;em&gt;「正在发生」&lt;/em&gt; 。&lt;/p&gt;</description>
     </item>
   </channel>

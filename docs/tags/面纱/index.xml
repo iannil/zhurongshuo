@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>面纱 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E9%9D%A2%E7%BA%B1/</link>
+    <link>https://zhurongshuo.com/tags/%E9%9D%A2%E7%BA%B1/</link>
     <description>Recent content in 面纱 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Mon, 28 Aug 2023 19:28:40 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E9%9D%A2%E7%BA%B1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E9%9D%A2%E7%BA%B1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>《面纱》节选——毛姆</title>
-      <link>http://localhost:1313/posts/2023/08/2801/</link>
+      <link>https://zhurongshuo.com/posts/2023/08/2801/</link>
       <pubDate>Mon, 28 Aug 2023 19:28:40 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2023/08/2801/</guid>
+      <guid>https://zhurongshuo.com/posts/2023/08/2801/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;我对你根本没抱幻想。&lt;br&gt;&#xA;我知道你愚蠢、轻佻、头脑空虚，然而我爱你。&lt;br&gt;&#xA;我知道你的企图、你的理想，你的势利，你的庸俗，然而我爱你。&lt;br&gt;&#xA;我知道你是个二流货色，然而我爱你。&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>看法 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E7%9C%8B%E6%B3%95/</link>
+    <link>https://zhurongshuo.com/tags/%E7%9C%8B%E6%B3%95/</link>
     <description>Recent content in 看法 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Fri, 07 Jul 2023 15:04:30 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E7%9C%8B%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E7%9C%8B%E6%B3%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>观点是对实相的看法，并不意味着实相本身。</title>
-      <link>http://localhost:1313/posts/2023/07/0701/</link>
+      <link>https://zhurongshuo.com/posts/2023/07/0701/</link>
       <pubDate>Fri, 07 Jul 2023 15:04:30 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2023/07/0701/</guid>
+      <guid>https://zhurongshuo.com/posts/2023/07/0701/</guid>
       <description>&lt;p&gt;观点是对实相的看法，并不意味着实相本身。&lt;/p&gt;</description>
     </item>
   </channel>

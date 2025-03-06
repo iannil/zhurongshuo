@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>弃胡 on 祝融说。</title>
-    <link>http://localhost:1313/tags/%E5%BC%83%E8%83%A1/</link>
+    <link>https://zhurongshuo.com/tags/%E5%BC%83%E8%83%A1/</link>
     <description>Recent content in 弃胡 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sun, 02 Aug 2020 22:20:04 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/%E5%BC%83%E8%83%A1/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://zhurongshuo.com/tags/%E5%BC%83%E8%83%A1/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>弃胡</title>
-      <link>http://localhost:1313/posts/2020/08/0203/</link>
+      <link>https://zhurongshuo.com/posts/2020/08/0203/</link>
       <pubDate>Sun, 02 Aug 2020 22:20:04 +0800</pubDate>
-      <guid>http://localhost:1313/posts/2020/08/0203/</guid>
+      <guid>https://zhurongshuo.com/posts/2020/08/0203/</guid>
       <description>&lt;blockquote&gt;&#xA;&lt;p&gt;胡人夜舞，山栾阻舟雾。&#xA;君陌等，千年路。&#xA;萍细雨，不相负，谁道婆娑苦。&#xA;红泥重，烟波，凝固。&lt;/p&gt;&lt;/blockquote&gt;</description>
     </item>
   </channel>
