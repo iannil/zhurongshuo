@@ -2,108 +2,108 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>认知 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E8%AE%A4%E7%9F%A5/</link>
+    <link>http://localhost:1313/tags/%E8%AE%A4%E7%9F%A5/</link>
     <description>Recent content in 认知 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Thu, 16 Nov 2023 15:01:37 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E8%AE%A4%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E8%AE%A4%E7%9F%A5/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>词汇量是认知的基本盘。</title>
-      <link>https://zhurongshuo.com/posts/2023/11/0401/</link>
+      <link>http://localhost:1313/posts/2023/11/0401/</link>
       <pubDate>Thu, 16 Nov 2023 15:01:37 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/11/0401/</guid>
+      <guid>http://localhost:1313/posts/2023/11/0401/</guid>
       <description>&lt;p&gt;词汇量是认知的基本盘。&lt;/p&gt;</description>
     </item>
     <item>
       <title>确定性或许只是一种过拟合。</title>
-      <link>https://zhurongshuo.com/posts/2023/01/2403/</link>
+      <link>http://localhost:1313/posts/2023/01/2403/</link>
       <pubDate>Tue, 24 Jan 2023 11:26:58 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/01/2403/</guid>
+      <guid>http://localhost:1313/posts/2023/01/2403/</guid>
       <description>&lt;p&gt;确定性或许只是一种过拟合。&lt;/p&gt;</description>
     </item>
     <item>
       <title>相比于不确定性，确定性或许注定只能是沧海一粟。</title>
-      <link>https://zhurongshuo.com/posts/2023/01/2402/</link>
+      <link>http://localhost:1313/posts/2023/01/2402/</link>
       <pubDate>Tue, 24 Jan 2023 11:22:12 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/01/2402/</guid>
+      <guid>http://localhost:1313/posts/2023/01/2402/</guid>
       <description>&lt;p&gt;相比于不确定性，确定性或许注定只能是沧海一粟。&lt;/p&gt;</description>
     </item>
     <item>
       <title>绝大多数的认知可能只是一种过拟合。</title>
-      <link>https://zhurongshuo.com/posts/2023/01/2401/</link>
+      <link>http://localhost:1313/posts/2023/01/2401/</link>
       <pubDate>Tue, 24 Jan 2023 11:20:40 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/01/2401/</guid>
+      <guid>http://localhost:1313/posts/2023/01/2401/</guid>
       <description>&lt;p&gt;绝大多数的认知可能只是一种过拟合。&lt;/p&gt;</description>
     </item>
     <item>
       <title>人有保持其认知前后一致的倾向，然而一致的倾向和一致的行动并不是一回事。</title>
-      <link>https://zhurongshuo.com/posts/2022/03/1401/</link>
+      <link>http://localhost:1313/posts/2022/03/1401/</link>
       <pubDate>Mon, 14 Mar 2022 02:12:49 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2022/03/1401/</guid>
+      <guid>http://localhost:1313/posts/2022/03/1401/</guid>
       <description>&lt;p&gt;人有保持其认知前后一致的倾向，然而一致的倾向和一致的行动并不是一回事。也就是所谓的，明白很多道理，却仍然过不好一生。&lt;/p&gt;</description>
     </item>
     <item>
       <title>影响认知一般有两种方式，一为饱和的狂轰滥炸式的重复，二为四两拨千斤式的挑拨。</title>
-      <link>https://zhurongshuo.com/posts/2021/01/3102/</link>
+      <link>http://localhost:1313/posts/2021/01/3102/</link>
       <pubDate>Sun, 31 Jan 2021 17:58:07 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/01/3102/</guid>
+      <guid>http://localhost:1313/posts/2021/01/3102/</guid>
       <description>&lt;p&gt;影响认知一般有两种方式，一为饱和的狂轰滥炸式的重复，二为四两拨千斤式的挑拨。前者成本高昂见效缓慢但胜在持久，后者成本虽低，但触达认知的通路曲折难辨效果不明。&lt;/p&gt;</description>
     </item>
     <item>
       <title>对于不确定信不信的事物，如果使其先付出不可回收的代价，人会倾向于让自己相信付出代价的合理性。</title>
-      <link>https://zhurongshuo.com/posts/2020/12/2701/</link>
+      <link>http://localhost:1313/posts/2020/12/2701/</link>
       <pubDate>Sun, 27 Dec 2020 16:41:11 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/12/2701/</guid>
+      <guid>http://localhost:1313/posts/2020/12/2701/</guid>
       <description>&lt;p&gt;对于不确定信不信的事物，如果 &lt;em&gt;使其先付出不可回收的代价，人会倾向于让自己相信付出代价的合理性。&lt;/em&gt; 这种行为或许是出于难以割舍的对沉没成本，也或许是出于避免认知失调，保持与自己认知的一致。&lt;/p&gt;&#xA;&lt;p&gt;例如一个人如果已经给某产品以正面评价，此时达成销售的成功率会更高；又例如先使得某个人付费或经历考核再加入某个群体，即使这个群体的价值实际上并不对得起这个门槛，人也会倾向于使得自己相信这个群体是具备其期待的价值的。&lt;/p&gt;</description>
     </item>
     <item>
       <title>对于媒体来说，标题就是其是否「好看」的主要标准。</title>
-      <link>https://zhurongshuo.com/posts/2020/10/2201/</link>
+      <link>http://localhost:1313/posts/2020/10/2201/</link>
       <pubDate>Thu, 22 Oct 2020 19:40:05 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/10/2201/</guid>
+      <guid>http://localhost:1313/posts/2020/10/2201/</guid>
       <description>&lt;p&gt;&lt;em&gt;对于媒体来说，标题就是其是否「好看」的主要标准。&lt;/em&gt; 只有足够「好看」的标题才能驱动受众打开并阅读其内容，进而体验到「好用」，甚至「好爽」。&lt;/p&gt;&#xA;&lt;p&gt;好看促使阅读行为发生，好用驱使阅读行为完成，而好爽则决定了阅读完毕后，是否会被传播。传播的主体没有标题，而只有内容，例如微博、短视频等，那么受众在一瞬间看到的内容将被作为是否「好看」的标准。&lt;/p&gt;</description>
     </item>
     <item>
       <title>视觉上的「好看」可被极低成本的感知，进而带来传播。</title>
-      <link>https://zhurongshuo.com/posts/2020/10/2001/</link>
+      <link>http://localhost:1313/posts/2020/10/2001/</link>
       <pubDate>Tue, 20 Oct 2020 23:24:39 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/10/2001/</guid>
+      <guid>http://localhost:1313/posts/2020/10/2001/</guid>
       <description>&lt;p&gt;&lt;em&gt;视觉上的「好看」可被极低成本的感知，进而带来传播。&lt;/em&gt;&lt;/p&gt;</description>
     </item>
     <item>
       <title>符合人认知的营销闭环应是：好看、好用、好爽。任何售卖都始于好看，终于好用，再生于好爽。</title>
-      <link>https://zhurongshuo.com/posts/2020/10/1501/</link>
+      <link>http://localhost:1313/posts/2020/10/1501/</link>
       <pubDate>Thu, 15 Oct 2020 21:04:37 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/10/1501/</guid>
+      <guid>http://localhost:1313/posts/2020/10/1501/</guid>
       <description>&lt;p&gt;&lt;em&gt;符合人认知的营销闭环应是：好看、好用、好爽。任何售卖都始于好看，终于好用，再生于好爽。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;好看不一定是视觉意义上的好看，正确的理解是：它的外形可以让人相信它可以完成某种功能。如果无法达到这个标准，则必然要在该产品的其他售卖环节做补充说明。&lt;/p&gt;&#xA;&lt;p&gt;完成购买以后，就进入到好用的阶段。这个好用至少要达成受众的预期，万千次的达成最终会形成群体性的共识，那就是品牌——这个牌子的东西可以达到某个目的，解决某个问题，表达了某种态度。&lt;/p&gt;</description>
     </item>
     <item>
       <title>人总是尝试用自己熟悉的东西去解释不熟悉的东西。</title>
-      <link>https://zhurongshuo.com/posts/2020/07/1201/</link>
+      <link>http://localhost:1313/posts/2020/07/1201/</link>
       <pubDate>Sun, 12 Jul 2020 00:49:29 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/07/1201/</guid>
+      <guid>http://localhost:1313/posts/2020/07/1201/</guid>
       <description>&lt;p&gt;&lt;em&gt;人总是尝试用自己熟悉的东西去解释不熟悉的东西，如果无法做到，就会出现一种阻塞感。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;如果你希望你的产品/内容/服务，更容易理解，更多次传播，更多的被人想起，就应在运营、营销、品牌等多个经营层面上尽量利用好这一点——尽量减少阻塞感，同时整体上维持熟悉感。&lt;/p&gt;</description>
     </item>
     <item>
       <title>人对事物的态度，基本上可以简单的分三种：确信的、确定不信的和不确定信不信的。</title>
-      <link>https://zhurongshuo.com/posts/2020/07/1101/</link>
+      <link>http://localhost:1313/posts/2020/07/1101/</link>
       <pubDate>Sat, 11 Jul 2020 17:46:20 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/07/1101/</guid>
+      <guid>http://localhost:1313/posts/2020/07/1101/</guid>
       <description>&lt;p&gt;&lt;em&gt;人对某个事物的态度，基本上可以简单的分三种：确信的、确定不信的和不确定信不信的。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;每个人的认知资源有限，接触到的与能接触到的信息也有限，因此「不确定信不信」的态度才是主流。&lt;/p&gt;&#xA;&lt;p&gt;无论是品牌还是思想，无论是人还是事，从陌生到熟悉，无论是否接受是否被人所认同，贯彻始终，持续在做的，主要都是&lt;em&gt;说服「不确定信不信」的人往「确信的、确定不信」转移&lt;/em&gt;这件事。&lt;/p&gt;</description>
     </item>
     <item>
       <title>「日常」与「非日常」的节奏，要根据目标的认知有意识的设计。</title>
-      <link>https://zhurongshuo.com/posts/2020/06/2701/</link>
+      <link>http://localhost:1313/posts/2020/06/2701/</link>
       <pubDate>Sat, 27 Jun 2020 17:49:41 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/06/2701/</guid>
+      <guid>http://localhost:1313/posts/2020/06/2701/</guid>
       <description>&lt;h2 id=&#34;一节奏感&#34;&gt;一、节奏感&lt;/h2&gt;&#xA;&lt;p&gt;&lt;em&gt;「日常」与「非日常」的节奏，要根据目标人群对「产品/内容/服务」的了解程度有意识的设计。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;p&gt;做一个粗略的分类，可以分4类：不知道、听说过、知道、很了解。（此分类不唯一，仅用来介绍如何去设计节奏）&lt;/p&gt;&#xA;&lt;p&gt;如果用户对我们一无所知，那么我们的主要任务就是向用户介绍我们，我们是谁，为什么做这个，我们能解决什么问题。这个时候越贴近用户，越让用户有画面感，用户的接受成本越低，因此全部都用日常堆砌。&lt;/p&gt;</description>
     </item>
     <item>
       <title>人对以某种节奏在「日常中遭遇一些非日常」欲罢不能。</title>
-      <link>https://zhurongshuo.com/posts/2020/06/2603/</link>
+      <link>http://localhost:1313/posts/2020/06/2603/</link>
       <pubDate>Fri, 26 Jun 2020 17:49:41 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2020/06/2603/</guid>
+      <guid>http://localhost:1313/posts/2020/06/2603/</guid>
       <description>&lt;h2 id=&#34;一综述&#34;&gt;一、综述&lt;/h2&gt;&#xA;&lt;p&gt;人类的认知是有倾向的，无论是做产品、做品牌、做营销、做运营，乃至讲故事，甚至PUA，皆是如此。&lt;/p&gt;&#xA;&lt;p&gt;一句话概括：&lt;em&gt;人类对以某种节奏在「日常中遭遇一些非日常」欲罢不能。&lt;/em&gt;&lt;/p&gt;&#xA;&lt;h2 id=&#34;二产品&#34;&gt;二、产品&lt;/h2&gt;&#xA;&lt;p&gt;做产品，大部分功能特性，要用用户熟悉的「日常」概念堆砌，这样用户一眼能看懂这东西能解决什么问题，联想到对应的使用场景，产生美好的预期；但又不能全部都是熟悉的，要有所不同，要「非日常」的给用户一些挑战，让用户感觉到「意外，但确实有用」。&lt;/p&gt;</description>
     </item>
   </channel>

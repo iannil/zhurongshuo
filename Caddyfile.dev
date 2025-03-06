@@ -1,5 +1,0 @@
-:1313 {
-    root * /src/public
-    file_server
-    encode gzip
-}

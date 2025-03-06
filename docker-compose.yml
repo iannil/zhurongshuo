@@ -3,12 +3,12 @@ services:
   dev:
     build: 
       context: .
-      target: builder  # 复用Dockerfile的构建阶段
+      target: builder
     ports:
       - "1313:1313"
     volumes:
-      - ./:/src         # 源码热加载
-      - ./Caddyfile.dev:/etc/caddy/Caddyfile
+      - ./:/src
+      - ./Caddyfile:/etc/caddy/Caddyfile
       - hugo_cache:/src/resources/_gen
     command: ["hugo", "server", "--bind=0.0.0.0", "-D", "-E", "-F", "--watch"]
     environment:
@@ -21,16 +21,19 @@ services:
       - "80:80"
       - "443:443"
     volumes:
-      - caddy_data:/data   # 证书持久化
+      - ./docs:/srv/docs
+      - caddy_data:/data
       - caddy_config:/config
+      - ./caddy/logs:/var/log/caddy
       - ./Caddyfile:/etc/caddy/Caddyfile:ro
+    environment:
+      - ACME_EMAIL=zhurongx@gmail.com
     deploy:
       resources:
         limits:
-          memory: 256m
-          cpus: '0.5'
+          memory: 512m
+          cpus: '1.0'
     user: caddy
-    read_only: true
     restart: unless-stopped
 
 volumes:

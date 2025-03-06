@@ -2,24 +2,24 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>吸引 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E5%90%B8%E5%BC%95/</link>
+    <link>http://localhost:1313/tags/%E5%90%B8%E5%BC%95/</link>
     <description>Recent content in 吸引 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Sat, 11 Feb 2023 23:49:32 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E5%90%B8%E5%BC%95/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E5%90%B8%E5%BC%95/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>销售的重点从来不是「卖掉」了，而「被买走」了。</title>
-      <link>https://zhurongshuo.com/posts/2023/02/1102/</link>
+      <link>http://localhost:1313/posts/2023/02/1102/</link>
       <pubDate>Sat, 11 Feb 2023 23:49:32 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/02/1102/</guid>
+      <guid>http://localhost:1313/posts/2023/02/1102/</guid>
       <description>&lt;p&gt;销售的重点从来不是「卖掉」了，而「被买走」了。&lt;/p&gt;</description>
     </item>
     <item>
       <title>吸引，而不是说服。</title>
-      <link>https://zhurongshuo.com/posts/2023/02/1101/</link>
+      <link>http://localhost:1313/posts/2023/02/1101/</link>
       <pubDate>Sat, 11 Feb 2023 22:06:21 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/02/1101/</guid>
+      <guid>http://localhost:1313/posts/2023/02/1101/</guid>
       <description>&lt;p&gt;吸引，而不是说服。吸引预设了相同的立场，而说服预设了不同的立场。&lt;/p&gt;</description>
     </item>
   </channel>

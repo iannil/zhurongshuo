@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>问题 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E9%97%AE%E9%A2%98/</link>
+    <link>http://localhost:1313/tags/%E9%97%AE%E9%A2%98/</link>
     <description>Recent content in 问题 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 24 Jul 2024 16:28:46 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E9%97%AE%E9%A2%98/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>缺乏的从来都不是问题的答案，是决心。</title>
-      <link>https://zhurongshuo.com/posts/2024/07/2401/</link>
+      <link>http://localhost:1313/posts/2024/07/2401/</link>
       <pubDate>Wed, 24 Jul 2024 16:28:46 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2024/07/2401/</guid>
+      <guid>http://localhost:1313/posts/2024/07/2401/</guid>
       <description>&lt;p&gt;缺乏的从来都不是问题的答案，是决心。&lt;/p&gt;</description>
     </item>
     <item>
       <title>得到错误的答案有时不是因为解题思路不对，而是因为一开始就提出了错误的问题。</title>
-      <link>https://zhurongshuo.com/posts/2023/08/2203/</link>
+      <link>http://localhost:1313/posts/2023/08/2203/</link>
       <pubDate>Tue, 22 Aug 2023 16:17:16 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2023/08/2203/</guid>
+      <guid>http://localhost:1313/posts/2023/08/2203/</guid>
       <description>&lt;p&gt;得到错误的答案有时不是因为解题思路不对，而是因为一开始就提出了错误的问题。&lt;/p&gt;</description>
     </item>
     <item>
       <title>复杂问题没有简单解，但可以被简洁的表达。</title>
-      <link>https://zhurongshuo.com/posts/2021/09/1101/</link>
+      <link>http://localhost:1313/posts/2021/09/1101/</link>
       <pubDate>Sat, 11 Sep 2021 23:09:33 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2021/09/1101/</guid>
+      <guid>http://localhost:1313/posts/2021/09/1101/</guid>
       <description>&lt;p&gt;复杂问题没有简单解，但可以被简洁的表达。&lt;/p&gt;</description>
     </item>
   </channel>

@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>最初 on 祝融说。</title>
-    <link>https://zhurongshuo.com/tags/%E6%9C%80%E5%88%9D/</link>
+    <link>http://localhost:1313/tags/%E6%9C%80%E5%88%9D/</link>
     <description>Recent content in 最初 on 祝融说。</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
     <lastBuildDate>Wed, 19 Feb 2025 10:52:55 +0800</lastBuildDate>
-    <atom:link href="https://zhurongshuo.com/tags/%E6%9C%80%E5%88%9D/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="http://localhost:1313/tags/%E6%9C%80%E5%88%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>从「最初」到「最终」，自始至终都没有「真正的」确定性，有的只是可能性。</title>
-      <link>https://zhurongshuo.com/posts/2025/02/1901/</link>
+      <link>http://localhost:1313/posts/2025/02/1901/</link>
       <pubDate>Wed, 19 Feb 2025 10:52:55 +0800</pubDate>
-      <guid>https://zhurongshuo.com/posts/2025/02/1901/</guid>
+      <guid>http://localhost:1313/posts/2025/02/1901/</guid>
       <description>&lt;p&gt;从「最初」到「最终」，自始至终都没有「真正的」确定性，有的只是&lt;em&gt;可能性&lt;/em&gt;。&lt;/p&gt;</description>
     </item>
   </channel>
