@@ -6,8 +6,11 @@ COPY . .
 RUN hugo --minify --gc
 
 FROM caddy:2.9.1-alpine
-# COPY Caddyfile /etc/caddy/Caddyfile
-COPY --from=builder /src/docs /usr/share/caddy
-EXPOSE 80 443
+WORKDIR /srv
+COPY --from=builder /src/docs ./docs
+COPY Caddyfile /etc/caddy/Caddyfile
 
-# CMD ["caddy", "file-server", "--access-log", "--listen", ":80"]
+RUN chown -R caddy:caddy /srv/docs
+
+EXPOSE 80
+USER caddy
