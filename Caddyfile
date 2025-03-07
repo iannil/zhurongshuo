@@ -1,5 +1,52 @@
+header { 
+    Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+    Permissions-Policy "camera=(), microphone=()"
+}
+
+@scanners {
+    path /wp-admin* 
+    path /admin* 
+    path *.php*
+}
+
+respond @scanners 403
+
+// 域名站点配置（自动HTTPS）
 t.iannil.net {
-    root * /usr/share/caddy
-    encode gzip
+    root * /srv/public
+    encode gzip zstd
+    header {
+        Content-Security-Policy "default-src 'self'"
+        X-Content-Type-Options "nosniff"
+    }
+    // tls {
+    //     dns cloudflare your_api_token
+    // }
     file_server
+
+    // 日志配置（生产环境推荐）
+    log {
+        output file /var/log/caddy/access.log {
+            roll_size 100MiB
+        }
+    }
+}
+
+// IP访问配置（开发/内网专用）
+:80 {
+    root * /srv/public
+    file_server
+    encode gzip
+}
+
+:1313 {
+    root * /src/public
+    file_server
+    encode gzip
+
+    # 开发环境特殊处理
+    @notStatic {
+        not path *.css *.js *.png
+    }
+    rewrite @notStatic /index.html
 }
