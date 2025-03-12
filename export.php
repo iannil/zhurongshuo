@@ -216,7 +216,7 @@ function parseMarkdown($content)
     }
 
     $content = explode('---', $content);
-    $result['last_paragraph'] = trim($content[count($content) - 1]);
+    $result['last_paragraph'] = str_replace(["\n", "\r", "> ", "*", "<!--more-->"], ["", "", "", "", ""], trim($content[count($content) - 1]));
 
     return $result;
 }
