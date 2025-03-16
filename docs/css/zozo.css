@@ -488,8 +488,8 @@ hr {
 .markdown pre,
 .markdown code {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 0.9em;
-  background: #f8fafc;
+  font-size: 0.95em;
+  background: rgb(237, 240, 243);
   border: none;
   white-space: pre;
 }
