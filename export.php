@@ -13,12 +13,47 @@ foreach ($files as $file) {
     $data[] = [$result['metadata']['date'], $result['last_paragraph']];
 }
 
+$data = sortByDate($data, false);
+if (empty($data)) {
+    echo "没有找到符合条件的文件或数据为空...".PHP_EOL;
+    exit(0);
+}
+
 if (writeCsvWithoutFunction($data, $csv, false)) {
     echo "文件写入成功...".PHP_EOL;
 } else {
     echo "文件写入失败...".PHP_EOL;
 }
 
+/**
+ * 按照日期对数组进行排序
+ * 
+ * @param array $items 待排序的数组，每个元素应包含 'date' 和 'content' 键
+ * @param bool $ascending 是否升序排列，默认为true（升序）
+ * @return array 排序后的数组
+ * @throws InvalidArgumentException 如果数组元素缺少必要的键
+ */
+function sortByDate(array $items, bool $ascending = true): array
+{
+    // 验证数组结构
+    foreach ($items as $item) {
+        if (!isset($item[0]) || !isset($item[1])) {
+            throw new InvalidArgumentException('每个数组元素长度必须为2');
+        }
+    }
+    // 排序操作
+    usort($items, function ($a, $b) use ($ascending) {
+        // 将日期转换为时间戳进行比较
+        $timestampA = strtotime($a[0]);
+        $timestampB = strtotime($b[0]);
+        
+        // 根据排序方向返回比较结果
+        return $ascending 
+            ? $timestampA <=> $timestampB 
+            : $timestampB <=> $timestampA;
+    });
+    return $items;
+}
 
 /**
  * 手动实现CSV文件写入（兼容RFC 4180标准）
