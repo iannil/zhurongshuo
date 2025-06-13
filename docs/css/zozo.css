@@ -485,6 +485,18 @@ hr {
   font-size: 1.1em;
 }
 
+.markdown h5 {
+  font-size: 1em;
+}
+
+.markdown h4 {
+  margin: 10px 0 10px 0;
+}
+
+.markdown h5 {
+  margin: 5px 0 5px 0;
+}
+
 .markdown pre,
 .markdown code {
   font-family: Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
