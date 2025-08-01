@@ -1,0 +1,190 @@
+{{/* 
+Hugo模板示例 - 在文章页面中显示区块链信息
+
+使用方法：
+1. 将此代码片段添加到你的Hugo主题模板中
+2. 确保文章的front matter包含cid、txHash、blockNumber等字段
+3. 在文章内容后显示区块链信息
+*/}}
+
+{{/* 检查文章是否有区块链信息 */}}
+{{ if or .Params.cid .Params.txHash .Params.blockNumber }}
+<div class="blockchain-info" style="margin: 30px 0; padding: 20px; background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); border-left: 4px solid #007bff; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+  
+  <div style="display: flex; align-items: center; margin-bottom: 15px;">
+    <div style="font-size: 24px; margin-right: 10px;">🔗</div>
+    <h3 style="margin: 0; color: #007bff; font-size: 1.2em;">区块链存储信息</h3>
+  </div>
+  
+  <div style="font-family: 'Courier New', 'Monaco', 'Consolas', monospace; font-size: 14px; line-height: 1.6;">
+    
+    {{ if .Params.cid }}
+    <div style="margin: 8px 0; display: flex; align-items: center;">
+      <span style="font-weight: bold; color: #495057; min-width: 80px;">IPFS CID:</span>
+      <a href="https://ipfs.io/ipfs/{{ .Params.cid }}" 
+         target="_blank" 
+         style="color: #007bff; text-decoration: none; word-break: break-all;"
+         title="在IPFS网关中查看">
+        {{ .Params.cid }}
+      </a>
+      <span style="margin-left: 8px; font-size: 12px; color: #6c757d;">🔗</span>
+    </div>
+    {{ end }}
+    
+    {{ if .Params.txHash }}
+    <div style="margin: 8px 0; display: flex; align-items: center;">
+      <span style="font-weight: bold; color: #495057; min-width: 80px;">交易哈希:</span>
+      <a href="https://polygonscan.com/tx/{{ .Params.txHash }}" 
+         target="_blank" 
+         style="color: #007bff; text-decoration: none; word-break: break-all;"
+         title="在PolygonScan中查看交易">
+        {{ .Params.txHash }}
+      </a>
+      <span style="margin-left: 8px; font-size: 12px; color: #6c757d;">🔍</span>
+    </div>
+    {{ end }}
+    
+    {{ if .Params.blockNumber }}
+    <div style="margin: 8px 0; display: flex; align-items: center;">
+      <span style="font-weight: bold; color: #495057; min-width: 80px;">区块号:</span>
+      <span style="color: #495057;">{{ .Params.blockNumber }}</span>
+    </div>
+    {{ end }}
+    
+    {{ if .Params.blockchainTimestamp }}
+    <div style="margin: 8px 0; display: flex; align-items: center;">
+      <span style="font-weight: bold; color: #495057; min-width: 80px;">存储时间:</span>
+      <span style="color: #495057;">{{ time.Format "2006-01-02 15:04:05" .Params.blockchainTimestamp }}</span>
+    </div>
+    {{ end }}
+    
+  </div>
+  
+  <div style="margin-top: 15px; padding-top: 15px; border-top: 1px solid #dee2e6;">
+    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+      <span style="color: #28a745; margin-right: 8px;">✅</span>
+      <span style="font-size: 14px; color: #495057;">此内容已永久存储在去中心化网络上</span>
+    </div>
+    <div style="display: flex; align-items: center; margin-bottom: 8px;">
+      <span style="color: #007bff; margin-right: 8px;">🔒</span>
+      <span style="font-size: 14px; color: #495057;">内容不可篡改，可验证真实性</span>
+    </div>
+    <div style="display: flex; align-items: center;">
+      <span style="color: #ffc107; margin-right: 8px;">🌐</span>
+      <span style="font-size: 14px; color: #495057;">数据同时存储在IPFS和区块链上</span>
+    </div>
+  </div>
+  
+  {{/* 验证按钮 */}}
+  <div style="margin-top: 15px; text-align: center;">
+    <button onclick="verifyContent()" 
+            style="background: #007bff; color: white; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer; font-size: 14px;"
+            title="验证内容完整性">
+      🔍 验证内容
+    </button>
+  </div>
+  
+</div>
+
+{{/* JavaScript验证函数 */}}
+<script>
+function verifyContent() {
+  const cid = '{{ .Params.cid }}';
+  if (!cid) {
+    alert('未找到IPFS CID');
+    return;
+  }
+  
+  // 这里可以添加内容验证逻辑
+  // 例如：计算当前页面内容的哈希值，与IPFS上的内容进行对比
+  
+  alert(`正在验证内容...\nIPFS CID: ${cid}\n\n验证功能需要进一步实现`);
+  
+  // 打开IPFS网关
+  window.open(`https://ipfs.io/ipfs/${cid}`, '_blank');
+}
+
+// 添加复制功能
+document.addEventListener('DOMContentLoaded', function() {
+  const blockchainInfo = document.querySelector('.blockchain-info');
+  if (blockchainInfo) {
+    const links = blockchainInfo.querySelectorAll('a');
+    links.forEach(link => {
+      link.addEventListener('click', function(e) {
+        // 添加点击反馈
+        this.style.opacity = '0.7';
+        setTimeout(() => {
+          this.style.opacity = '1';
+        }, 200);
+      });
+    });
+  }
+});
+</script>
+{{ end }}
+
+{{/* 
+使用说明：
+
+1. 将此模板代码添加到你的Hugo主题的single.html或article.html模板中
+2. 确保在文章内容后调用此模板
+3. 文章的front matter应该包含以下字段：
+   ---
+   title: "文章标题"
+   date: 2024-01-01
+   cid: "QmYourIPFSCID"
+   txHash: "0xYourTransactionHash"
+   blockNumber: 12345678
+   blockchainTimestamp: "2024-01-01T12:00:00Z"
+   ---
+
+4. 样式可以根据你的主题进行调整
+5. 验证功能需要根据具体需求实现
+
+可选的自定义样式：
+*/}}
+
+<style>
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .blockchain-info {
+    margin: 20px 0;
+    padding: 15px;
+    font-size: 13px;
+  }
+  
+  .blockchain-info h3 {
+    font-size: 1.1em;
+  }
+  
+  .blockchain-info > div > div {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .blockchain-info > div > div > span:first-child {
+    min-width: auto;
+    margin-bottom: 4px;
+  }
+}
+
+/* 深色模式支持 */
+@media (prefers-color-scheme: dark) {
+  .blockchain-info {
+    background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+    border-left-color: #4299e1;
+  }
+  
+  .blockchain-info h3 {
+    color: #4299e1;
+  }
+  
+  .blockchain-info span {
+    color: #e2e8f0;
+  }
+  
+  .blockchain-info a {
+    color: #4299e1;
+  }
+}
+</style> 

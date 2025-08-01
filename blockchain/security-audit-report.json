@@ -1,0 +1,13 @@
+{
+  "timestamp": "2025-08-01T07:04:29.128Z",
+  "contract": "BlogContract",
+  "riskLevel": "LOW",
+  "securityScore": 100,
+  "vulnerabilities": [],
+  "recommendations": [
+    {
+      "title": "代码注释",
+      "description": "建议为函数添加更多注释"
+    }
+  ]
+}
