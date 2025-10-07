@@ -2,10 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://zhurongshuo.com/posts/</loc>
-    <lastmod>2025-10-01T20:17:33+08:00</lastmod>
+    <loc>https://zhurongshuo.com/teach/linyun/2025/1007/</loc>
+    <lastmod>2025-10-07T11:16:14+08:00</lastmod>
+  </url><url>
+    <loc>https://zhurongshuo.com/tags/linyun/</loc>
+    <lastmod>2025-10-07T11:16:14+08:00</lastmod>
   </url><url>
     <loc>https://zhurongshuo.com/tags/</loc>
+    <lastmod>2025-10-07T11:16:14+08:00</lastmod>
+  </url><url>
+    <loc>https://zhurongshuo.com/teach/</loc>
+    <lastmod>2025-10-07T11:16:14+08:00</lastmod>
+  </url><url>
+    <loc>https://zhurongshuo.com/</loc>
+    <lastmod>2025-10-07T11:16:14+08:00</lastmod>
+  </url><url>
+    <loc>https://zhurongshuo.com/posts/</loc>
     <lastmod>2025-10-01T20:17:33+08:00</lastmod>
   </url><url>
     <loc>https://zhurongshuo.com/tags/%E9%9B%8F%E5%BD%A2/</loc>
@@ -24,9 +36,6 @@
     <lastmod>2025-10-01T20:17:33+08:00</lastmod>
   </url><url>
     <loc>https://zhurongshuo.com/posts/2025/10/0101/</loc>
-    <lastmod>2025-10-01T20:17:33+08:00</lastmod>
-  </url><url>
-    <loc>https://zhurongshuo.com/</loc>
     <lastmod>2025-10-01T20:17:33+08:00</lastmod>
   </url><url>
     <loc>https://zhurongshuo.com/posts/2025/08/1305/</loc>
@@ -108,15 +117,6 @@
     <lastmod>2025-08-08T21:10:57+08:00</lastmod>
   </url><url>
     <loc>https://zhurongshuo.com/teach/yanshuang/2025/0803/</loc>
-    <lastmod>2025-08-03T23:16:14+08:00</lastmod>
-  </url><url>
-    <loc>https://zhurongshuo.com/teach/linyun/2025/1007/</loc>
-    <lastmod>2025-08-03T23:16:14+08:00</lastmod>
-  </url><url>
-    <loc>https://zhurongshuo.com/tags/linyun/</loc>
-    <lastmod>2025-08-03T23:16:14+08:00</lastmod>
-  </url><url>
-    <loc>https://zhurongshuo.com/teach/</loc>
     <lastmod>2025-08-03T23:16:14+08:00</lastmod>
   </url><url>
     <loc>https://zhurongshuo.com/tags/yanshuang/</loc>
