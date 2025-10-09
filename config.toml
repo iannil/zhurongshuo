@@ -39,11 +39,6 @@ pygmentscodefencesguesssyntax = true
   identifier = ""
   url = "/advanced/"
 [[menu.main]]
-  name = "书籍"
-  weight = 27
-  identifier = "book"
-  url = "/book/"
-[[menu.main]]
   name = "归档"
   weight = 30
   identifier = "archive"
