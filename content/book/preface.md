@@ -1,5 +1,5 @@
 ---
-title: "序言:源起——作为思想奇点的《进阶rc》"
+title: "序言：源起——作为思想奇点的《进阶rc》"
 date: 2025-10-09T00:00:00+08:00
 draft: false
 hidden: false
