@@ -489,6 +489,10 @@ hr {
   font-size: 1em;
 }
 
+.markdown h6 {
+  font-size: 0.9em;
+}
+
 .markdown h4 {
   margin: 10px 0 10px 0;
 }
