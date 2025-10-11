@@ -1,5 +1,5 @@
 ---
-title: "第一章 可能性基底：万物未形时"
+title: "第一章、可能性基底：万物未形时"
 date: 2025-10-09T00:00:00+08:00
 draft: false
 hidden: false
