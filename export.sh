@@ -20,7 +20,7 @@ DOCS_DIR="./content/posts"
 CSV_PREFIX="祝融说_副本"
 CSV_SUFFIX=".csv"
 # 最终的CSV文件名，格式如: 祝融说_副本20231225.csv
-CSV_FILE="${CSV_PREFIX}$(date +%Y%m%d)${CSV_SUFFIX}"
+CSV_FILE="./archive/${CSV_PREFIX}$(date +%Y%m%d)${CSV_SUFFIX}"
 
 # --- 主逻辑 ---
 
