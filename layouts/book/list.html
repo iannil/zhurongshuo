@@ -34,11 +34,11 @@
                         {{ end }}
                     </div>
                 {{ end }}
-                {{ $chapterPages := where $allPages "File.Dir" "!=" "book/" }}
+                {{ $chapterPages := where $allPages "File.Dir" "!=" "books/reality-construction/" }}
                 {{ $scratch := newScratch }}
                 {{ $scratch.Set "partSlugs" (slice) }}
                 {{ range $chapterPages }}
-                    {{ $slug := replace (replace .File.Dir "book/" "") "/" "" }}
+                    {{ $slug := replace (replace .File.Dir "books/reality-construction/" "") "/" "" }}
                     {{ $existing := $scratch.Get "partSlugs" }}
                     {{ if not (in $existing $slug) }}
                         {{ $scratch.Add "partSlugs" (slice $slug) }}
@@ -62,7 +62,7 @@
                     {{ end }}
                     <div class="listing_title part-title">{{ $title }}</div>
                     <div class="listing compact">
-                        {{ $dir := printf "book/%s/" $slug }}
+                        {{ $dir := printf "books/reality-construction/%s/" $slug }}
                         {{ range sort (where $chapterPages "File.Dir" $dir) "File.BaseFileName" }}
                             {{ template "book_list_item" . }}
                         {{ end }}
