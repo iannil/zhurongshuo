@@ -22,14 +22,6 @@
                 </div>
                 {{ end }}
                 {{ $allPages := .RegularPagesRecursive }}
-                {{ with (first 1 (where $allPages "File.BaseFileName" "preface")) }}
-                    <div class="listing_title section-title">序言</div>
-                    <div class="listing compact">
-                        {{ range . }}
-                            {{ template "book_list_item" . }}
-                        {{ end }}
-                    </div>
-                {{ end }}
                 {{ with (first 1 (where $allPages "File.BaseFileName" "introduction")) }}
                     <div class="listing_title section-title">导论</div>
                     <div class="listing compact">
@@ -74,6 +66,14 @@
                 {{ end }}
                 {{ with (first 1 (where $allPages "File.BaseFileName" "epilogue")) }}
                     <div class="listing_title section-title epilogue-title">结语</div>
+                    <div class="listing compact">
+                        {{ range . }}
+                            {{ template "book_list_item" . }}
+                        {{ end }}
+                    </div>
+                {{ end }}
+                {{ with (first 1 (where $allPages "File.BaseFileName" "appendix")) }}
+                    <div class="listing_title section-title epilogue-title">附录</div>
                     <div class="listing compact">
                         {{ range . }}
                             {{ template "book_list_item" . }}
