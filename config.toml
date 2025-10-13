@@ -29,14 +29,14 @@ pygmentscodefencesguesssyntax = true
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "核心"
+  name = "开始"
   weight = 20
-  identifier = "core"
-  url = "/core/"
+  identifier = "start"
+  url = "/start/"
 [[menu.main]]
   name = "进阶"
   weight = 25
-  identifier = ""
+  identifier = "advanced"
   url = "/advanced/"
 [[menu.main]]
   name = "归档"
