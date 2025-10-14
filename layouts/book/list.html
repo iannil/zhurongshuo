@@ -29,6 +29,7 @@
                 {{ $bookTitles := dict
                     "reality-construction" (dict "title" "实在建构：从无限可能到有限确定" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
                     "the-optionality-advantage" (dict "title" "选择权优势：在不确定世界中的可持续决策" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
+                    "the-fetters-of-evaluation" (dict "title" "评估的枷锁：数字时代的权力与控制" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
                 }}
 
                 {{ $bookInfo := index $bookTitles $bookSlug }}
@@ -74,9 +75,17 @@
                     "part-03" "第三部、实践应用——跨领域的选择权策略"
                 }}
 
+                {{ $fettersPartTitles := dict
+                    "part-01" "第一部、理论基础——评估权力的谱系学"
+                    "part-02" "第二部、经验场域——数字技术下的评估异化"
+                    "part-03" "第三部、抵抗与未来——夺回评估权的可能性"
+                }}
+
                 {{ $partTitles := $realityPartTitles }}
                 {{ if eq $bookSlug "the-optionality-advantage" }}
                     {{ $partTitles = $optionalityPartTitles }}
+                {{ else if eq $bookSlug "the-fetters-of-evaluation" }}
+                    {{ $partTitles = $fettersPartTitles }}
                 {{ end }}
                 {{ range $partSlugs }}
                     {{ $slug := . }}
