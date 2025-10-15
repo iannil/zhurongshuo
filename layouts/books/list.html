@@ -1,0 +1,193 @@
+{{ partial "head.html" . }}
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        {{ partial "nav.html" . }}
+        {{ partial "header.html" . }}
+        <div class="content">
+            <div class="list_with_title books-index-list">
+                <style>
+                /* Books Index Styles */
+                .books-index-list .listing {
+                    margin-bottom: 30px;
+                }
+
+                .books-index-list .listing_item {
+                    margin-bottom: 25px;
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 20px;
+                }
+
+                .books-index-list .listing_item:last-child {
+                    border-bottom: none;
+                }
+
+                /* PC端布局 */
+                .books-index-list .book-info {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .books-index-list .book-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    margin-bottom: 6px;
+                }
+
+                .books-index-list .book-title-cn {
+                    font-size: 1.15rem;
+                    font-weight: 500;
+                    flex: 1;
+                }
+
+                .books-index-list .book-title-cn a {
+                    color: #34495e;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+
+                .books-index-list .book-title-cn a:hover {
+                    color: #3273dc;
+                }
+
+                .books-index-list .book-word-count {
+                    color: #7f8c8d;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    margin-left: 15px;
+                }
+
+                .books-index-list .book-title-en {
+                    font-size: 0.9rem;
+                    color: #95a5a6;
+                    font-style: italic;
+                    flex: 1;
+                }
+
+                .books-index-list .book-date {
+                    color: #95a5a6;
+                    font-size: 0.85rem;
+                    white-space: nowrap;
+                    margin-left: 15px;
+                }
+
+                /* 默认隐藏移动端元素 */
+                .books-index-list .mobile-only {
+                    display: none;
+                }
+
+                /* 移动端响应式布局 */
+                @media screen and (max-width: 768px) {
+                    /* 隐藏PC端元素 */
+                    .books-index-list .pc-only {
+                        display: none;
+                    }
+
+                    /* 显示移动端元素 */
+                    .books-index-list .mobile-only {
+                        display: flex;
+                    }
+
+                    .books-index-list .book-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    .books-index-list .book-title-cn,
+                    .books-index-list .book-title-en {
+                        width: 100%;
+                        margin-bottom: 8px;
+                    }
+
+                    .books-index-list .book-word-count,
+                    .books-index-list .book-date {
+                        margin-left: 0;
+                    }
+
+                    .books-index-list .book-meta-row {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 4px;
+                    }
+
+                    .books-index-list .book-meta-row .book-word-count {
+                        text-align: left;
+                    }
+
+                    .books-index-list .book-meta-row .book-date {
+                        text-align: right;
+                    }
+                }
+                </style>
+
+                {{ range .Data.Pages.GroupByDate "2006" }}
+                <div class="listing">
+                    {{ range .Pages }}
+                    {{ $bookSlug := path.Base .File.Dir }}
+
+                    {{ $bookTitles := dict
+                        "reality-construction" (dict "title" "实在建构：从无限可能到有限确定（草稿）" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
+                        "the-optionality-advantage" (dict "title" "选择权优势：在不确定世界中的可持续决策（草稿）" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
+                        "the-fetters-of-evaluation" (dict "title" "评估的枷锁：数字时代的权力与控制（草稿）" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
+                        "the-breath-of-words" (dict "title" "词语的呼吸：语言如何塑造我们（草稿）" "subtitle" "The Breath of Words: How Language Shapes Us")
+                    }}
+
+                    {{ $bookInfo := index $bookTitles $bookSlug }}
+                    {{ $cnTitle := .Title }}
+                    {{ $enTitle := "" }}
+                    {{ if $bookInfo }}
+                        {{ $cnTitle = $bookInfo.title }}
+                        {{ $enTitle = $bookInfo.subtitle }}
+                    {{ end }}
+
+                    {{ $totalWords := 0 }}
+                    {{ $allPages := .RegularPagesRecursive }}
+                    {{ range $allPages }}
+                        {{ $totalWords = add $totalWords .WordCount }}
+                    {{ end }}
+
+                    <div class="listing_item">
+                        <div class="book-info">
+                            <!-- PC端：第一行显示中文名和字数 -->
+                            <div class="book-row">
+                                <div class="book-title-cn">
+                                    <a href="{{ .RelPermalink }}">{{ $cnTitle }}</a>
+                                </div>
+                                <div class="book-word-count pc-only">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
+                            </div>
+
+                            <!-- PC端：第二行显示英文名和日期 -->
+                            <div class="book-row">
+                                {{ if $enTitle }}
+                                <div class="book-title-en">{{ $enTitle }}</div>
+                                {{ end }}
+                                <div class="book-date pc-only">
+                                    <span class="date">{{ .Lastmod.Format "2006-01-02" }}</span>
+                                </div>
+                            </div>
+
+                            <!-- 移动端：第三行显示字数和日期 -->
+                            <div class="book-meta-row mobile-only">
+                                <div class="book-word-count">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
+                                <div class="book-date">
+                                    <span class="date">{{ .Lastmod.Format "2006-01-02" }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {{ end }}
+                </div>
+                {{ end }}
+            </div>
+            <div class="pagination"></div>
+        </div>
+        <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    </div>
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+</body>
+
+</html>

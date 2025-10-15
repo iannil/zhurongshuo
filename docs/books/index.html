@@ -113,36 +113,402 @@
     </div>
 </div>
         <div class="content">
-            <div class="list_with_title">
+            <div class="list_with_title books-index-list">
+                <style>
+                 
+                .books-index-list .listing {
+                    margin-bottom: 30px;
+                }
+
+                .books-index-list .listing_item {
+                    margin-bottom: 25px;
+                    border-bottom: 1px solid #eee;
+                    padding-bottom: 20px;
+                }
+
+                .books-index-list .listing_item:last-child {
+                    border-bottom: none;
+                }
+
+                 
+                .books-index-list .book-info {
+                    display: flex;
+                    flex-direction: column;
+                }
+
+                .books-index-list .book-row {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: baseline;
+                    margin-bottom: 6px;
+                }
+
+                .books-index-list .book-title-cn {
+                    font-size: 1.15rem;
+                    font-weight: 500;
+                    flex: 1;
+                }
+
+                .books-index-list .book-title-cn a {
+                    color: #34495e;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+
+                .books-index-list .book-title-cn a:hover {
+                    color: #3273dc;
+                }
+
+                .books-index-list .book-word-count {
+                    color: #7f8c8d;
+                    font-size: 0.9rem;
+                    white-space: nowrap;
+                    margin-left: 15px;
+                }
+
+                .books-index-list .book-title-en {
+                    font-size: 0.9rem;
+                    color: #95a5a6;
+                    font-style: italic;
+                    flex: 1;
+                }
+
+                .books-index-list .book-date {
+                    color: #95a5a6;
+                    font-size: 0.85rem;
+                    white-space: nowrap;
+                    margin-left: 15px;
+                }
+
+                 
+                .books-index-list .mobile-only {
+                    display: none;
+                }
+
+                 
+                @media screen and (max-width: 768px) {
+                     
+                    .books-index-list .pc-only {
+                        display: none;
+                    }
+
+                     
+                    .books-index-list .mobile-only {
+                        display: flex;
+                    }
+
+                    .books-index-list .book-row {
+                        flex-direction: column;
+                        align-items: flex-start;
+                    }
+
+                    .books-index-list .book-title-cn,
+                    .books-index-list .book-title-en {
+                        width: 100%;
+                        margin-bottom: 8px;
+                    }
+
+                    .books-index-list .book-word-count,
+                    .books-index-list .book-date {
+                        margin-left: 0;
+                    }
+
+                    .books-index-list .book-meta-row {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        width: 100%;
+                        margin-top: 4px;
+                    }
+
+                    .books-index-list .book-meta-row .book-word-count {
+                        text-align: left;
+                    }
+
+                    .books-index-list .book-meta-row .book-date {
+                        text-align: right;
+                    }
+                }
+                </style>
+
                 
-                <div class="listing_title">2025</div>
                 <div class="listing">
                     
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
                     <div class="listing_item">
-                        <div class="listing_post">
-                            <a href="/books/the-breath-of-words/">词语的呼吸：语言如何塑造我们</a>
-                            <div class="post_time"><span class="date">10-15</span></div>
+                        <div class="book-info">
+                            
+                            <div class="book-row">
+                                <div class="book-title-cn">
+                                    <a href="/books/the-breath-of-words/">词语的呼吸：语言如何塑造我们（草稿）</a>
+                                </div>
+                                <div class="book-word-count pc-only">约 152,296 字</div>
+                            </div>
+
+                            
+                            <div class="book-row">
+                                
+                                <div class="book-title-en">The Breath of Words: How Language Shapes Us</div>
+                                
+                                <div class="book-date pc-only">
+                                    <span class="date">2025-10-15</span>
+                                </div>
+                            </div>
+
+                            
+                            <div class="book-meta-row mobile-only">
+                                <div class="book-word-count">约 152,296 字</div>
+                                <div class="book-date">
+                                    <span class="date">2025-10-15</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
                     <div class="listing_item">
-                        <div class="listing_post">
-                            <a href="/books/the-fetters-of-evaluation/">评估的枷锁：数字时代的权力与控制</a>
-                            <div class="post_time"><span class="date">10-14</span></div>
+                        <div class="book-info">
+                            
+                            <div class="book-row">
+                                <div class="book-title-cn">
+                                    <a href="/books/the-fetters-of-evaluation/">评估的枷锁：数字时代的权力与控制（草稿）</a>
+                                </div>
+                                <div class="book-word-count pc-only">约 113,406 字</div>
+                            </div>
+
+                            
+                            <div class="book-row">
+                                
+                                <div class="book-title-en">The Fetters of Evaluation: Power and Control in the Digital Age</div>
+                                
+                                <div class="book-date pc-only">
+                                    <span class="date">2025-10-14</span>
+                                </div>
+                            </div>
+
+                            
+                            <div class="book-meta-row mobile-only">
+                                <div class="book-word-count">约 113,406 字</div>
+                                <div class="book-date">
+                                    <span class="date">2025-10-14</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
                     <div class="listing_item">
-                        <div class="listing_post">
-                            <a href="/books/the-optionality-advantage/">选择权优势：在不确定世界中的可持续决策</a>
-                            <div class="post_time"><span class="date">10-13</span></div>
+                        <div class="book-info">
+                            
+                            <div class="book-row">
+                                <div class="book-title-cn">
+                                    <a href="/books/the-optionality-advantage/">选择权优势：在不确定世界中的可持续决策（草稿）</a>
+                                </div>
+                                <div class="book-word-count pc-only">约 173,694 字</div>
+                            </div>
+
+                            
+                            <div class="book-row">
+                                
+                                <div class="book-title-en">The Optionality Advantage: Sustainable Decision-Making in an Uncertain World</div>
+                                
+                                <div class="book-date pc-only">
+                                    <span class="date">2025-10-13</span>
+                                </div>
+                            </div>
+
+                            
+                            <div class="book-meta-row mobile-only">
+                                <div class="book-word-count">约 173,694 字</div>
+                                <div class="book-date">
+                                    <span class="date">2025-10-13</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
+                    
+
+                    
+
+                    
+                    
+                    
+                    
+                        
+                        
+                    
+
+                    
+                    
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+                        
+                    
+
                     <div class="listing_item">
-                        <div class="listing_post">
-                            <a href="/books/reality-construction/">实在建构：从无限可能到有限确定</a>
-                            <div class="post_time"><span class="date">10-10</span></div>
+                        <div class="book-info">
+                            
+                            <div class="book-row">
+                                <div class="book-title-cn">
+                                    <a href="/books/reality-construction/">实在建构：从无限可能到有限确定（草稿）</a>
+                                </div>
+                                <div class="book-word-count pc-only">约 131,397 字</div>
+                            </div>
+
+                            
+                            <div class="book-row">
+                                
+                                <div class="book-title-en">Reality Construction: From Infinite Possibility to Finite Certainty</div>
+                                
+                                <div class="book-date pc-only">
+                                    <span class="date">2025-10-10</span>
+                                </div>
+                            </div>
+
+                            
+                            <div class="book-meta-row mobile-only">
+                                <div class="book-word-count">约 131,397 字</div>
+                                <div class="book-date">
+                                    <span class="date">2025-10-10</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     
