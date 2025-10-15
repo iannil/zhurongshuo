@@ -27,9 +27,10 @@
                 {{ $bookDir := printf "books/%s/" $bookSlug }}
 
                 {{ $bookTitles := dict
-                    "reality-construction" (dict "title" "实在建构：从无限可能到有限确定" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
-                    "the-optionality-advantage" (dict "title" "选择权优势：在不确定世界中的可持续决策" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
-                    "the-fetters-of-evaluation" (dict "title" "评估的枷锁：数字时代的权力与控制" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
+                    "reality-construction" (dict "title" "实在建构：从无限可能到有限确定（草稿）" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
+                    "the-optionality-advantage" (dict "title" "选择权优势：在不确定世界中的可持续决策（草稿）" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
+                    "the-fetters-of-evaluation" (dict "title" "评估的枷锁：数字时代的权力与控制（草稿）" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
+                    "the-breath-of-words" (dict "title" "词语的呼吸：语言如何塑造我们（草稿）" "subtitle" "The Breath of Words: How Language Shapes Us")
                 }}
 
                 {{ $bookInfo := index $bookTitles $bookSlug }}
@@ -81,11 +82,20 @@
                     "part-03" "第三部、抵抗与未来——夺回评估权的可能性"
                 }}
 
+                {{ $breathPartTitles := dict
+                    "part-01" "第一部分、词语的创世——语言作为实在的收敛工具"
+                    "part-02" "第二部分、共识的基石与裂痕——语言在公共领域的运作"
+                    "part-03" "第三部分、权力的游戏——语言作为控制与规训的工具"
+                    "part-04" "第四部分、语言的解放——成为一个有意识的使用者"
+                }}
+
                 {{ $partTitles := $realityPartTitles }}
                 {{ if eq $bookSlug "the-optionality-advantage" }}
                     {{ $partTitles = $optionalityPartTitles }}
                 {{ else if eq $bookSlug "the-fetters-of-evaluation" }}
                     {{ $partTitles = $fettersPartTitles }}
+                {{ else if eq $bookSlug "the-breath-of-words" }}
+                    {{ $partTitles = $breathPartTitles }}
                 {{ end }}
                 {{ range $partSlugs }}
                     {{ $slug := . }}
