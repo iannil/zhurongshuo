@@ -9,13 +9,13 @@
                 <style>
                 /* Books Index Styles */
                 .books-index-list .listing {
-                    margin-bottom: 30px;
+                    margin-bottom: 0px;
                 }
 
                 .books-index-list .listing_item {
-                    margin-bottom: 25px;
+                    margin-bottom: 10px;
                     border-bottom: 1px solid #eee;
-                    padding-bottom: 20px;
+                    padding-bottom: 10px;
                 }
 
                 .books-index-list .listing_item:last-child {
@@ -32,7 +32,7 @@
                     display: flex;
                     justify-content: space-between;
                     align-items: baseline;
-                    margin-bottom: 6px;
+                    margin-bottom: 0px;
                 }
 
                 .books-index-list .book-title-cn {
@@ -121,63 +121,116 @@
                         text-align: right;
                     }
                 }
+
+                /* Disabled book styles */
+                .books-index-list .book-title-cn.disabled {
+                    color: #bdc3c7;
+                    cursor: default;
+                }
+
+                .books-index-list .book-title-cn.disabled:hover {
+                    color: #bdc3c7;
+                }
+
+                .books-index-list .book-title-en.disabled {
+                    color: #d5d8da;
+                }
                 </style>
 
-                {{ range .Data.Pages.GroupByDate "2006" }}
+                {{ $allBooksBySlug := dict }}
+                {{ range .Site.Pages }}
+                    {{ if eq .Type "book" }}
+                        {{ $bookSlug := path.Base .File.Dir }}
+                        {{ $allBooksBySlug = merge $allBooksBySlug (dict $bookSlug .) }}
+                    {{ end }}
+                {{ end }}
+
+                {{ $bookCollection := slice
+                    (dict "volume" "第1卷" "books" (slice
+                        (dict "slug" "reality-construction" "title" "实在建构：从无限可能到有限确定（草稿）" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
+                        (dict "slug" "" "title" "观察者们：共同创造的现实" "subtitle" "Observers: The Co-Created Reality")
+                        (dict "slug" "" "title" "神在观察之外：一种不确定的神学" "subtitle" "God Beyond Observation: A Theology of Uncertainty")
+                    ))
+                    (dict "volume" "第2卷" "books" (slice
+                        (dict "slug" "the-breath-of-words" "title" "词语的呼吸：语言如何塑造我们（草稿）" "subtitle" "The Breath of Words: How Language Shapes Us")
+                        (dict "slug" "" "title" "沉默的建构：身体、空间与情感" "subtitle" "The Silent Construction: Body, Space, and Emotion")
+                        (dict "slug" "" "title" "再叙历史：作为观念生态演化的文明" "subtitle" "Revisiting History: Civilization as the Evolution of Conceptual Ecology")
+                    ))
+                    (dict "volume" "第3卷" "books" (slice
+                        (dict "slug" "the-fetters-of-evaluation" "title" "评估的枷锁：数字时代的权力与控制（草稿）" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
+                        (dict "slug" "" "title" "暴力的共识：国家、革命与秩序的边界" "subtitle" "The Violent Consensus: Boundaries of State, Revolution, and Order")
+                        (dict "slug" "" "title" "价值再观察：一种后资本主义经济学构想" "subtitle" "Reobserve Value: A Post-Capitalist Economic Vision")
+                        (dict "slug" "" "title" "世界的多重宇宙：主权国家作为实在建构者" "subtitle" "The Multiverse of Worlds: Sovereign States as Reality Constructors")
+                        (dict "slug" "" "title" "信任的基底：从血缘到算法" "subtitle" "The Foundation of Trust: From Blood Ties to Algorithms")
+                    ))
+                    (dict "volume" "第4卷" "books" (slice
+                        (dict "slug" "the-optionality-advantage" "title" "选择权优势：在不确定世界中的可持续决策（草稿）" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
+                        (dict "slug" "" "title" "如何观察：为可塑的未来而教育" "subtitle" "How to Observe: Educating for a Malleable Future")
+                        (dict "slug" "" "title" "心念视界：内在游戏" "subtitle" "The Mind's Horizon:  The Inner Game")
+                    ))
+                }}
+
+                {{ range $volumeData := $bookCollection }}
                 <div class="listing">
-                    {{ range .Pages }}
-                    {{ $bookSlug := path.Base .File.Dir }}
+                    <div class="listing_title">{{ $volumeData.volume }}</div>
 
-                    {{ $bookTitles := dict
-                        "reality-construction" (dict "title" "实在建构：从无限可能到有限确定（草稿）" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
-                        "the-optionality-advantage" (dict "title" "选择权优势：在不确定世界中的可持续决策（草稿）" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
-                        "the-fetters-of-evaluation" (dict "title" "评估的枷锁：数字时代的权力与控制（草稿）" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
-                        "the-breath-of-words" (dict "title" "词语的呼吸：语言如何塑造我们（草稿）" "subtitle" "The Breath of Words: How Language Shapes Us")
-                    }}
+                    {{ range $book := $volumeData.books }}
+                        {{ $bookPage := index $allBooksBySlug $book.slug }}
+                        {{ $exists := ne $bookPage nil }}
 
-                    {{ $bookInfo := index $bookTitles $bookSlug }}
-                    {{ $cnTitle := .Title }}
-                    {{ $enTitle := "" }}
-                    {{ if $bookInfo }}
-                        {{ $cnTitle = $bookInfo.title }}
-                        {{ $enTitle = $bookInfo.subtitle }}
-                    {{ end }}
+                        {{ if $exists }}
+                            {{ $totalWords := 0 }}
+                            {{ $allPages := $bookPage.RegularPagesRecursive }}
+                            {{ range $allPages }}
+                                {{ $totalWords = add $totalWords .WordCount }}
+                            {{ end }}
 
-                    {{ $totalWords := 0 }}
-                    {{ $allPages := .RegularPagesRecursive }}
-                    {{ range $allPages }}
-                        {{ $totalWords = add $totalWords .WordCount }}
-                    {{ end }}
+                            <div class="listing_item">
+                                <div class="book-info">
+                                    <!-- PC端：第一行显示中文名和字数 -->
+                                    <div class="book-row">
+                                        <div class="book-title-cn">
+                                            <a href="{{ $bookPage.RelPermalink }}">{{ $book.title }}</a>
+                                        </div>
+                                        <div class="book-word-count pc-only">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
+                                    </div>
 
-                    <div class="listing_item">
-                        <div class="book-info">
-                            <!-- PC端：第一行显示中文名和字数 -->
-                            <div class="book-row">
-                                <div class="book-title-cn">
-                                    <a href="{{ .RelPermalink }}">{{ $cnTitle }}</a>
-                                </div>
-                                <div class="book-word-count pc-only">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
-                            </div>
+                                    <!-- PC端：第二行显示英文名和日期 -->
+                                    <div class="book-row">
+                                        {{ if $book.subtitle }}
+                                        <div class="book-title-en">{{ $book.subtitle }}</div>
+                                        {{ end }}
+                                        <div class="book-date pc-only">
+                                            <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                        </div>
+                                    </div>
 
-                            <!-- PC端：第二行显示英文名和日期 -->
-                            <div class="book-row">
-                                {{ if $enTitle }}
-                                <div class="book-title-en">{{ $enTitle }}</div>
-                                {{ end }}
-                                <div class="book-date pc-only">
-                                    <span class="date">{{ .Lastmod.Format "2006-01-02" }}</span>
-                                </div>
-                            </div>
-
-                            <!-- 移动端：第三行显示字数和日期 -->
-                            <div class="book-meta-row mobile-only">
-                                <div class="book-word-count">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
-                                <div class="book-date">
-                                    <span class="date">{{ .Lastmod.Format "2006-01-02" }}</span>
+                                    <!-- 移动端：第三行显示字数和日期 -->
+                                    <div class="book-meta-row mobile-only">
+                                        <div class="book-word-count">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
+                                        <div class="book-date">
+                                            <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
+                        {{ else }}
+                            <div class="listing_item">
+                                <div class="book-info">
+                                    <!-- PC端：第一行显示中文名（无字数） -->
+                                    <div class="book-row">
+                                        <div class="book-title-cn disabled">{{ $book.title }}</div>
+                                    </div>
+
+                                    <!-- PC端：第二行显示英文名（如果有） -->
+                                    {{ if $book.subtitle }}
+                                    <div class="book-row">
+                                        <div class="book-title-en disabled">{{ $book.subtitle }}</div>
+                                    </div>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        {{ end }}
                     {{ end }}
                 </div>
                 {{ end }}
