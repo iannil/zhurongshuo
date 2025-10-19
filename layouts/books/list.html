@@ -215,7 +215,7 @@
                                         <div class="book-title-cn">
                                             <a href="{{ $bookPage.RelPermalink }}">{{ $book.title }}</a>
                                         </div>
-                                        <div class="book-word-count pc-only">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 10000.0) }} 万字</div>
+                                        <div class="book-word-count pc-only">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 100000.0) }} 万字</div>
                                     </div>
 
                                     <!-- PC端：第二行显示英文名和日期 -->
@@ -230,7 +230,7 @@
 
                                     <!-- 移动端：第三行显示字数和日期 -->
                                     <div class="book-meta-row mobile-only">
-                                        <div class="book-word-count">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 10000.0) }} 万字</div>
+                                        <div class="book-word-count">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 100000.0) }} 万字</div>
                                         <div class="book-date">
                                             <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
                                         </div>
@@ -254,7 +254,7 @@
                                             <div class="book-title-cn disabled">
                                                 <a href="{{ $bookPage.RelPermalink }}">{{ $book.title }}</a>
                                             </div>
-                                            <div class="book-word-count pc-only">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 10000.0) }} 万字</div>
+                                            <div class="book-word-count pc-only">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 100000.0) }} 万字</div>
                                         </div>
 
                                         <!-- PC端：第二行显示英文名和日期 -->
@@ -269,7 +269,7 @@
 
                                         <!-- 移动端：第三行显示字数和日期 -->
                                         <div class="book-meta-row mobile-only">
-                                            <div class="book-word-count">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 10000.0) }} 万字</div>
+                                            <div class="book-word-count">约 {{ lang.FormatNumberCustom 1 (div (mul $totalWords 10.0) 100000.0) }} 万字</div>
                                             <div class="book-date">
                                                 <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
                                             </div>
