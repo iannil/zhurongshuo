@@ -128,7 +128,17 @@
                     cursor: default;
                 }
 
+                .books-index-list .book-title-cn.disabled a {
+                    color: #bdc3c7;
+                    pointer-events: none;
+                    cursor: default;
+                }
+
                 .books-index-list .book-title-cn.disabled:hover {
+                    color: #bdc3c7;
+                }
+
+                .books-index-list .book-title-cn.disabled a:hover {
                     color: #bdc3c7;
                 }
 
@@ -147,23 +157,23 @@
 
                 {{ $bookCollection := slice
                     (dict "volume" "第1卷" "books" (slice
-                        (dict "slug" "reality-construction" "title" "实在建构：从无限可能到有限确定（草稿）" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
+                        (dict "slug" "reality-construction" "title" "实在建构：从无限可能到有限确定 (beta)" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
                         (dict "slug" "" "title" "观察者们：共同创造的现实" "subtitle" "Observers: The Co-Created Reality")
                         (dict "slug" "" "title" "神在观察之外：一种不确定的神学" "subtitle" "God Beyond Observation: A Theology of Uncertainty")
                     ))
                     (dict "volume" "第2卷" "books" (slice
-                        (dict "slug" "the-breath-of-words" "title" "词语的呼吸：语言如何塑造我们（草稿）" "subtitle" "The Breath of Words: How Language Shapes Us")
+                        (dict "slug" "the-breath-of-words" "title" "词语的呼吸：语言如何塑造我们 (beta)" "subtitle" "The Breath of Words: How Language Shapes Us")
                         (dict "slug" "" "title" "沉默的建构：身体、空间与情感" "subtitle" "The Silent Construction: Body, Space, and Emotion")
                         (dict "slug" "" "title" "再叙历史：作为观念生态演化的文明" "subtitle" "Revisiting History: Civilization as the Evolution of Conceptual Ecology")
                     ))
                     (dict "volume" "第3卷" "books" (slice
-                        (dict "slug" "the-fetters-of-evaluation" "title" "评估的枷锁：数字时代的权力与控制（草稿）" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
+                        (dict "slug" "the-fetters-of-evaluation" "title" "评估的枷锁：数字时代的权力与控制 (beta)" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
                         (dict "slug" "" "title" "暴力的共识：国家、革命与秩序的边界" "subtitle" "The Violent Consensus: Boundaries of State, Revolution, and Order")
                         (dict "slug" "" "title" "世界的多重宇宙：主权国家作为实在建构者" "subtitle" "The Multiverse of Worlds: Sovereign States as Reality Constructors")
                         (dict "slug" "" "title" "信任的基底：从血缘到算法" "subtitle" "The Foundation of Trust: From Blood Ties to Algorithms")
                     ))
                     (dict "volume" "第4卷" "books" (slice
-                        (dict "slug" "the-optionality-advantage" "title" "选择权优势：在不确定世界中的可持续决策（草稿）" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
+                        (dict "slug" "the-optionality-advantage" "title" "选择权优势：在不确定世界中的可持续决策 (beta)" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
                         (dict "slug" "" "title" "如何观察：为可塑的未来而教育" "subtitle" "How to Observe: Educating for a Malleable Future")
                         (dict "slug" "" "title" "心念视界：内在游戏" "subtitle" "The Mind's Horizon:  The Inner Game")
                     ))
@@ -177,7 +187,20 @@
                         {{ $bookPage := index $allBooksBySlug $book.slug }}
                         {{ $exists := ne $bookPage nil }}
 
-                        {{ if $exists }}
+                        {{/* Extract version from title (alpha/beta/rc) */}}
+                        {{ $version := "" }}
+                        {{ if findRE "\\(alpha\\)" $book.title }}
+                            {{ $version = "alpha" }}
+                        {{ else if findRE "\\(beta\\)" $book.title }}
+                            {{ $version = "beta" }}
+                        {{ else if findRE "\\(rc\\)" $book.title }}
+                            {{ $version = "rc" }}
+                        {{ end }}
+
+                        {{/* Determine if book should be clickable: exists AND (beta OR rc) */}}
+                        {{ $isClickable := and $exists (or (eq $version "beta") (eq $version "rc")) }}
+
+                        {{ if $isClickable }}
                             {{ $totalWords := 0 }}
                             {{ $allPages := $bookPage.RegularPagesRecursive }}
                             {{ range $allPages }}
@@ -214,21 +237,62 @@
                                 </div>
                             </div>
                         {{ else }}
-                            <div class="listing_item">
-                                <div class="book-info">
-                                    <!-- PC端：第一行显示中文名（无字数） -->
-                                    <div class="book-row">
-                                        <div class="book-title-cn disabled">{{ $book.title }}</div>
-                                    </div>
+                            {{/* Book is not clickable: either doesn't exist OR is alpha version */}}
+                            {{ if $exists }}
+                                {{/* Alpha version exists: show full info but disabled */}}
+                                {{ $totalWords := 0 }}
+                                {{ $allPages := $bookPage.RegularPagesRecursive }}
+                                {{ range $allPages }}
+                                    {{ $totalWords = add $totalWords .WordCount }}
+                                {{ end }}
 
-                                    <!-- PC端：第二行显示英文名（如果有） -->
-                                    {{ if $book.subtitle }}
-                                    <div class="book-row">
-                                        <div class="book-title-en disabled">{{ $book.subtitle }}</div>
+                                <div class="listing_item">
+                                    <div class="book-info">
+                                        <!-- PC端：第一行显示中文名和字数 -->
+                                        <div class="book-row">
+                                            <div class="book-title-cn disabled">
+                                                <a href="{{ $bookPage.RelPermalink }}">{{ $book.title }}</a>
+                                            </div>
+                                            <div class="book-word-count pc-only">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
+                                        </div>
+
+                                        <!-- PC端：第二行显示英文名和日期 -->
+                                        <div class="book-row">
+                                            {{ if $book.subtitle }}
+                                            <div class="book-title-en disabled">{{ $book.subtitle }}</div>
+                                            {{ end }}
+                                            <div class="book-date pc-only">
+                                                <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                            </div>
+                                        </div>
+
+                                        <!-- 移动端：第三行显示字数和日期 -->
+                                        <div class="book-meta-row mobile-only">
+                                            <div class="book-word-count">约 {{ lang.FormatNumber 0 $totalWords }} 字</div>
+                                            <div class="book-date">
+                                                <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                            </div>
+                                        </div>
                                     </div>
-                                    {{ end }}
                                 </div>
-                            </div>
+                            {{ else }}
+                                {{/* Book doesn't exist: show only title and subtitle, disabled */}}
+                                <div class="listing_item">
+                                    <div class="book-info">
+                                        <!-- PC端：第一行显示中文名（无字数） -->
+                                        <div class="book-row">
+                                            <div class="book-title-cn disabled">{{ $book.title }}</div>
+                                        </div>
+
+                                        <!-- PC端：第二行显示英文名（如果有） -->
+                                        {{ if $book.subtitle }}
+                                        <div class="book-row">
+                                            <div class="book-title-en disabled">{{ $book.subtitle }}</div>
+                                        </div>
+                                        {{ end }}
+                                    </div>
+                                </div>
+                            {{ end }}
                         {{ end }}
                     {{ end }}
                 </div>
