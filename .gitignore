@@ -1,1 +1,5 @@
 **/.DS_Store
+
+# Ignore Word documents in archive/anthology, only track PDFs
+archive/anthology/**/*.doc
+archive/anthology/**/*.docx
