@@ -1,5 +1,7 @@
 **/.DS_Store
 
-# Ignore Word documents in archive/anthology, only track PDFs
+# Ignore Word documents in archive/anthology and archive/选集, only track PDFs
 archive/anthology/**/*.doc
 archive/anthology/**/*.docx
+archive/选集/**/*.doc
+archive/选集/**/*.docx
