@@ -20,9 +20,6 @@ pygmentscodefencesguesssyntax = true
 [author]
   name = "祝融"
 
-[blackfriday]
-  smartypants = false
-
 [[menu.main]]
   name = "首页"
   weight = 10
@@ -86,6 +83,8 @@ pygmentscodefencesguesssyntax = true
 [markup.goldmark]
 [markup.goldmark.renderer]
   unsafe = true
+[markup.goldmark.extensions.typographer]
+  disable = true
 
 [sitemap]
   changefreq = ""
