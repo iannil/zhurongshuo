@@ -82,29 +82,29 @@ draft: false
 
 - 适合人群： 追求体系化、根本性理解的思考者，希望从第一性原理出发，构建完整的世界观。
 - 学习顺序：
-    1. 《观察者们：共同创造的现实》：建立核心世界观的直观感受。[阅读](/books/volume-1/the-observers/)
-    2. 《实在建构：从无限可能到有限确定》：深入理论内核，啃下最硬的骨头。[阅读](/books/volume-1/reality-construction/)
-    3. 《词语的呼吸：语言如何塑造我们》：理解建构实在的最基本工具——语言。[阅读](/books/volume-2/the-breath-of-words/)
-    4. 《再叙历史：作为观念生态演化的文明》：运用上述理论，审视人类文明这一最宏大的「实在建构」过程。[阅读](/books/volume-2/revisiting-history/)
-    5. 《神在观察之外：一种不确定的神学》：将思考延伸至形而上的终极领域。[阅读](/books/volume-1/god-beyond-observation/)
+  - 《观察者们：共同创造的现实》：建立核心世界观的直观感受。[阅读](/books/volume-1/the-observers/)
+  - 《神在观察之外：一种不确定的神学》：将思考延伸至形而上的终极领域。[阅读](/books/volume-1/god-beyond-observation/)
+  - 《实在建构：从无限可能到有限确定》：深入理论内核，啃下最硬的骨头。[阅读](/books/volume-1/reality-construction/)
+  - 《词语的呼吸：语言如何塑造我们》：理解建构实在的最基本工具——语言。[阅读](/books/volume-2/the-breath-of-words/)
+  - 《再叙历史：作为观念生态演化的文明》：运用上述理论，审视人类文明这一最宏大的「实在建构」过程。[阅读](/books/volume-2/revisiting-history/) 
 
 ### 路径二：批判者之路
 
 - 适合人群： 关心社会现实、权力运作和公共议题的行动者、学者和公民。
 - 学习顺序：
-    1. 《评估的枷锁：数字时代的权力与控制》：直击时代痛点，感受理论的批判力量。[阅读](/books/volume-3/the-fetters-of-evaluation/)
-    2. 《暴力的观察者：国家、革命与秩序的边界》：探究权力最赤裸的形态。[阅读](/books/volume-3/the-violent-consensus/)
-    3. 《信任的基底：从血缘共识到算法契约》：理解社会秩序的演化逻辑。[阅读](/books/volume-3/the-foundation-of-trust/)
-    4. 《世界的多重宇宙：主权国家作为实在建构者》：将批判视野扩展至全球政治。[阅读](/books/volume-3/the-multiverse-of-worlds/)
+  - 《评估的枷锁：数字时代的权力与控制》：直击时代痛点，感受理论的批判力量。[阅读](/books/volume-3/the-fetters-of-evaluation/)
+  - 《暴力的观察者：国家、革命与秩序的边界》：探究权力最赤裸的形态。[阅读](/books/volume-3/the-violent-consensus/)
+  - 《信任的基底：从血缘共识到算法契约》：理解社会秩序的演化逻辑。[阅读](/books/volume-3/the-foundation-of-trust/)
+  - 《世界的多重宇宙：主权国家作为实在建构者》：将批判视野扩展至全球政治。[阅读](/books/volume-3/the-multiverse-of-worlds/)
 
 ### 路径三：践行者之路
 
 - 适合人群： 寻求解决现实问题、提升决策能力的商业人士、创业者、管理者和个人成长者。
 - 学习顺序：
-    1. 《选择权优势：在不确定世界中的可持续决策》：学习具体的方法论，直接应用。[阅读](/books/volume-4/the-optionality-advantage/)
-    2. 《心念视界：内在的游戏》：优化你最核心的决策工具——你自己的心智。[阅读](/books/volume-4/the-minds-horizon/)
-    3. 《如何观察：为可塑的未来而教育》：思考如何为组织和下一代构建面向未来的能力。[阅读](/books/volume-4/how-to-observe/)
-    4. 《沉默的建构：身体、空间与情感》：掌握那些被忽略的、影响决策的非语言力量。[阅读](/books/volume-2/the-silent-construction/)
+  - 《选择权优势：在不确定世界中的可持续决策》：学习具体的方法论，直接应用。[阅读](/books/volume-4/the-optionality-advantage/)
+  - 《心念视界：内在的游戏》：优化你最核心的决策工具——你自己的心智。[阅读](/books/volume-4/the-minds-horizon/)
+  - 《如何观察：为可塑的未来而教育》：思考如何为组织和下一代构建面向未来的能力。[阅读](/books/volume-4/how-to-observe/)
+  - 《沉默的建构：身体、空间与情感》：掌握那些被忽略的、影响决策的非语言力量。[阅读](/books/volume-2/the-silent-construction/)
 
 ### 路径四：整合者之路
 
