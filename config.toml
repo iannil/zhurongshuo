@@ -31,7 +31,7 @@ pygmentscodefencesguesssyntax = true
   identifier = "start"
   url = "/start/"
 [[menu.main]]
-  name = "进阶"
+  name = "进阶rc"
   weight = 25
   identifier = "advanced"
   url = "/advanced/"
