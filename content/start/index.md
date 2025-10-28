@@ -85,7 +85,7 @@ draft: false
     1. 入门：《观察者们：共同创造的现实》- 建立核心世界观的直观感受。[阅读](/books/volume-1/the-observers/)
     2. 核心：《实在建构：从无限可能到有限确定》- 深入理论内核，啃下最硬的骨头。[阅读](/books/volume-1/reality-construction/)
     3. 延伸：《词语的呼吸：语言如何塑造我们》- 理解建构实在的最基本工具——语言。[阅读](/books/volume-2/the-breath-of-words/)
-    4. 宏观：《再叙历史：作为观念生态演化的文明》- 运用上述理论，审视人类文明这一最宏大的“实在建构”过程。[阅读](/books/volume-2/revisiting-history/)
+    4. 宏观：《再叙历史：作为观念生态演化的文明》- 运用上述理论，审视人类文明这一最宏大的「实在建构」过程。[阅读](/books/volume-2/revisiting-history/)
     5. 终极：《神在观察之外：一种不确定的神学》- 将思考延伸至形而上的终极领域。[阅读](/books/volume-1/god-beyond-observation/)
 
 ### 路径二：批判者之路
