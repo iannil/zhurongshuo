@@ -8,6 +8,10 @@ collection:
         title: "实在建构：从无限可能到有限确定"
         subtitle: "Reality Construction: From Infinite Possibility to Finite Certainty"
         version: "beta"
+      - slug: "advancement-of-reality"
+        title: "实在进阶：观察、收敛与动态生成"
+        subtitle: "The Advancement of Reality: Observation, Convergence, and Dynamic Becoming"
+        version: "beta"
       - slug: "the-observers"
         title: "观察者们：共同创造的现实"
         subtitle: "Observers: The Co-Created Reality"
@@ -115,13 +119,13 @@ part_titles:
     part-03: "第三部 实践应用——跨领域的选择权策略"
 
   how-to-observe:
-    part-01: "第一部分 '标准答案'的终结——为什么在AI时代，知识的保质期越来越短"
+    part-01: "第一部分 \"标准答案\"的终结——为什么在AI时代，知识的保质期越来越短"
     part-02: "第二部分 教育的根本任务——不是装满一桶水，而是点燃一把火"
-    part-03: "第三部分 培养'观察者'——为孩子准备应对任何未来的终极能力"
-    part-04: "第四部分 从理论到实践——构建以'观察'为核心的教育生态"
+    part-03: "第三部分 培养\"观察者\"——为孩子准备应对任何未来的终极能力"
+    part-04: "第四部分 从理论到实践——构建以\"观察\"为核心的教育生态"
 
   the-minds-horizon:
-    part-01: "第一部分 心智的原理——作为观察系统的'我'"
+    part-01: "第一部分 心智的原理——作为观察系统的\"我\""
     part-02: "第二部分 视界的囚笼——心理困扰的根源"
     part-03: "第三部分 疗愈的艺术——成为一名灵活的观察者"
     part-04: "第四部分 视界的无限——通往内在自由的整合之路"
@@ -139,8 +143,13 @@ part_titles:
     part-04: "第四部分 千指一月"
 
   the-multiverse-of-worlds:
-    part-01: "第一部分 从“可能性基底”到国际政治"
-    part-02: "第二部分 国家作为“共识边界”的形成"
+    part-01: "第一部分 从\"可能性基底\"到国际政治"
+    part-02: "第二部分 国家作为\"共识边界\"的形成"
     part-03: "第三部分 多重宇宙的碰撞——不同实在版本的互动动力学"
     part-04: "第四部分 当代挑战——全球化时代的实在摩擦"
-    part-05: "第四部分 走向共存——构建“世界多重宇宙”的秩序"
+    part-05: "第五部分 走向共存——构建\"世界多重宇宙\"的秩序"
+
+  advancement-of-reality:
+    part-01: "第一部分 本体论——可能性与动态存在"
+    part-02: "第二部分 认识论与秩序论——共识与权力的演化"
+    part-03: "第三部分 实践论——可能的实现"
