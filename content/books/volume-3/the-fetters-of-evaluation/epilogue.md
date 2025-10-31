@@ -4,7 +4,7 @@ date: 2025-10-14T00:00:00+08:00
 draft: false
 hidden: false
 tags: ["书稿"]
-keywords: ["评估的枷锁：数字时代的权力与控制", "结论、在评估的枷锁下舞蹈"]
+keywords: ["评估的枷锁：隐形的权力与控制", "结论、在评估的枷锁下舞蹈"]
 slug: "epilogue"
 ---
 
