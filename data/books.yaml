@@ -3,6 +3,7 @@
 
 collection:
   - volume: "第1卷"
+    description: ""
     books:
       - slug: "reality-construction"
         title: "实在建构：从无限可能到有限确定"
@@ -26,6 +27,7 @@ collection:
         version: "alpha"
 
   - volume: "第2卷"
+    description: ""
     books:
       - slug: "the-breath-of-words"
         title: "词语的呼吸：语言如何塑造我们"
@@ -49,6 +51,7 @@ collection:
         version: "alpha"
 
   - volume: "第3卷"
+    description: ""
     books:
       - slug: "the-multiverse-of-worlds"
         title: "世界的多重宇宙：主权国家作为实在建构者"
@@ -72,6 +75,7 @@ collection:
         version: "alpha"
 
   - volume: "第4卷"
+    description: ""
     books:
       - slug: "the-minds-horizon"
         title: "心念视界：内在游戏"

@@ -155,6 +155,16 @@
                 .books-index-list .book-version.disabled {
                     color: #d5d8da;
                 }
+
+                /* Volume description styles */
+                .books-index-list .volume-description {
+                    color: #7f8c8d;
+                    font-size: 0.85rem;
+                    line-height: 1.6;
+                    margin-top: 8px;
+                    margin-bottom: 15px;
+                    padding-left: 0;
+                }
                 </style>
 
                 {{ $allBooksBySlug := dict }}
@@ -171,6 +181,9 @@
                 {{ range $volumeData := $bookCollection }}
                 <div class="listing">
                     <div class="listing_title">{{ $volumeData.volume }}</div>
+                    {{ if $volumeData.description }}
+                    <div class="volume-description">{{ $volumeData.description }}</div>
+                    {{ end }}
 
                     {{ range $book := $volumeData.books }}
                         {{ $bookPage := index $allBooksBySlug $book.slug }}
