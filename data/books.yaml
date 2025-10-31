@@ -20,6 +20,10 @@ collection:
         title: "神在观察之外：一种不确定的神学"
         subtitle: "God Beyond Observation: A Theology of Uncertainty"
         version: "beta"
+      - slug: "a-unified-view"
+        title: "万物一观：从粒子到星系的演化阶梯"
+        subtitle: "A Unified View: The Evolutionary Ladder from Particles to Galaxies"
+        version: "alpha"
 
   - volume: "第2卷"
     books:
@@ -35,6 +39,14 @@ collection:
         title: "再叙历史：作为观念生态演化的文明"
         subtitle: "Revisiting History: Civilization as the Evolution of Conceptual Ecology"
         version: "beta"
+      - slug: "convergent-rationality"
+        title: "收敛的理性：科学、数学与逻辑"
+        subtitle: "Convergent Rationality: Science, Mathematics, and Logic"
+        version: "alpha"
+      - slug: "alternative-observation"
+        title: "另类观察：机器的回视"
+        subtitle: "Alternative Observation: The Machine's Gaze"
+        version: "alpha"
 
   - volume: "第3卷"
     books:
@@ -54,6 +66,10 @@ collection:
         title: "信任的基底：从血缘到算法"
         subtitle: "The Foundation of Trust: From Blood Ties to Algorithms"
         version: "beta"
+      - slug: "the-gravity-of-capital"
+        title: "资本的引力：货币与人类"
+        subtitle: "The Gravity of Capital: Currency and Humanity"
+        version: "alpha"
 
   - volume: "第4卷"
     books:
@@ -69,6 +85,14 @@ collection:
         title: "如何观察：为可塑的未来而教育"
         subtitle: "How to Observe: Educating for a Malleable Future"
         version: "beta"
+      - slug: "intimate-resonance"
+        title: "亲密共振：爱、关系与共同实在"
+        subtitle: "Intimate Resonance: Love, Relationships, and Shared Reality"
+        version: "alpha"
+      - slug: "creation-from-nothing"
+        title: "无中生有：美、艺术与创新"
+        subtitle: "Creation from Nothing: Beauty, Art, and Innovation"
+        version: "alpha"
 
 # 部分标题配置
 part_titles:
