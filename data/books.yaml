@@ -3,7 +3,7 @@
 
 collection:
   - volume: "第1卷"
-    description: ""
+    # description: "从最抽象的宇宙本体论出发，回答“世界是什么？”。这个阶段完成了从公理 → 过程 → 普及 → 精神 → 科学的逻辑闭环，为理论建立了无懈可击的合法性基础。"
     books:
       - slug: "reality-construction"
         title: "实在建构：从无限可能到有限确定"
@@ -27,7 +27,7 @@ collection:
         version: "alpha"
 
   - volume: "第2卷"
-    description: ""
+    # description: "转向人类自身，回答“我们如何建构世界？”。它系统地解剖了人类建构现实的核心工具，从语言 → 历史 → 身体 → 理性 → AI，覆盖了从古老到未来、从显性到隐性的所有认知媒介。"
     books:
       - slug: "the-breath-of-words"
         title: "词语的呼吸：语言如何塑造我们"
@@ -51,7 +51,7 @@ collection:
         version: "alpha"
 
   - volume: "第3卷"
-    description: ""
+    # description: "将理论的矛头指向社会，回答“世界为何如此不公？”。这是体系最锋利、最具现实关怀的部分。它以原创的“评估异化”为核心武器，层层深入，从当代控制 → 国际博弈 → 社会信任 → 国家暴力 → 经济基础，完成了一次对现代权力结构的全方位、穿透性的解剖。"
     books:
       - slug: "the-multiverse-of-worlds"
         title: "世界的多重宇宙：主权国家作为实在建构者"
@@ -75,7 +75,7 @@ collection:
         version: "alpha"
 
   - volume: "第4卷"
-    description: ""
+    # description: "最终将所有思辨的价值落回个体，回答“我们该怎么办？”。这个阶段将整套哲学转化为可操作的智慧，指引我们从生存策略 → 教育未来 → 内在疗愈 → 亲密关系 → 终极创造，完成了一个从“认识世界”到“改造世界”，从“自我实现”到“共同创造”的升华。"
     books:
       - slug: "the-minds-horizon"
         title: "心念视界：内在游戏"
