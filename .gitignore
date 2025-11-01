@@ -3,3 +3,5 @@
 # Ignore Word documents in archive/anthology and archive/选集, only track PDFs
 archive/anthology/**
 archive/选集/**
+
+.env
