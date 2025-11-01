@@ -40,9 +40,9 @@
 ### 本地开发
 
 ```bash
-# 启动本地开发服务器 (实时刷新，包含草稿)
+# 启动本地开发服务器 (实时刷新)
 # 访问: http://localhost:1313
-hugo server -D -E -F --watch
+hugo server -E -F --watch
 ```
 
 ### 站点构建

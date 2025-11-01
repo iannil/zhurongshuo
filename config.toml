@@ -10,6 +10,8 @@ enableEmoji = true
 googleAnalytics = ""
 disqusShortname = ""
 
+ignoreFiles = ["content/kachuai/.*", "content/yiguan/.*"]
+
 pygmentsUseClasses = true
 pygmentCodeFences = true
 pygmentscodefencesguesssyntax = true
