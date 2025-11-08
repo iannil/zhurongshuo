@@ -51,6 +51,12 @@
                     color: #3273dc;
                 }
 
+                .books-index-list .book-version {
+                    color: #95a5a6;
+                    font-size: 0.9rem;
+                    font-weight: normal;
+                }
+
                 .books-index-list .book-word-count {
                     color: #7f8c8d;
                     font-size: 0.9rem;
@@ -145,6 +151,20 @@
                 .books-index-list .book-title-en.disabled {
                     color: #d5d8da;
                 }
+
+                .books-index-list .book-version.disabled {
+                    color: #d5d8da;
+                }
+
+                /* Volume description styles */
+                .books-index-list .volume-description {
+                    color: #7f8c8d;
+                    font-size: 0.85rem;
+                    line-height: 1.6;
+                    margin-top: 8px;
+                    margin-bottom: 15px;
+                    padding-left: 0;
+                }
                 </style>
 
                 {{ $allBooksBySlug := dict }}
@@ -155,47 +175,24 @@
                     {{ end }}
                 {{ end }}
 
-                {{ $bookCollection := slice
-                    (dict "volume" "第1卷" "books" (slice
-                        (dict "slug" "reality-construction" "title" "实在建构：从无限可能到有限确定 (beta)" "subtitle" "Reality Construction: From Infinite Possibility to Finite Certainty")
-                        (dict "slug" "the-observers" "title" "观察者们：共同创造的现实 (alpha)" "subtitle" "Observers: The Co-Created Reality")
-                        (dict "slug" "god-beyond-observation" "title" "神在观察之外：一种不确定的神学 (alpha)" "subtitle" "God Beyond Observation: A Theology of Uncertainty")
-                    ))
-                    (dict "volume" "第2卷" "books" (slice
-                        (dict "slug" "the-breath-of-words" "title" "词语的呼吸：语言如何塑造我们 (beta)" "subtitle" "The Breath of Words: How Language Shapes Us")
-                        (dict "slug" "the-silent-construction" "title" "沉默的建构：身体、空间与情感 (alpha)" "subtitle" "The Silent Construction: Body, Space, and Emotion")
-                        (dict "slug" "revisiting-history" "title" "再叙历史：作为观念生态演化的文明 (alpha)" "subtitle" "Revisiting History: Civilization as the Evolution of Conceptual Ecology")
-                    ))
-                    (dict "volume" "第3卷" "books" (slice
-                        (dict "slug" "the-fetters-of-evaluation" "title" "评估的枷锁：数字时代的权力与控制 (beta)" "subtitle" "The Fetters of Evaluation: Power and Control in the Digital Age")
-                        (dict "slug" "the-violent-consensus" "title" "暴力的共识：国家、革命与秩序的边界 (alpha)" "subtitle" "The Violent Consensus: Boundaries of State, Revolution, and Order")
-                        (dict "slug" "the-multiverse-of-worlds" "title" "世界的多重宇宙：主权国家作为实在建构者 (alpha)" "subtitle" "The Multiverse of Worlds: Sovereign States as Reality Constructors")
-                        (dict "slug" "the-foundation-of-trust" "title" "信任的基底：从血缘到算法 (alpha)" "subtitle" "The Foundation of Trust: From Blood Ties to Algorithms")
-                        (dict "slug" "rethinking-value" "title" "价值再观察：一种后资本主义经济学构想 (alpha)" "subtitle" "Rethinking Value: A Post-Capitalist Economic Vision")
-                    ))
-                    (dict "volume" "第4卷" "books" (slice
-                        (dict "slug" "the-optionality-advantage" "title" "选择权优势：在不确定世界中的可持续决策 (beta)" "subtitle" "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World")
-                        (dict "slug" "how-to-observe" "title" "如何观察：为可塑的未来而教育 (alpha)" "subtitle" "How to Observe: Educating for a Malleable Future")
-                        (dict "slug" "the-minds-horizon" "title" "心念视界：内在游戏 (alpha)" "subtitle" "The Mind's Horizon: The Inner Game")
-                    ))
-                }}
+                {{ $booksData := .Site.Data.books }}
+                {{ $bookCollection := $booksData.collection }}
 
                 {{ range $volumeData := $bookCollection }}
                 <div class="listing">
                     <div class="listing_title">{{ $volumeData.volume }}</div>
+                    {{ if $volumeData.description }}
+                    <div class="volume-description">{{ $volumeData.description }}</div>
+                    {{ end }}
 
                     {{ range $book := $volumeData.books }}
                         {{ $bookPage := index $allBooksBySlug $book.slug }}
                         {{ $exists := ne $bookPage nil }}
 
-                        {{/* Extract version from title (alpha/beta/rc) */}}
-                        {{ $version := "" }}
-                        {{ if findRE "\\(alpha\\)" $book.title }}
+                        {{/* Get version from YAML data */}}
+                        {{ $version := $book.version }}
+                        {{ if not $version }}
                             {{ $version = "alpha" }}
-                        {{ else if findRE "\\(beta\\)" $book.title }}
-                            {{ $version = "beta" }}
-                        {{ else if findRE "\\(rc\\)" $book.title }}
-                            {{ $version = "rc" }}
                         {{ end }}
 
                         {{/* Determine if book should be clickable: exists AND (beta OR rc) */}}
@@ -214,6 +211,7 @@
                                     <div class="book-row">
                                         <div class="book-title-cn">
                                             <a href="{{ $bookPage.RelPermalink }}">{{ $book.title }}</a>
+                                            <span class="book-version">{{ $version }}</span>
                                         </div>
                                         <div class="book-word-count pc-only">约 {{ lang.FormatNumberCustom 1 (div $totalWords 10000.0) }} 万字</div>
                                     </div>
@@ -253,6 +251,7 @@
                                         <div class="book-row">
                                             <div class="book-title-cn disabled">
                                                 <a href="{{ $bookPage.RelPermalink }}">{{ $book.title }}</a>
+                                                <span class="book-version disabled">{{ $version }}</span>
                                             </div>
                                             <div class="book-word-count pc-only">约 {{ lang.FormatNumberCustom 1 (div $totalWords 10000.0) }} 万字</div>
                                         </div>
@@ -282,7 +281,10 @@
                                     <div class="book-info">
                                         <!-- PC端：第一行显示中文名（无字数） -->
                                         <div class="book-row">
-                                            <div class="book-title-cn disabled">{{ $book.title }}</div>
+                                            <div class="book-title-cn disabled">
+                                                {{ $book.title }}
+                                                <span class="book-version disabled">{{ $version }}</span>
+                                            </div>
                                         </div>
 
                                         <!-- PC端：第二行显示英文名（如果有） -->

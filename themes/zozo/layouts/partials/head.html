@@ -8,26 +8,77 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="author"
         content="{{ if .Params.author }}{{ .Params.author | safeHTML }}{{ else }}{{ .Site.Params.Author.name | safeHTML }}{{ end }}" />
+
+    <!-- DNS Prefetch & Preconnect for Performance -->
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="dns-prefetch" href="//www.googletagmanager.com">
+    <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="{{ .Permalink }}" />
     {{ $title := ( .Title ) }}
     {{ $siteTitle := ( .Site.Title ) }}
     {{ if .IsHome }}
     <title>{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }} {{ .Site.Params.Subtitle }}{{ end }}</title>
-    <meta content='{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }} {{ .Site.Params.Subtitle }}{{ end }}' property="og:title">
     {{ else }}
     <title>{{ $siteTitle }} {{ $title }}</title>
-    <meta content="{{ $siteTitle }} {{ $title }}" property="og:title">
+    {{ end }}
+
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="{{ if .IsHome }}{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }}{{ .Site.Params.Subtitle }}{{ end }}{{ else }}{{ $title }}{{ end }}" />
+    <meta property="og:url" content="{{ .Permalink }}" />
+    <meta property="og:site_name" content="{{ .Site.Title }}" />
+    <meta property="og:locale" content="zh_CN" />
+    {{ if .IsPage }}
+    <meta property="og:type" content="article" />
+    <meta property="article:published_time" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}" />
+    <meta property="article:modified_time" content="{{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" }}" />
+    {{ if .Params.author }}
+    <meta property="article:author" content="{{ .Params.author }}" />
+    {{ end }}
+    {{ with .Params.tags }}
+    {{ range first 5 . }}
+    <meta property="article:tag" content="{{ . }}" />
+    {{ end }}
+    {{ end }}
+    {{ else }}
+    <meta property="og:type" content="website" />
     {{ end }}
 
     <!-- description & keywords -->
     {{ if .Description }}
     <meta name="description" content="{{ .Description | safeHTML }}" />
-    <meta content="{{ .Description | safeHTML }}" property="og:description">
+    <meta property="og:description" content="{{ .Description | safeHTML }}" />
     {{ else if .IsPage }}
     <meta name="description" content="{{ .Summary | plainify }}" />
-    <meta content="{{ .Summary | plainify }}" property="og:description">
+    <meta property="og:description" content="{{ .Summary | plainify }}" />
     {{ else if .Site.Params.description }}
     <meta name="description" content="{{ .Site.Params.description | safeHTML }}" />
-    <meta content="{{ .Site.Params.description | safeHTML }}" property="og:description">
+    <meta property="og:description" content="{{ .Site.Params.description | safeHTML }}" />
+    {{ end }}
+
+    <!-- Open Graph Image -->
+    {{ if .Params.image }}
+    <meta property="og:image" content="{{ .Params.image | absURL }}" />
+    {{ else }}
+    <meta property="og:image" content="{{ "images/favicon.ico" | absURL }}" />
+    {{ end }}
+
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="{{ if .IsHome }}{{ $siteTitle }} {{ if isset .Site.Params "subtitle" }}{{ .Site.Params.Subtitle }}{{ end }}{{ else }}{{ $title }}{{ end }}" />
+    {{ if .Description }}
+    <meta name="twitter:description" content="{{ .Description | safeHTML }}" />
+    {{ else if .IsPage }}
+    <meta name="twitter:description" content="{{ .Summary | plainify }}" />
+    {{ else if .Site.Params.description }}
+    <meta name="twitter:description" content="{{ .Site.Params.description | safeHTML }}" />
+    {{ end }}
+    {{ if .Params.image }}
+    <meta name="twitter:image" content="{{ .Params.image | absURL }}" />
+    {{ else }}
+    <meta name="twitter:image" content="{{ "images/favicon.ico" | absURL }}" />
     {{ end }}
 
     {{ if .Keywords }}
@@ -66,4 +117,7 @@
     {{ range .Site.Params.customCSS }}
     <link rel="stylesheet" href="{{ " css/" | absURL }}{{ . }}" />
     {{ end }}
+
+    <!-- Structured Data (Schema.org) -->
+    {{ partial "schema.html" . }}
 </head>

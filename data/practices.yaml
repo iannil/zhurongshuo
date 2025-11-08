@@ -1,0 +1,31 @@
+collection:
+  - volume: "算力"
+    # description: ""
+    practices:
+      - slug: "enterprise-ai-computing-platform"
+        title: "企业级人工智能算力平台：构建、运营与生态"
+        subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
+        version: "beta"
+      # - slug: "practice-2"
+      #   title: "修行示例2"
+      #   subtitle: "Practice Example 2"
+      #   version: "alpha"
+
+  # - volume: "第2卷"
+  #   # description: ""
+  #   practices:
+  #     - slug: "practice-3"
+  #       title: "修行示例3"
+  #       subtitle: "Practice Example 3"
+  #       version: "alpha"
+
+# 部分标题配置
+part_titles:
+  enterprise-ai-computing-platform:
+    part-01: "第一篇：顶层设计与战略布局"
+    part-02: "第二篇：算力资源全生命周期管理"
+    part-03: "第三篇：核心技术支撑与服务保障"
+
+  # practice-2:
+  #   part-01: "第一部分 准备"
+  #   part-02: "第二部分 实践"

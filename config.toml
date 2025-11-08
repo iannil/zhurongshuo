@@ -7,8 +7,13 @@ theme = "zozo"
 hasCJKLanguage = true
 summaryLength = 120
 enableEmoji = true
-googleAnalytics = ""
 disqusShortname = ""
+
+# SEO Optimization
+enableRobotsTXT = true
+canonifyURLs = true
+
+ignoreFiles = ["content/kachuai/.*", "content/yiguan/.*"]
 
 pygmentsUseClasses = true
 pygmentCodeFences = true
@@ -19,9 +24,6 @@ pygmentscodefencesguesssyntax = true
 
 [author]
   name = "祝融"
-
-[blackfriday]
-  smartypants = false
 
 [[menu.main]]
   name = "首页"
@@ -34,7 +36,7 @@ pygmentscodefencesguesssyntax = true
   identifier = "start"
   url = "/start/"
 [[menu.main]]
-  name = "进阶"
+  name = "进阶rc"
   weight = 25
   identifier = "advanced"
   url = "/advanced/"
@@ -63,6 +65,7 @@ pygmentscodefencesguesssyntax = true
   enableMathJax = true
   enableSummary = true
   mainSections = ["posts", "post"]
+  googleAnalytics = "G-KKJ5ZEG1NB"
 
 [params.author]
   name = "祝融"
@@ -81,13 +84,38 @@ pygmentscodefencesguesssyntax = true
 [params.social]
   game = "/about/"
   book-open = "/books/"
+  trophy = "/practices/"
 
 [markup]
 [markup.goldmark]
 [markup.goldmark.renderer]
   unsafe = true
+[markup.goldmark.extensions.typographer]
+  disable = true
 
 [sitemap]
   changefreq = ""
   filename = "sitemap.xml"
   priority = -1
+
+# Performance Optimization - Minify Output
+[minify]
+  disableHTML = false
+  disableCSS = false
+  disableJS = false
+  disableJSON = false
+  disableSVG = false
+  disableXML = false
+  minifyOutput = true
+  [minify.tdewolff]
+    [minify.tdewolff.html]
+      keepWhitespace = false
+    [minify.tdewolff.css]
+      precision = 0
+    [minify.tdewolff.js]
+      precision = 0
+
+# Image Processing
+[imaging]
+  quality = 85
+  resampleFilter = "lanczos"

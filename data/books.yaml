@@ -1,0 +1,183 @@
+# 书籍集合数据
+# 用于 layouts/books/list.html 和 layouts/book/list.html
+
+collection:
+  - volume: "第1卷"
+    # description: "世界是什么？"
+    books:
+      - slug: "reality-construction"
+        title: "实在建构：从无限可能到有限确定"
+        subtitle: "Reality Construction: From Infinite Possibility to Finite Certainty"
+        version: "rc"
+      - slug: "advancement-of-reality"
+        title: "实在进阶：观察、收敛与动态生成"
+        subtitle: "The Advancement of Reality: Observation, Convergence, and Dynamic Becoming"
+        version: "rc"
+      - slug: "the-observers"
+        title: "观察者们：共同创造的现实"
+        subtitle: "Observers: The Co-Created Reality"
+        version: "rc"
+      - slug: "god-beyond-observation"
+        title: "神在观察之外：一种不确定的神学"
+        subtitle: "God Beyond Observation: A Theology of Uncertainty"
+        version: "rc"
+      - slug: "a-unified-view"
+        title: "万物一观：从粒子到星系的演化阶梯"
+        subtitle: "A Unified View: The Evolutionary Ladder from Particles to Galaxies"
+        version: "alpha"
+
+  - volume: "第2卷"
+    # description: "我们如何认识世界？"
+    books:
+      - slug: "the-breath-of-words"
+        title: "词语的呼吸：语言如何塑造我们"
+        subtitle: "The Breath of Words: How Language Shapes Us"
+        version: "rc"
+      - slug: "the-silent-construction"
+        title: "沉默的建构：身体、空间与情感"
+        subtitle: "The Silent Construction: Body, Space, and Emotion"
+        version: "rc"
+      - slug: "revisiting-history"
+        title: "再叙历史：作为观念生态演化的文明"
+        subtitle: "Revisiting History: Civilization as the Evolution of Conceptual Ecology"
+        version: "rc"
+      - slug: "convergent-rationality"
+        title: "收敛的理性：科学、数学与逻辑"
+        subtitle: "Convergent Rationality: Science, Mathematics, and Logic"
+        version: "alpha"
+      - slug: "alternative-observation"
+        title: "另类观察：机器的回视"
+        subtitle: "Alternative Observation: The Machine's Gaze"
+        version: "alpha"
+
+  - volume: "第3卷"
+    # description: "我们该如何共处？"
+    books:
+      - slug: "the-multiple-realities-of-the-world"
+        title: "世界的多重实在：主权国家作为建构者"
+        subtitle: "The Multiple Realities of the World: Sovereign States as Constructors"
+        version: "rc"
+      - slug: "the-fetters-of-evaluation"
+        title: "评估的枷锁：隐形的权力与控制"
+        subtitle: "The Fetters of Evaluation: Invisible Power and Control"
+        version: "rc"
+      - slug: "the-violent-consensus"
+        title: "暴力的共识：国家、革命与秩序的边界"
+        subtitle: "The Violent Consensus: Boundaries of State, Revolution, and Order"
+        version: "rc"
+      - slug: "the-foundation-of-trust"
+        title: "信任的基底：从血缘到算法"
+        subtitle: "The Foundation of Trust: From Blood Ties to Algorithms"
+        version: "rc"
+      - slug: "the-gravity-of-capital"
+        title: "资本的引力：货币与人类"
+        subtitle: "The Gravity of Capital: Currency and Humanity"
+        version: "alpha"
+
+  - volume: "第4卷"
+    # description: "我们该如何行动？"
+    books:
+      - slug: "the-minds-horizon"
+        title: "心念视界：内在游戏"
+        subtitle: "The Mind's Horizon: The Inner Game"
+        version: "rc"
+      - slug: "the-optionality-advantage"
+        title: "选择权优势：在不确定世界中的可持续决策"
+        subtitle: "The Optionality Advantage: Sustainable Decision-Making in an Uncertain World"
+        version: "rc"
+      - slug: "how-to-observe"
+        title: "如何观察：为可塑的未来而教育"
+        subtitle: "How to Observe: Educating for a Malleable Future"
+        version: "rc"
+      - slug: "intimate-resonance"
+        title: "亲密共振：爱、关系与共同实在"
+        subtitle: "Intimate Resonance: Love, Relationships, and Shared Reality"
+        version: "alpha"
+      - slug: "creation-from-nothing"
+        title: "无中生有：美、艺术与创新"
+        subtitle: "Creation from Nothing: Beauty, Art, and Innovation"
+        version: "alpha"
+
+# 部分标题配置
+part_titles:
+  reality-construction:
+    part-01: "第一部 存在——世界的本来"
+    part-02: "第二部 认知——建构的工具"
+    part-03: "第三部 秩序——全体的契约"
+    part-04: "第四部 实践——重返无限"
+
+  the-observers:
+    part-01: "第一部分 世界是一个选项，而非一个事实"
+    part-02: "第二部分 我们共同搭建的世界"
+    part-03: "第三部分 成为一名有意识的观察者"
+
+  the-silent-construction:
+    part-01: "第一部分 身体——观察的第一界面"
+    part-02: "第二部分 空间——固化的观察引导系统"
+    part-03: "第三部分 情感——弥散性的观察场"
+    part-04: "第四部分 仪式——意义的锚定与观察的固化"
+
+  revisiting-history:
+    part-01: "第一部分 理论基石——观念生态与文明演化"
+    part-02: "第二部分 演化动力——推动观念生态变迁的核心机制"
+    part-03: "第三部分 历史视界——观念生态的若干关键跃迁"
+    part-04: "第四部分 当下回响——理解我们时代的观念生态"
+
+  the-fetters-of-evaluation:
+    part-01: "第一部 理论基础——评估权力的谱系学"
+    part-02: "第二部 经验场域——数字技术下的评估异化"
+    part-03: "第三部 抵抗与未来——夺回评估权的可能性"
+
+  the-violent-consensus:
+    part-01: "第一部分 理论基石——暴力的本体论"
+    part-02: "第二部分 国家，终极观察者"
+    part-03: "第三部分 革命，暴力的再观察"
+    part-04: "第四部分 暴力的现代演化"
+
+  the-foundation-of-trust:
+    part-01: "第一部分 理论基石——信任的形而上学"
+    part-02: "第二部分 血缘的纽带——最古老的信任网络"
+    part-03: "第三部分 制度的承诺——从个人信任到系统信任"
+    part-04: "第四部分 数字的契约——算法时代的信任重构"
+    part-05: "第五部分 未来的信任——在不确定性中建立韧性"
+
+  the-optionality-advantage:
+    part-01: "第一部 思维重构——从静态最优到动态可持续"
+    part-02: "第二部 组织变革——赋能个体，激活系统"
+    part-03: "第三部 实践应用——跨领域的选择权策略"
+
+  how-to-observe:
+    part-01: "第一部分 \"标准答案\"的终结——为什么在AI时代，知识的保质期越来越短"
+    part-02: "第二部分 教育的根本任务——不是装满一桶水，而是点燃一把火"
+    part-03: "第三部分 培养\"观察者\"——为孩子准备应对任何未来的终极能力"
+    part-04: "第四部分 从理论到实践——构建以\"观察\"为核心的教育生态"
+
+  the-minds-horizon:
+    part-01: "第一部分 心智的原理——作为观察系统的\"我\""
+    part-02: "第二部分 视界的囚笼——心理困扰的根源"
+    part-03: "第三部分 疗愈的艺术——成为一名灵活的观察者"
+    part-04: "第四部分 视界的无限——通往内在自由的整合之路"
+
+  the-breath-of-words:
+    part-01: "第一部分 词语的创世——语言作为实在的收敛工具"
+    part-02: "第二部分 共识的基石与裂痕——语言在公共领域的运作"
+    part-03: "第三部分 权力的游戏——语言作为控制与规训的工具"
+    part-04: "第四部分 语言的解放——成为一个有意识的使用者"
+
+  god-beyond-observation:
+    part-01: "第一部分 从观察中诞生"
+    part-02: "第二部分 不确定的神"
+    part-03: "第三部分 连接之路"
+    part-04: "第四部分 千指一月"
+
+  the-multiverse-of-worlds:
+    part-01: "第一部分 从\"可能性基底\"到国际政治"
+    part-02: "第二部分 国家作为\"共识边界\"的形成"
+    part-03: "第三部分 多重宇宙的碰撞——不同实在版本的互动动力学"
+    part-04: "第四部分 当代挑战——全球化时代的实在摩擦"
+    part-05: "第五部分 走向共存——构建\"世界多重宇宙\"的秩序"
+
+  advancement-of-reality:
+    part-01: "第一部分 本体论——可能性与动态存在"
+    part-02: "第二部分 认识论与秩序论——共识与权力的演化"
+    part-03: "第三部分 实践论——可能的实现"

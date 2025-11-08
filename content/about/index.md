@@ -1,6 +1,7 @@
 ---
 title: "关于"
 date: 2020-07-09T12:35:28+08:00
+description: "一书一戏一块钱，一觉睡来一更天。一睁一闭一杯酒，不知醒时是何年。 你好，我是祝融。 很高兴遇见你，祝你玩的开心。 版权 本站的所有文章都是原创（特别注明的除外），我对此保留全部权利。任何形式的非商业用途转载（包括但不限于纸质/网站等）都无需征求同意，但必须完整保留原文全部内容，并附上原文 URL 链..."
 hidden: true
 draft: false
 ---
@@ -19,5 +20,5 @@ draft: false
 
 - 微信个人号：iannil
 - 微信公众号：祝融说
-- 邮箱：hi@zhurongshuo.com
+- 邮箱：<hi@zhurongshuo.com>
 <!-- - 比特币：bc1quqyadpd4fmtkwemz90wwcg38fpkekv650w9wpq -->
