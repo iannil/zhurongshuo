@@ -1,5 +1,5 @@
 collection:
-  - volume: "平台"
+  - volume: "平台与基础"
     # description: ""
     practices:
       - slug: "enterprise-ai-computing-platform"
@@ -7,7 +7,7 @@ collection:
         subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
         version: "beta"
 
-  - volume: "战略"
+  - volume: "商业战略"
     # description: ""
     practices:
       - slug: "growth-blueprint"
@@ -15,7 +15,7 @@ collection:
         subtitle: "Growth Blueprint: The Second Half of Low-Code-Driven Digital Transformation"
         version: "alpha"
 
-  - volume: "文化"
+  - volume: "组织与文化"
     # description: ""
     practices:
       - slug: "fundamentals-of-remote-work"
@@ -23,7 +23,7 @@ collection:
         subtitle: "Fundamentals of Remote Work: Building a Culture of High Autonomy, High Trust, and High-Quality Delivery"
         version: "beta"
 
-  - volume: "执行"
+  - volume: "构建执行"
     # description: ""
     practices:
       - slug: "conversation-as-a-platform"
@@ -31,7 +31,7 @@ collection:
         subtitle: "Conversation as a Platform: Building Natural Language-Based E-Mail SaaS"
         version: "beta"
 
-  - volume: "产品"
+  - volume: "产品设计"
     # description: ""
     practices:
       - slug: "prudent-production"
