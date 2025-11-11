@@ -1,6 +1,6 @@
 ---
 title: 前言：当你的收件箱成为你的首席执行官
-date: 2025-11-07T00:00:00+08:00
+date: 2025-10-30T00:00:00+08:00
 description: ""
 draft: false
 hidden: false
