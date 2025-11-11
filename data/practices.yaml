@@ -1,23 +1,43 @@
 collection:
-  - volume: "算力"
+  - volume: "平台"
     # description: ""
     practices:
       - slug: "enterprise-ai-computing-platform"
         title: "企业级人工智能算力平台：构建、运营与生态"
         subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
         version: "beta"
-      # - slug: "practice-2"
-      #   title: "修行示例2"
-      #   subtitle: "Practice Example 2"
-      #   version: "alpha"
 
-  # - volume: "第2卷"
-  #   # description: ""
-  #   practices:
-  #     - slug: "practice-3"
-  #       title: "修行示例3"
-  #       subtitle: "Practice Example 3"
-  #       version: "alpha"
+  - volume: "战略"
+    # description: ""
+    practices:
+      - slug: "growth-blueprint"
+        title: "增长蓝图：低代码驱动的数字化转型下半场"
+        subtitle: "Growth Blueprint: The Second Half of Low-Code-Driven Digital Transformation"
+        version: "alpha"
+
+  - volume: "文化"
+    # description: ""
+    practices:
+      - slug: "fundamentals-of-remote-work"
+        title: "远程的基本：构建高自主、高信任、高质量的交付文化"
+        subtitle: "Fundamentals of Remote Work: Building a Culture of High Autonomy, High Trust, and High-Quality Delivery"
+        version: "beta"
+
+  - volume: "执行"
+    # description: ""
+    practices:
+      - slug: "conversation-as-a-platform"
+        title: "对话即平台：构建基于自然语言的 E-Mail SaaS"
+        subtitle: "Conversation as a Platform: Building Natural Language-Based E-Mail SaaS"
+        version: "alpha"
+
+  - volume: "产品"
+    # description: ""
+    practices:
+      - slug: "prudent-production"
+        title: "审慎生产：写给工程师的务实项目管理法"
+        subtitle: "Prudent Production: Pragmatic Project Management for Engineers"
+        version: "alpha"
 
 # 部分标题配置
 part_titles:
@@ -25,7 +45,10 @@ part_titles:
     part-01: "第一篇：顶层设计与战略布局"
     part-02: "第二篇：算力资源全生命周期管理"
     part-03: "第三篇：核心技术支撑与服务保障"
+    part-04: "第四篇：价值实现与生态拓展"
 
-  # practice-2:
-  #   part-01: "第一部分 准备"
-  #   part-02: "第二部分 实践"
+  fundamentals-of-remote-work:
+    part-01: "第一篇：通信的基本"
+    part-02: "第二篇：文化的基本"
+    part-03: "第三篇：交付的基本"
+    part-04: "第四篇：信任的基本"
