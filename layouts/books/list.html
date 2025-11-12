@@ -205,6 +205,12 @@
                                 {{ $totalWords = add $totalWords .WordCount }}
                             {{ end }}
 
+                            {{/* Get date: prefer last_updated from YAML, fallback to Lastmod */}}
+                            {{ $displayDate := $bookPage.Lastmod }}
+                            {{ if $book.last_updated }}
+                                {{ $displayDate = time $book.last_updated }}
+                            {{ end }}
+
                             <div class="listing_item">
                                 <div class="book-info">
                                     <!-- PC端：第一行显示中文名和字数 -->
@@ -222,7 +228,7 @@
                                         <div class="book-title-en">{{ $book.subtitle }}</div>
                                         {{ end }}
                                         <div class="book-date pc-only">
-                                            <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                            <span class="date">{{ $displayDate.Format "2006-01-02" }}</span>
                                         </div>
                                     </div>
 
@@ -230,7 +236,7 @@
                                     <div class="book-meta-row mobile-only">
                                         <div class="book-word-count">约 {{ lang.FormatNumberCustom 1 (div $totalWords 10000.0) }} 万字</div>
                                         <div class="book-date">
-                                            <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                            <span class="date">{{ $displayDate.Format "2006-01-02" }}</span>
                                         </div>
                                     </div>
                                 </div>
@@ -243,6 +249,12 @@
                                 {{ $allPages := $bookPage.RegularPagesRecursive }}
                                 {{ range $allPages }}
                                     {{ $totalWords = add $totalWords .WordCount }}
+                                {{ end }}
+
+                                {{/* Get date: prefer last_updated from YAML, fallback to Lastmod */}}
+                                {{ $displayDate := $bookPage.Lastmod }}
+                                {{ if $book.last_updated }}
+                                    {{ $displayDate = time $book.last_updated }}
                                 {{ end }}
 
                                 <div class="listing_item">
@@ -262,7 +274,7 @@
                                             <div class="book-title-en disabled">{{ $book.subtitle }}</div>
                                             {{ end }}
                                             <div class="book-date pc-only">
-                                                <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                                <span class="date">{{ $displayDate.Format "2006-01-02" }}</span>
                                             </div>
                                         </div>
 
@@ -270,7 +282,7 @@
                                         <div class="book-meta-row mobile-only">
                                             <div class="book-word-count">约 {{ lang.FormatNumberCustom 1 (div $totalWords 10000.0) }} 万字</div>
                                             <div class="book-date">
-                                                <span class="date">{{ $bookPage.Lastmod.Format "2006-01-02" }}</span>
+                                                <span class="date">{{ $displayDate.Format "2006-01-02" }}</span>
                                             </div>
                                         </div>
                                     </div>

@@ -16,14 +16,6 @@
                 .book-list .listing.compact {margin-bottom:20px;}
                 .book-list .listing.compact:last-child {margin-bottom:0;}
                 </style>
-                {{ define "book_list_item" }}
-                <div class="listing_item">
-                    <div class="listing_post">
-                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
-                        <div class="post_time"><span class="date">{{ .Date.Format "01-02" }}</span></div>
-                    </div>
-                </div>
-                {{ end }}
                 {{ $bookSlug := path.Base .File.Dir }}
                 {{ $bookDir := .File.Dir }}
 
@@ -35,6 +27,16 @@
                             {{ $bookInfo = . }}
                         {{ end }}
                     {{ end }}
+                {{ end }}
+
+                {{ define "book_list_item" }}
+                <div class="listing_item">
+                    <div class="listing_post">
+                        <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                        {{/* Use page Date directly - the parent template will handle date logic */}}
+                        <div class="post_time"><span class="date">{{ .Date.Format "01-02" }}</span></div>
+                    </div>
+                </div>
                 {{ end }}
 
                 {{ if $bookInfo.title }}

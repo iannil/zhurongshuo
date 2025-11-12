@@ -6,6 +6,7 @@ collection:
         title: "企业级人工智能算力平台：构建、运营与生态"
         subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
         version: "beta"
+        last_updated: "2025-11-06T00:00:00+08:00"
 
   - volume: "商业战略"
     # description: ""
@@ -14,6 +15,7 @@ collection:
         title: "增长蓝图：低代码驱动的数字化转型下半场"
         subtitle: "Growth Blueprint: The Second Half of Low-Code-Driven Digital Transformation"
         version: "alpha"
+        last_updated: "2025-11-11T00:00:00+08:00"
 
   - volume: "组织文化"
     # description: ""
@@ -22,6 +24,7 @@ collection:
         title: "远程的基本：构建高自主、高信任、高质量的交付文化"
         subtitle: "Fundamentals of Remote Work: Building a Culture of High Autonomy, High Trust, and High-Quality Delivery"
         version: "rc"
+        last_updated: "2025-11-12T00:00:00+08:00"
 
   - volume: "产品设计"
     # description: ""
@@ -30,6 +33,7 @@ collection:
         title: "审慎生产：写给工程师的务实项目管理法"
         subtitle: "Prudent Production: Pragmatic Project Management for Engineers"
         version: "alpha"
+        last_updated: "2025-11-11T00:00:00+08:00"
 
   - volume: "构建执行"
     # description: ""
@@ -38,6 +42,7 @@ collection:
         title: "对话即平台：构建基于自然语言的 E-Mail SaaS"
         subtitle: "Conversation as a Platform: Building Natural Language-Based E-Mail SaaS"
         version: "beta"
+        last_updated: "2025-10-30T00:00:00+08:00"
 
 # 部分标题配置
 part_titles:
