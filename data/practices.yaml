@@ -21,7 +21,7 @@ collection:
       - slug: "fundamentals-of-remote-work"
         title: "远程的基本：构建高自主、高信任、高质量的交付文化"
         subtitle: "Fundamentals of Remote Work: Building a Culture of High Autonomy, High Trust, and High-Quality Delivery"
-        version: "beta"
+        version: "rc"
 
   - volume: "产品设计"
     # description: ""
