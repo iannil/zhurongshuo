@@ -29,20 +29,20 @@ collection:
   - volume: "产品设计"
     # description: ""
     practices:
-      - slug: "prudent-production"
-        title: "审慎生产：写给工程师的务实项目管理法"
-        subtitle: "Prudent Production: Pragmatic Project Management for Engineers"
-        version: "alpha"
-        last_updated: "2025-11-11"
-
-  - volume: "构建执行"
-    # description: ""
-    practices:
       - slug: "conversation-as-a-platform"
         title: "对话即平台：构建基于自然语言的 E-Mail SaaS"
         subtitle: "Conversation as a Platform: Building Natural Language-Based E-Mail SaaS"
         version: "beta"
         last_updated: "2025-10-30"
+
+  - volume: "项目执行"
+    # description: ""
+    practices:
+      - slug: "prudent-production"
+        title: "审慎生产：写给工程师的务实项目管理法"
+        subtitle: "Prudent Production: Pragmatic Project Management for Engineers"
+        version: "alpha"
+        last_updated: "2025-11-11"
 
 # 部分标题配置
 part_titles:
