@@ -35,7 +35,7 @@ collection:
         version: "beta"
         last_updated: "2025-10-30"
 
-  - volume: "项目执行"
+  - volume: "工程技术"
     # description: ""
     practices:
       - slug: "prudent-production"
