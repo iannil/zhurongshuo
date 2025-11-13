@@ -1,6 +1,6 @@
 ---
 title: 开图：情报与决策推演
-date: 2025-11-11T00:00:00+08:00
+date: 2025-11-13T00:00:00+08:00
 draft: false
 hidden: false
 tags: ["书稿"]
