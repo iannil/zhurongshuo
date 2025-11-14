@@ -1,5 +1,5 @@
 collection:
-  - volume: "平台基础"
+  - volume: "平台篇"
     # description: ""
     practices:
       - slug: "enterprise-ai-computing-platform"
@@ -8,7 +8,7 @@ collection:
         version: "beta"
         last_updated: "2025-11-06"
 
-  - volume: "商业战略"
+  - volume: "战略篇"
     # description: ""
     practices:
       - slug: "open-map"
@@ -22,7 +22,7 @@ collection:
         version: "alpha"
         last_updated: "2025-11-11"
 
-  - volume: "组织文化"
+  - volume: "文化篇"
     # description: ""
     practices:
       - slug: "fundamentals-of-remote-work"
@@ -31,21 +31,21 @@ collection:
         version: "rc"
         last_updated: "2025-11-12"
 
-  - volume: "产品设计"
+  - volume: "产品篇"
     # description: ""
     practices:
-      - slug: "conversation-as-a-platform"
-        title: "对话即平台：构建基于自然语言的 E-Mail SaaS"
-        subtitle: "Conversation as a Platform: Building Natural Language-Based E-Mail SaaS"
-        version: "beta"
-        last_updated: "2025-10-30"
+      # - slug: "conversation-as-a-platform"
+      #   title: "对话即平台：构建基于自然语言的 E-Mail SaaS"
+      #   subtitle: "Conversation as a Platform: Building Natural Language-Based E-Mail SaaS"
+      #   version: "beta"
+      #   last_updated: "2025-10-30"
       - slug: "global-experience"
         title: "全局体验：设计驱动的业务全链路优化"
         subtitle: "Global Experience: Design-Driven Full-Link Business Optimization"
         version: "alpha"
         last_updated: "2025-11-13"
 
-  - volume: "工程技术"
+  - volume: "工程篇"
     # description: ""
     practices:
       - slug: "prudent-production"
