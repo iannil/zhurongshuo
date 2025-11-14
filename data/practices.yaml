@@ -1,5 +1,5 @@
 collection:
-  - volume: "第一季"
+  - volume: "第1季"
     # description: ""
     practices:
       - slug: "a-frightened-bird-at-the-sound-of-a-bow"
@@ -18,7 +18,7 @@ collection:
         version: "alpha"
         last_updated: "2025-11-11"
 
-  - volume: "第二季"
+  - volume: "第2季"
     # description: ""
     practices:
       - slug: "fundamentals-of-remote-work"
@@ -37,7 +37,7 @@ collection:
       #   version: "beta"
       #   last_updated: "2025-10-30"
 
-  - volume: "第三季"
+  - volume: "第3季"
     # description: ""
     practices:
       - slug: "enterprise-ai-computing-platform"
