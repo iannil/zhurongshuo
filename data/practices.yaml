@@ -40,6 +40,11 @@ collection:
   - volume: "第3季"
     # description: ""
     practices:
+      - slug: "persona-and-performance"
+        title: "人戏：代价"
+        subtitle: "Persona and Performance: The Price"
+        version: "rc"
+        last_updated: "2025-11-15"
       - slug: "enterprise-ai-computing-platform"
         title: "企业级人工智能算力平台：构建、运营与生态"
         subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
@@ -69,3 +74,8 @@ part_titles:
     part-01: "第一部分：牢笼"
     part-02: "第二部分：拆解"
     part-03: "第三部分：再起"
+
+  open-map:
+    part-01: "第一部分：心法篇"
+    part-02: "第二部分：方法篇"
+    part-03: "第三部分：实战篇"

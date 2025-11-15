@@ -52,58 +52,101 @@
                 {{ end }}
 
                 {{ $allPages := .RegularPagesRecursive }}
-                {{ with (first 1 (where $allPages "File.BaseFileName" "introduction")) }}
-                    <div class="listing_title section-title">导论</div>
-                    <div class="listing compact">
-                        {{ range . }}
-                            {{ template "book_list_item" . }}
-                        {{ end }}
-                    </div>
-                {{ end }}
-                {{ $chapterPages := where $allPages "File.Dir" "!=" $bookDir }}
-                {{ $scratch := newScratch }}
-                {{ $scratch.Set "partSlugs" (slice) }}
-                {{ range $chapterPages }}
-                    {{ $slug := replace (replace .File.Dir $bookDir "") "/" "" }}
-                    {{ $existing := $scratch.Get "partSlugs" }}
-                    {{ if not (in $existing $slug) }}
-                        {{ $scratch.Add "partSlugs" (slice $slug) }}
-                    {{ end }}
-                {{ end }}
-                {{ $partSlugs := sort ($scratch.Get "partSlugs") }}
-                {{ $cnNumbers := slice "" "一" "二" "三" "四" "五" "六" "七" "八" "九" "十" "十一" "十二" "十三" "十四" "十五" "十六" "十七" "十八" "十九" "二十" }}
 
                 {{ $partTitles := dict }}
                 {{ if isset $booksData.part_titles $bookSlug }}
                     {{ $partTitles = index $booksData.part_titles $bookSlug }}
                 {{ end }}
 
-                {{ range $partSlugs }}
-                    {{ $slug := . }}
-                    {{ $num := int (replace $slug "part-" "") }}
-                    {{ $default := printf "第%s部" (cond (and (ge $num 0) (lt $num (len $cnNumbers))) (index $cnNumbers $num) (printf "%02d" $num)) }}
-                    {{ $title := $default }}
-                    {{ if isset $partTitles $slug }}
-                        {{ $title = index $partTitles $slug }}
+                {{/* Prologue */}}
+                {{ with (first 1 (where $allPages "File.BaseFileName" "prologue")) }}
+                    {{ if $partTitles }}
+                        <div class="listing_title section-title">楔子</div>
                     {{ end }}
-                    <div class="listing_title part-title">{{ $title }}</div>
-                    <div class="listing compact">
-                        {{ $dir := printf "%s%s/" $bookDir $slug }}
-                        {{ range sort (where $chapterPages "File.Dir" $dir) "File.BaseFileName" }}
-                            {{ template "book_list_item" . }}
-                        {{ end }}
-                    </div>
-                {{ end }}
-                {{ with (first 1 (where $allPages "File.BaseFileName" "epilogue")) }}
-                    <div class="listing_title section-title epilogue-title">结语</div>
                     <div class="listing compact">
                         {{ range . }}
                             {{ template "book_list_item" . }}
                         {{ end }}
                     </div>
                 {{ end }}
+
+                {{/* Introduction */}}
+                {{ with (first 1 (where $allPages "File.BaseFileName" "introduction")) }}
+                    {{ if $partTitles }}
+                        <div class="listing_title section-title">导论</div>
+                    {{ end }}
+                    <div class="listing compact">
+                        {{ range . }}
+                            {{ template "book_list_item" . }}
+                        {{ end }}
+                    </div>
+                {{ end }}
+
+                {{/* Chapters */}}
+                {{ $specialFiles := slice "prologue" "introduction" "epilogue" "appendix" }}
+                {{ $chapterPages := slice }}
+                {{ range $allPages }}
+                    {{ if not (in $specialFiles .File.BaseFileName) }}
+                        {{ $chapterPages = $chapterPages | append . }}
+                    {{ end }}
+                {{ end }}
+
+                {{ $scratch := newScratch }}
+                {{ $scratch.Set "partSlugs" (slice) }}
+                {{ range $chapterPages }}
+                    {{ $slug := replace (replace .File.Dir $bookDir "") "/" "" }}
+                    {{ if ne $slug "" }}
+                        {{ $existing := $scratch.Get "partSlugs" }}
+                        {{ if not (in $existing $slug) }}
+                            {{ $scratch.Add "partSlugs" (slice $slug) }}
+                        {{ end }}
+                    {{ end }}
+                {{ end }}
+                {{ $partSlugs := sort ($scratch.Get "partSlugs") }}
+                {{ $cnNumbers := slice "" "一" "二" "三" "四" "五" "六" "七" "八" "九" "十" "十一" "十二" "十三" "十四" "十五" "十六" "十七" "十八" "十九" "二十" }}
+
+                {{ if $partTitles }}
+                    {{ range $partSlugs }}
+                        {{ $slug := . }}
+                        {{ $num := int (replace $slug "part-" "") }}
+                        {{ $default := printf "第%s部" (cond (and (ge $num 0) (lt $num (len $cnNumbers))) (index $cnNumbers $num) (printf "%02d" $num)) }}
+                        {{ $title := $default }}
+                        {{ if isset $partTitles $slug }}
+                            {{ $title = index $partTitles $slug }}
+                        {{ end }}
+                        <div class="listing_title section-title">{{ $title }}</div>
+                        <div class="listing compact">
+                            {{ $dir := printf "%s%s/" $bookDir $slug }}
+                            {{ range sort (where $chapterPages "File.Dir" $dir) "File.BaseFileName" }}
+                                {{ template "book_list_item" . }}
+                            {{ end }}
+                        </div>
+                    {{ end }}
+                {{ else }}
+                    <div class="listing compact">
+                        {{ range sort $chapterPages "File.Path" }}
+                            {{ template "book_list_item" . }}
+                        {{ end }}
+                    </div>
+                {{ end }}
+
+                {{/* Epilogue */}}
+                {{ with (first 1 (where $allPages "File.BaseFileName" "epilogue")) }}
+                    {{ if $partTitles }}
+                        <div class="listing_title section-title epilogue-title">结语</div>
+                    {{ end }}
+                    <div class="listing compact">
+                        {{ range . }}
+                            {{ template "book_list_item" . }}
+                        {{ end }}
+                    </div>
+                {{ end }}
+
+                {{/* Appendix */}}
                 {{ with (first 1 (where $allPages "File.BaseFileName" "appendix")) }}
-                    <div class="listing_title section-title epilogue-title">附录</div>
+                    {{ if $partTitles }}
+                        <div class="listing_title section-title epilogue-title">附录</div>
+                    {{ end }}
                     <div class="listing compact">
                         {{ range . }}
                             {{ template "book_list_item" . }}
