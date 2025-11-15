@@ -195,8 +195,8 @@
                             {{ $version = "alpha" }}
                         {{ end }}
 
-                        {{/* Determine if practice should be clickable: exists AND (beta OR rc) */}}
-                        {{ $isClickable := and $exists (or (eq $version "beta") (eq $version "rc")) }}
+                        {{/* Determine if practice should be clickable: exists AND (beta OR rc OR ongoing) */}}
+                        {{ $isClickable := and $exists (or (eq $version "beta") (eq $version "rc") (eq $version "ongoing")) }}
 
                         {{ if $isClickable }}
                             {{ $totalWords := 0 }}
