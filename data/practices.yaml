@@ -40,21 +40,30 @@ collection:
   - volume: "第3季"
     # description: ""
     practices:
-      - slug: "persona-and-performance"
-        title: "人戏：代价"
-        subtitle: "Persona and Performance: The Price"
-        version: "ongoing"
-        last_updated: "2025-11-15"
       - slug: "enterprise-ai-computing-platform"
         title: "企业级人工智能算力平台：构建、运营与生态"
         subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
         version: "beta"
         last_updated: "2025-11-06"
+      - slug: "street-savagery"
+        title: "街头野蛮：先活下来，再赢下来"
+        subtitle: "Street Savagery: Survive First, Win Later"
+        version: "alpha"
+        last_updated: "2025-11-15"
       - slug: "growth-blueprint"
         title: "增长蓝图：低代码驱动的数字化转型下半场"
         subtitle: "Growth Blueprint: The Second Half of Low-Code-Driven Digital Transformation"
         version: "alpha"
         last_updated: "2025-11-11"
+
+  - volume: "第4季"
+    # description: ""
+    practices:
+      - slug: "persona-and-performance"
+        title: "人戏：代价"
+        subtitle: "Persona and Performance: The Price"
+        version: "ongoing"
+        last_updated: "2025-11-15"
 
 # 部分标题配置
 part_titles:
