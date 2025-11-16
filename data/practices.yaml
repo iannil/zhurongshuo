@@ -45,10 +45,10 @@ collection:
         subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
         version: "beta"
         last_updated: "2025-11-06"
-      - slug: "street-savagery"
-        title: "街头野蛮：先活下来，再赢下来"
-        subtitle: "Street Savagery: Survive First, Win Later"
-        version: "alpha"
+      - slug: "barbaric-order"
+        title: "野蛮秩序：先活下来，再赢下来"
+        subtitle: "Barbaric Order: Survive First, Win Later"
+        version: "rc"
         last_updated: "2025-11-15"
       - slug: "growth-blueprint"
         title: "增长蓝图：低代码驱动的数字化转型下半场"
@@ -88,3 +88,7 @@ part_titles:
     part-01: "第一部分：心法篇"
     part-02: "第二部分：方法篇"
     part-03: "第三部分：实战篇"
+
+  barbaric-order:
+    part-01: "第一部分：生存法则篇"
+    part-02: "第二部分：赢家心法篇"
