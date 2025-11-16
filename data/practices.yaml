@@ -45,6 +45,20 @@ collection:
         subtitle: "Barbaric Order: Survive First, Win Later"
         version: "rc"
         last_updated: "2025-11-16"
+      - slug: "probability-game"
+        title: "概率游戏：在噪音中寻找常识"
+        subtitle: "Probability Game: Finding Common Sense in the Noise"
+        version: "alpha"
+        last_updated: "2025-11-16"
+      - slug: "possible-script"
+        title: "可能剧本：被设计的运气"
+        subtitle: "Possible Script: Designed Luck"
+        version: "alpha"
+        last_updated: "2025-11-16"
+
+  - volume: "第4季"
+    # description: ""
+    practices:
       - slug: "enterprise-ai-computing-platform"
         title: "企业级人工智能算力平台：构建、运营与生态"
         subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
@@ -55,10 +69,6 @@ collection:
         subtitle: "Growth Blueprint: The Second Half of Low-Code-Driven Digital Transformation"
         version: "alpha"
         last_updated: "2025-11-11"
-
-  - volume: "第4季"
-    # description: ""
-    practices:
       - slug: "persona-and-performance"
         title: "人戏：代价"
         subtitle: "Persona and Performance: The Price"
