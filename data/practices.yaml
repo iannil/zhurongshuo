@@ -45,7 +45,7 @@ collection:
         subtitle: "Barbaric Order: Survive First, Win Later"
         version: "rc"
         last_updated: "2025-11-16"
-      - slug: "value-density"
+      - slug: "introduction-to-value-density"
         title: "价值密度入门：复杂度 x 稀缺性 x 确定性 ÷ 时间"
         subtitle: "Introduction to Value Density：Complexity x Scarcity x Certainty ÷ Time"
         version: "rc"
