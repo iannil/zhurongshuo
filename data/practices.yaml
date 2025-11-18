@@ -26,11 +26,6 @@ collection:
         subtitle: "Fundamentals of Remote Work: Building a Culture of High Autonomy, High Trust, and High-Quality Delivery"
         version: "rc"
         last_updated: "2025-11-12"
-      - slug: "prudent-production"
-        title: "审慎生产：写给工程师的务实项目管理法"
-        subtitle: "Prudent Production: Pragmatic Project Management for Engineers"
-        version: "alpha"
-        last_updated: "2025-11-11"
       - slug: "global-experience"
         title: "全局体验：设计驱动的业务全链路优化"
         subtitle: "Global Experience: Design-Driven Full-Link Business Optimization"
@@ -47,7 +42,7 @@ collection:
         last_updated: "2025-11-16"
       - slug: "introduction-to-value-density"
         title: "价值密度入门：复杂度 x 稀缺性 x 确定性 ÷ 时间"
-        subtitle: "Introduction to Value Density：Complexity x Scarcity x Certainty ÷ Time"
+        subtitle: "Introduction to Value Density: Complexity x Scarcity x Certainty ÷ Time"
         version: "rc"
         last_updated: "2025-11-17"
       - slug: "probability-game"
@@ -69,15 +64,6 @@ collection:
         subtitle: "Growth Blueprint: The Second Half of Low-Code-Driven Digital Transformation"
         version: "alpha"
         last_updated: "2025-11-11"
-  
-  # - volume: "第0季"
-    # description: ""
-    # practices:
-      # - slug: "conversation-as-a-platform"
-      #   title: "对话即平台：构建基于自然语言的 E-Mail SaaS"
-      #   subtitle: "Conversation as a Platform: Building Natural Language-Based E-Mail SaaS"
-      #   version: "beta"
-      #   last_updated: "2025-10-30"
 
 # 部分标题配置
 part_titles:
