@@ -93,10 +93,16 @@ pygmentscodefencesguesssyntax = true
 [markup.goldmark.extensions.typographer]
   disable = true
 
+# Sitemap Configuration - Optimized for Cloudflare CDN
 [sitemap]
-  changefreq = ""
+  changefreq = "weekly"
   filename = "sitemap.xml"
-  priority = -1
+  priority = 0.5
+
+# RSS Feed Optimization - Limit items for reduced bandwidth
+[services]
+  [services.rss]
+    limit = 20  # Limit RSS feed to 20 most recent items
 
 # Performance Optimization - Minify Output
 [minify]
@@ -115,7 +121,30 @@ pygmentscodefencesguesssyntax = true
     [minify.tdewolff.js]
       precision = 0
 
-# Image Processing
+# Image Processing - Optimized for Cloudflare CDN
 [imaging]
-  quality = 85
+  quality = 75
   resampleFilter = "lanczos"
+  anchor = "Smart"
+  bgColor = "#ffffff"
+
+# Output Configuration - Optimize for CDN caching
+[outputs]
+  home = ["HTML", "RSS"]
+  page = ["HTML"]
+  section = ["HTML", "RSS"]
+  taxonomy = ["HTML", "RSS"]
+  term = ["HTML", "RSS"]
+
+# Cache busting via fingerprinting
+[build]
+  writeStats = true
+
+[build.buildStats]
+  enable = true
+
+# Asset Bundling and Optimization
+[module]
+  [module.hugoVersion]
+    extended = false
+    min = "0.110.0"
