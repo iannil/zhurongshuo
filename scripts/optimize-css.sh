@@ -36,12 +36,23 @@ echo ""
 
 echo -e "${YELLOW}[1/4] 扫描项目中使用的 Remixicon 图标...${NC}"
 
-# 从所有 HTML 模板中提取 ri-* 类名
-REMIXICON_CLASSES=$(find "${LAYOUTS_DIR}" "${CUSTOM_LAYOUTS_DIR}" -type f -name "*.html" 2>/dev/null | \
-    xargs grep -oh 'class="[^"]*ri-[^"]*"' 2>/dev/null | \
-    grep -o 'ri-[a-z0-9-]*' | \
-    sort -u | \
-    grep -v '^ri-$' || true)
+# 优先从 hugo_stats.json 提取图标类名（如果存在）
+HUGO_STATS_FILE="${PROJECT_ROOT}/hugo_stats.json"
+if [ -f "$HUGO_STATS_FILE" ]; then
+    echo -e "${BLUE}  → 从 hugo_stats.json 提取图标类名${NC}"
+    REMIXICON_CLASSES=$(grep -o '"ri-[a-z0-9-]*"' "$HUGO_STATS_FILE" | \
+        tr -d '"' | \
+        sort -u | \
+        grep -v '^ri-$' || true)
+else
+    # 回退方案：从 HTML 模板中提取
+    echo -e "${BLUE}  → 从 HTML 模板提取图标类名${NC}"
+    REMIXICON_CLASSES=$(find "${LAYOUTS_DIR}" "${CUSTOM_LAYOUTS_DIR}" -type f -name "*.html" 2>/dev/null | \
+        xargs grep -oh 'class="[^"]*ri-[^"]*"' 2>/dev/null | \
+        grep -o 'ri-[a-z0-9-]*' | \
+        sort -u | \
+        grep -v '^ri-$' || true)
+fi
 
 if [ -z "$REMIXICON_CLASSES" ]; then
     echo -e "${RED}  ✗ 未找到任何 Remixicon 图标${NC}"
@@ -109,12 +120,23 @@ echo ""
 
 echo -e "${YELLOW}[3/4] 扫描项目中使用的 Animate.css 动画...${NC}"
 
-# 从所有 HTML 模板中提取 animate__* 类名（排除 animate__animated）
-ANIMATION_NAMES=$(find "${LAYOUTS_DIR}" "${CUSTOM_LAYOUTS_DIR}" -type f -name "*.html" 2>/dev/null | \
-    xargs grep -oh 'animate__[a-zA-Z]*' 2>/dev/null | \
-    grep -v '^animate__animated$' | \
-    sed 's/animate__//' | \
-    sort -u || true)
+# 优先从 hugo_stats.json 提取动画类名（如果存在）
+if [ -f "$HUGO_STATS_FILE" ]; then
+    echo -e "${BLUE}  → 从 hugo_stats.json 提取动画类名${NC}"
+    ANIMATION_NAMES=$(grep -o '"animate__[a-zA-Z]*"' "$HUGO_STATS_FILE" | \
+        tr -d '"' | \
+        grep -v '^animate__animated$' | \
+        sed 's/animate__//' | \
+        sort -u || true)
+else
+    # 回退方案：从 HTML 模板中提取
+    echo -e "${BLUE}  → 从 HTML 模板提取动画类名${NC}"
+    ANIMATION_NAMES=$(find "${LAYOUTS_DIR}" "${CUSTOM_LAYOUTS_DIR}" -type f -name "*.html" 2>/dev/null | \
+        xargs grep -oh 'animate__[a-zA-Z]*' 2>/dev/null | \
+        grep -v '^animate__animated$' | \
+        sed 's/animate__//' | \
+        sort -u || true)
+fi
 
 if [ -z "$ANIMATION_NAMES" ]; then
     echo -e "${RED}  ✗ 未找到任何 Animate.css 动画${NC}"

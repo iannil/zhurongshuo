@@ -22,7 +22,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Only include the icons actually used */
+/* Only include the 8 icons actually used */
 .ri-arrow-up-s-line:before { content: "\ea78"; }
 .ri-book-open-line:before { content: "\eadb"; }
 .ri-game-line:before { content: "\eda9"; }
