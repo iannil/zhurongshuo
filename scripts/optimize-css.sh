@@ -3,7 +3,7 @@
 ##############################################################################
 # CSS Optimizer Script
 # 自动提取项目中使用的 Remixicon 图标和 Animate.css 动画
-# 生成精简版 CSS 文件
+# 生成精简版 CSS 文件并优化字体文件
 ##############################################################################
 
 set -e  # 遇到错误立即退出
@@ -20,13 +20,16 @@ PROJECT_ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 LAYOUTS_DIR="${PROJECT_ROOT}/themes/zozo/layouts"
 CUSTOM_LAYOUTS_DIR="${PROJECT_ROOT}/layouts"
 STATIC_CSS_DIR="${PROJECT_ROOT}/themes/zozo/static/css"
+STATIC_FONTS_DIR="${PROJECT_ROOT}/themes/zozo/static/fonts"
 REMIXICON_SOURCE="${STATIC_CSS_DIR}/remixicon.css"
 ANIMATE_SOURCE="${STATIC_CSS_DIR}/animate.min.css"
 REMIXICON_OUTPUT="${STATIC_CSS_DIR}/remixicon-custom.css"
 ANIMATE_OUTPUT="${STATIC_CSS_DIR}/animate-custom.css"
+FONT_SOURCE="${STATIC_FONTS_DIR}/remixicon.woff2"
+FONT_OUTPUT="${STATIC_FONTS_DIR}/remixicon-custom.woff2"
 
 echo -e "${BLUE}========================================${NC}"
-echo -e "${BLUE}  CSS 优化脚本${NC}"
+echo -e "${BLUE}  CSS & Font 优化脚本${NC}"
 echo -e "${BLUE}========================================${NC}"
 echo ""
 
@@ -34,7 +37,7 @@ echo ""
 # 1. 提取 Remixicon 图标
 ##############################################################################
 
-echo -e "${YELLOW}[1/4] 扫描项目中使用的 Remixicon 图标...${NC}"
+echo -e "${YELLOW}[1/6] 扫描项目中使用的 Remixicon 图标...${NC}"
 
 # 优先从 hugo_stats.json 提取图标类名（如果存在）
 HUGO_STATS_FILE="${PROJECT_ROOT}/hugo_stats.json"
@@ -69,7 +72,7 @@ echo ""
 # 2. 生成 remixicon-custom.css
 ##############################################################################
 
-echo -e "${YELLOW}[2/4] 生成 remixicon-custom.css...${NC}"
+echo -e "${YELLOW}[2/6] 生成 remixicon-custom.css...${NC}"
 
 # 检查源文件
 if [ ! -f "$REMIXICON_SOURCE" ]; then
@@ -115,10 +118,106 @@ echo -e "    原始大小: ${ORIGINAL_SIZE} → 优化后: ${OPTIMIZED_SIZE}"
 echo ""
 
 ##############################################################################
-# 3. 提取 Animate.css 动画
+# 3. 提取字体文件中使用的字符 (Unicode)
 ##############################################################################
 
-echo -e "${YELLOW}[3/4] 扫描项目中使用的 Animate.css 动画...${NC}"
+echo -e "${YELLOW}[3/6] 提取图标对应的 Unicode 字符...${NC}"
+
+# 从 CSS 中提取 content 值 (Unicode码点)
+UNICODE_LIST=""
+for icon in $REMIXICON_CLASSES; do
+    unicode=$(grep "^\\.${icon}:before" "$REMIXICON_SOURCE" | grep -o 'content: "\\[^"]*"' | sed 's/content: "\\//;s/"//g' || true)
+    if [ -n "$unicode" ]; then
+        UNICODE_LIST="${UNICODE_LIST}${unicode},"
+    fi
+done
+
+# 移除最后的逗号
+UNICODE_LIST=${UNICODE_LIST%,}
+
+if [ -z "$UNICODE_LIST" ]; then
+    echo -e "${RED}  ✗ 未能提取 Unicode 字符${NC}"
+else
+    echo -e "${GREEN}  ✓ 提取到 ${ICON_COUNT} 个字符码点${NC}"
+    echo -e "    Unicode: ${UNICODE_LIST}"
+fi
+echo ""
+
+##############################################################################
+# 4. 优化字体文件 (使用 pyftsubset)
+##############################################################################
+
+echo -e "${YELLOW}[4/6] 优化字体文件...${NC}"
+
+# 检查是否安装 fonttools
+if ! command -v pyftsubset &> /dev/null; then
+    echo -e "${YELLOW}  ! pyftsubset 未安装，正在尝试安装 fonttools...${NC}"
+    if command -v pip3 &> /dev/null; then
+        pip3 install --user --quiet --break-system-packages fonttools brotli 2>&1 | grep -v "Requirement already satisfied" || true
+    elif command -v pip &> /dev/null; then
+        pip install --user --quiet --break-system-packages fonttools brotli 2>&1 | grep -v "Requirement already satisfied" || true
+    else
+        echo -e "${RED}  ✗ 无法安装 fonttools${NC}"
+        echo -e "${YELLOW}  ⚠ 跳过字体优化，CSS 优化已完成${NC}"
+        SKIP_FONT_OPTIMIZATION=true
+    fi
+
+    # 重新检查是否安装成功
+    if ! command -v pyftsubset &> /dev/null; then
+        # 尝试使用完整路径
+        PYFTSUBSET_PATH="$HOME/Library/Python/$(python3 --version 2>&1 | grep -o '[0-9]\.[0-9]*')/bin/pyftsubset"
+        if [ -f "$PYFTSUBSET_PATH" ]; then
+            export PATH="$HOME/Library/Python/$(python3 --version 2>&1 | grep -o '[0-9]\.[0-9]*')/bin:$PATH"
+        else
+            echo -e "${RED}  ✗ fonttools 安装失败或未找到${NC}"
+            echo -e "${YELLOW}  ⚠ 跳过字体优化，CSS 优化已完成${NC}"
+            SKIP_FONT_OPTIMIZATION=true
+        fi
+    fi
+fi
+
+if [ "$SKIP_FONT_OPTIMIZATION" != "true" ] && [ -n "$UNICODE_LIST" ]; then
+    # 检查源字体文件
+    if [ ! -f "$FONT_SOURCE" ]; then
+        echo -e "${RED}  ✗ 字体文件不存在: $FONT_SOURCE${NC}"
+    else
+        FONT_ORIGINAL_SIZE=$(du -h "$FONT_SOURCE" | cut -f1)
+
+        # 使用 pyftsubset 提取子集
+        echo -e "${BLUE}  → 正在生成精简字体文件...${NC}"
+
+        pyftsubset "$FONT_SOURCE" \
+            --unicodes="$UNICODE_LIST" \
+            --flavor=woff2 \
+            --output-file="$FONT_OUTPUT" \
+            --layout-features='*' \
+            --no-hinting \
+            2>&1 | grep -v "WARNING" || true
+
+        if [ -f "$FONT_OUTPUT" ]; then
+            FONT_OPTIMIZED_SIZE=$(du -h "$FONT_OUTPUT" | cut -f1)
+            echo -e "${GREEN}  ✓ 字体优化成功: ${FONT_OUTPUT}${NC}"
+            echo -e "    原始大小: ${FONT_ORIGINAL_SIZE} → 优化后: ${FONT_OPTIMIZED_SIZE}"
+
+            # 更新 CSS 中的字体引用
+            echo -e "${BLUE}  → 更新 CSS 字体引用...${NC}"
+            sed -i.bak 's|url("/fonts/remixicon.woff2|url("/fonts/remixicon-custom.woff2|g' "$REMIXICON_OUTPUT"
+            rm -f "${REMIXICON_OUTPUT}.bak"
+            echo -e "${GREEN}  ✓ CSS 字体引用已更新${NC}"
+        else
+            echo -e "${RED}  ✗ 字体优化失败${NC}"
+        fi
+    fi
+else
+    echo -e "${YELLOW}  ⚠ 跳过字体优化${NC}"
+fi
+echo ""
+
+##############################################################################
+# 5. 提取 Animate.css 动画
+##############################################################################
+
+echo -e "${YELLOW}[5/6] 扫描项目中使用的 Animate.css 动画...${NC}"
 
 # 优先从 hugo_stats.json 提取动画类名（如果存在）
 if [ -f "$HUGO_STATS_FILE" ]; then
@@ -150,10 +249,10 @@ echo "$ANIMATION_NAMES" | sed 's/^/    - animate__/'
 echo ""
 
 ##############################################################################
-# 4. 生成 animate-custom.css（手动处理压缩CSS）
+# 6. 生成 animate-custom.css（手动处理压缩CSS）
 ##############################################################################
 
-echo -e "${YELLOW}[4/4] 生成 animate-custom.css...${NC}"
+echo -e "${YELLOW}[6/6] 生成 animate-custom.css...${NC}"
 
 # 检查源文件
 if [ ! -f "$ANIMATE_SOURCE" ]; then
@@ -262,7 +361,7 @@ echo ""
 ##############################################################################
 
 echo -e "${BLUE}========================================${NC}"
-echo -e "${GREEN}✓ CSS 优化完成!${NC}"
+echo -e "${GREEN}✓ CSS & Font 优化完成!${NC}"
 echo -e "${BLUE}========================================${NC}"
 echo ""
 echo -e "统计信息:"
@@ -271,10 +370,13 @@ echo -e "  • Animate.css 动画: ${ANIM_COUNT} 个"
 echo ""
 echo -e "文件大小:"
 echo -e "  • remixicon.css:        ${ORIGINAL_SIZE} → ${OPTIMIZED_SIZE}"
+if [ -n "$FONT_OPTIMIZED_SIZE" ]; then
+    echo -e "  • remixicon.woff2:      ${FONT_ORIGINAL_SIZE} → ${FONT_OPTIMIZED_SIZE}"
+fi
 echo -e "  • animate.min.css:      ${ANIMATE_ORIGINAL_SIZE} → ${ANIMATE_OPTIMIZED_SIZE}"
 echo ""
 echo -e "${YELLOW}提示:${NC}"
 echo -e "  1. 请运行 'hugo server' 预览效果"
 echo -e "  2. 确认无误后运行 'hugo' 重新构建站点"
-echo -e "  3. 提交更改: git add . && git commit -m 'chore: 优化 CSS 资源'"
+echo -e "  3. 提交更改: git add . && git commit -m 'chore: 优化 CSS 和字体资源'"
 echo ""
