@@ -770,3 +770,45 @@ a.back_to_top:hover span {
 }
 
 /*animation ends*/
+
+/*audio player styles starts*/
+.audio-player {
+  margin: 2em 0;
+  padding: 1.5em;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.audio-player .audio-title {
+  margin: 0 0 1em 0;
+  font-size: 1.1em;
+  font-weight: 500;
+  color: #333333;
+}
+
+.audio-player audio {
+  width: 100%;
+  outline: none;
+}
+
+.audio-player audio::-webkit-media-controls-panel {
+  background-color: #f7f7f7;
+}
+
+.audio-player audio::-webkit-media-controls-play-button,
+.audio-player audio::-webkit-media-controls-pause-button {
+  background-color: #424242;
+  border-radius: 50%;
+}
+
+@media (max-width: 800px) {
+  .audio-player {
+    padding: 1em;
+  }
+
+  .audio-player .audio-title {
+    font-size: 1em;
+  }
+}
+/*audio player styles ends*/

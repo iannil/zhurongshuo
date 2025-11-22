@@ -1,0 +1,13 @@
+{{ $src := .Get "src" }}
+{{ $title := .Get "title" }}
+<div class="audio-player">
+    {{ if $title }}
+    <p class="audio-title">{{ $title }}</p>
+    {{ end }}
+    <audio controls preload="metadata">
+        <source src="{{ $src | absURL }}" type="audio/mpeg">
+        <source src="{{ $src | absURL }}" type="audio/ogg">
+        <source src="{{ $src | absURL }}" type="audio/wav">
+        您的浏览器不支持音频播放。
+    </audio>
+</div>
