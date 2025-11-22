@@ -69,7 +69,6 @@ Local Image
 
 ![Local Image](/100.jpg)
 
-
 # Block Quotes
 
 ```markdown
@@ -113,7 +112,7 @@ function doIt() {
 
 | Colors        | Fruits          | Vegetable         |
 | ------------- |:---------------:| -----------------:|
-| Red           | *Apple*         | [Pepper](#Tables) |
+| Red           | *Apple*         | [Pepper](#tables) |
 | ~~Orange~~    | Oranges         | **Carrot**        |
 | Green         | ~~***Pears***~~ | Spinach           |
 
@@ -176,3 +175,24 @@ This is a test for emoji.
 :see_no_evil:
 :smile_cat:
 :watermelon:
+
+#### Audio
+
+在任何 Markdown 文章中，使用以下语法添加音频：
+
+```
+{{< audio src="/audio/your-file.mp3" title="音频标题" >}}
+```
+
+参数说明：
+
+- src（必需）：音频文件路径，相对于 static/ 目录
+- title（可选）：音频标题，显示在播放器上方
+
+示例：
+
+{{< audio src="/audio/podcast.mp3" title="第一期播客" >}}
+
+1. 添加音频文件：在项目根目录创建 static/audio/ 文件夹，将音频文件放入其中
+2. 运行 Hugo 预览：hugo server -D 查看效果
+3. 在文章中使用：在任何文章的 Markdown 内容中插入音频 shortcode
