@@ -47,24 +47,6 @@
                         {{ .Content }}
                     </div>
                 </div>
-
-                <div class="gallery-navigation">
-                    {{ if .PrevInSection }}
-                    <a href="{{ .PrevInSection.Permalink }}" class="gallery-nav-prev">
-                        <i class="ri-arrow-left-s-line"></i> {{ .PrevInSection.Title }}
-                    </a>
-                    {{ end }}
-
-                    <!-- <a href="/gallery/" class="gallery-nav-index">
-                        <i class="ri-grid-line"></i> 返回作品集
-                    </a> -->
-
-                    {{ if .NextInSection }}
-                    <a href="{{ .NextInSection.Permalink }}" class="gallery-nav-next">
-                        {{ .NextInSection.Title }} <i class="ri-arrow-right-s-line"></i>
-                    </a>
-                    {{ end }}
-                </div>
             </div>
         </div>
         <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
