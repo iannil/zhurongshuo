@@ -100,8 +100,8 @@
   font-size: 16px;
   font-weight: 500;
   margin-bottom: 5px;
-  color: #fff;
-  text-decoration: none;
+  color: #fff !important;
+  text-decoration: none !important;
   display: inline-block;
   transition: opacity 0.2s ease;
 }
