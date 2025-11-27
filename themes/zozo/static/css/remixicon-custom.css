@@ -22,10 +22,14 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* Only include the 8 icons actually used */
+/* Only include the 12 icons actually used */
+.ri-arrow-left-s-line:before { content: "\ea64"; }
+.ri-arrow-right-s-line:before { content: "\ea6e"; }
 .ri-arrow-up-s-line:before { content: "\ea78"; }
 .ri-book-open-line:before { content: "\eadb"; }
+.ri-gallery-line:before { content: "\eda5"; }
 .ri-game-line:before { content: "\eda9"; }
+.ri-grid-line:before { content: "\eddf"; }
 .ri-map-pin-time-line:before { content: "\ef18"; }
 .ri-menu-line:before { content: "\ef3e"; }
 .ri-rss-fill:before { content: "\f09e"; }

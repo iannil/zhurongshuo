@@ -90,7 +90,7 @@ pygmentscodefencesguesssyntax = true
   game = "/about/"
   book-open = "/books/"
   trophy = "/practices/"
-  # camera = "/gallery/"
+  gallery = "/gallery/"
 
 [markup]
 [markup.goldmark]
