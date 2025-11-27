@@ -1,0 +1,70 @@
+{{ partial "head.html" . }}
+<link rel="stylesheet" type="text/css" media="screen" href="/css/gallery.css" />
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        {{ partial "nav.html" . }}
+        {{ partial "header.html" . }}
+        <div class="content">
+            <!-- <div class="gallery-intro">
+                {{ .Content }}
+            </div> -->
+
+            <div class="gallery-grid">
+                {{ range .Pages }}
+                    {{ if eq .Type "gallery" }}
+                    <div class="gallery-item">
+                        {{ if .Params.featured_image }}
+                        <a data-fancybox="gallery"
+                           href="{{ .Params.featured_image | absURL }}"
+                           data-caption="{{ .Title }}{{ if .Params.description }} - {{ .Params.description }}{{ end }}">
+                            <div class="gallery-item-image">
+                                <img src="{{ .Params.featured_image | absURL }}" alt="{{ .Title }}" loading="lazy">
+                                <div class="gallery-item-overlay">
+                                    <div class="gallery-item-title">{{ .Title }}</div>
+                                    {{ if .Params.date }}
+                                    <div class="gallery-item-date">{{ .Date.Format "2006-01-02" }}</div>
+                                    {{ end }}
+                                </div>
+                            </div>
+                        </a>
+                        {{ else if .Params.video }}
+                        <div class="gallery-item-video">
+                            <video controls preload="metadata">
+                                <source src="{{ .Params.video | absURL }}" type="video/mp4">
+                                您的浏览器不支持视频播放。
+                            </video>
+                            <div class="gallery-item-info">
+                                <div class="gallery-item-title">{{ .Title }}</div>
+                                {{ if .Params.description }}
+                                <div class="gallery-item-description">{{ .Params.description }}</div>
+                                {{ end }}
+                            </div>
+                        </div>
+                        {{ else if .Params.audio }}
+                        <div class="gallery-item-audio">
+                            <div class="gallery-item-info">
+                                <div class="gallery-item-title">{{ .Title }}</div>
+                                {{ if .Params.description }}
+                                <div class="gallery-item-description">{{ .Params.description }}</div>
+                                {{ end }}
+                            </div>
+                            <audio controls preload="metadata">
+                                <source src="{{ .Params.audio | absURL }}" type="audio/mpeg">
+                                您的浏览器不支持音频播放。
+                            </audio>
+                        </div>
+                        {{ end }}
+                    </div>
+                    {{ end }}
+                {{ end }}
+            </div>
+        </div>
+        <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    </div>
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+</body>
+
+</html>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>风景 on 祝融说。</title><link>https://zhurongshuo.com/tags/%E9%A3%8E%E6%99%AF/</link><description>Recent content in 风景 on 祝融说。</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Tue, 25 Nov 2025 00:00:00 +0800</lastBuildDate><atom:link href="https://zhurongshuo.com/tags/%E9%A3%8E%E6%99%AF/index.xml" rel="self" type="application/rss+xml"/><item><title>示例照片 - 使用外部URL</title><link>https://zhurongshuo.com/gallery/sample-photo-url/</link><pubDate>Tue, 25 Nov 2025 00:00:00 +0800</pubDate><guid>https://zhurongshuo.com/gallery/sample-photo-url/</guid><description>&lt;p&gt;这个示例展示了如何使用外部URL来引用图片。&lt;/p&gt;
+&lt;p&gt;图片可以托管在：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;CDN服务（如Cloudflare、阿里云OSS、腾讯云COS等）&lt;/li&gt;
+&lt;li&gt;图床服务（如Imgur、图虫等）&lt;/li&gt;
+&lt;li&gt;其他任何支持外链的服务&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;优点：&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;节省服务器空间&lt;/li&gt;
+&lt;li&gt;利用CDN加速&lt;/li&gt;
+&lt;li&gt;便于管理大量媒体文件&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;注意事项：&lt;/strong&gt;&lt;/p&gt;</description></item><item><title>海边的宁静</title><link>https://zhurongshuo.com/gallery/sample-photo-4/</link><pubDate>Mon, 17 Nov 2025 00:00:00 +0800</pubDate><guid>https://zhurongshuo.com/gallery/sample-photo-4/</guid><description>&lt;p&gt;海水轻轻拍打着沙滩，海天一色，宁静而美好。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;图片来源：Unsplash（示例用途）&lt;/p&gt;&lt;/blockquote&gt;</description></item></channel></rss>

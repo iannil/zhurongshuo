@@ -1,0 +1,76 @@
+{{ partial "head.html" . }}
+<link rel="stylesheet" type="text/css" media="screen" href="/css/gallery.css" />
+</head>
+
+<body>
+    <div class="main animate__animated animate__fadeInDown">
+        {{ partial "nav.html" . }}
+        {{ partial "header.html" . }}
+        <div class="content">
+            <div class="gallery-single">
+                <h1 class="gallery-single-title">{{ .Title }}</h1>
+
+                {{ if .Params.date }}
+                <div class="gallery-single-meta">
+                    <span class="date">{{ .Date.Format "2006年01月02日" }}</span>
+                </div>
+                {{ end }}
+
+                <div class="gallery-single-content">
+                    {{ if .Params.featured_image }}
+                    <div class="gallery-single-image">
+                        <a data-fancybox href="{{ .Params.featured_image | absURL }}">
+                            <img src="{{ .Params.featured_image | absURL }}" alt="{{ .Title }}">
+                        </a>
+                    </div>
+                    {{ end }}
+
+                    {{ if .Params.video }}
+                    <div class="gallery-single-video">
+                        <video controls>
+                            <source src="{{ .Params.video | absURL }}" type="video/mp4">
+                            您的浏览器不支持视频播放。
+                        </video>
+                    </div>
+                    {{ end }}
+
+                    {{ if .Params.audio }}
+                    <div class="gallery-single-audio">
+                        <audio controls>
+                            <source src="{{ .Params.audio | absURL }}" type="audio/mpeg">
+                            您的浏览器不支持音频播放。
+                        </audio>
+                    </div>
+                    {{ end }}
+
+                    <div class="gallery-single-description">
+                        {{ .Content }}
+                    </div>
+                </div>
+
+                <div class="gallery-navigation">
+                    {{ if .PrevInSection }}
+                    <a href="{{ .PrevInSection.Permalink }}" class="gallery-nav-prev">
+                        <i class="ri-arrow-left-s-line"></i> {{ .PrevInSection.Title }}
+                    </a>
+                    {{ end }}
+
+                    <a href="/gallery/" class="gallery-nav-index">
+                        <i class="ri-grid-line"></i> 返回作品集
+                    </a>
+
+                    {{ if .NextInSection }}
+                    <a href="{{ .NextInSection.Permalink }}" class="gallery-nav-next">
+                        {{ .NextInSection.Title }} <i class="ri-arrow-right-s-line"></i>
+                    </a>
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+        <a id="back_to_top" href="#" class="back_to_top"><i class="ri-arrow-up-s-line"></i></a>
+    </div>
+    {{ partial "footer.html" . }}
+    {{ partial "js.html" . }}
+</body>
+
+</html>
