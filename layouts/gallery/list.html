@@ -24,13 +24,16 @@
 {{- range .Pages -}}
     {{- if eq .Type "gallery" -}}
         {{- $featuredImage := "" -}}
+        {{- $thumbnailImage := "" -}}
         {{- $videoURL := "" -}}
         {{- $audioURL := "" -}}
         {{- if .Params.featured_image -}}
             {{- if $cdnURL -}}
                 {{- $featuredImage = printf "%s%s" $cdnURL .Params.featured_image -}}
+                {{- $thumbnailImage = printf "%s%s?w=600&q=75" $cdnURL .Params.featured_image -}}
             {{- else -}}
                 {{- $featuredImage = .Params.featured_image | absURL -}}
+                {{- $thumbnailImage = .Params.featured_image | absURL -}}
             {{- end -}}
         {{- end -}}
         {{- if .Params.video -}}
@@ -52,6 +55,7 @@
             "date" (.Date.Format "2006-01-02")
             "description" (default "" .Params.description)
             "featured_image" $featuredImage
+            "thumbnail_image" $thumbnailImage
             "video" $videoURL
             "audio" $audioURL
             "permalink" .Permalink -}}
@@ -92,12 +96,18 @@
             div.className = 'gallery-item';
 
             if (item.featured_image) {
+                // Use thumbnail for grid display, original for lightbox
+                const thumbnailSrc = item.thumbnail_image || item.featured_image;
+
                 div.innerHTML = `
                     <div class="gallery-item-image">
                         <a data-fancybox="gallery"
                            href="${item.featured_image}"
                            data-caption="${item.title}${item.description ? ' - ' + item.description : ''}">
-                            <img src="${item.featured_image}" alt="${item.title}" loading="lazy">
+                            <img src="${thumbnailSrc}"
+                                 alt="${item.title}"
+                                 loading="lazy"
+                                 data-original="${item.featured_image}">
                         </a>
                         <div class="gallery-item-overlay">
                             <a href="${item.permalink}" class="gallery-item-title">${item.title}</a>
