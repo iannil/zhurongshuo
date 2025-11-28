@@ -27,7 +27,8 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     // Remove leading slash from pathname for R2 object key
-    const pathname = url.pathname.substring(1);
+    // Decode URI component to handle Chinese characters and other encoded characters
+    const pathname = decodeURIComponent(url.pathname.substring(1));
 
     // Extract query parameters for image processing
     const width = url.searchParams.get('w');
