@@ -71,6 +71,8 @@ pygmentscodefencesguesssyntax = true
   enableSummary = true
   mainSections = ["posts", "post"]
   googleAnalytics = "G-KKJ5ZEG1NB"
+  # Cloudflare R2 CDN URL for images
+  cdnURL = "https://r2.zhurongshuo.com"
 
 [params.author]
   name = "祝融"

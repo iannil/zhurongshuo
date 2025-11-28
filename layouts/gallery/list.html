@@ -20,15 +20,40 @@
             <!-- Gallery data for infinite scroll -->
             <script id="gallery-data" type="application/json">
 {{- $galleryItems := slice -}}
+{{- $cdnURL := .Site.Params.cdnURL | default "" -}}
 {{- range .Pages -}}
     {{- if eq .Type "gallery" -}}
+        {{- $featuredImage := "" -}}
+        {{- $videoURL := "" -}}
+        {{- $audioURL := "" -}}
+        {{- if .Params.featured_image -}}
+            {{- if $cdnURL -}}
+                {{- $featuredImage = printf "%s%s" $cdnURL .Params.featured_image -}}
+            {{- else -}}
+                {{- $featuredImage = .Params.featured_image | absURL -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if .Params.video -}}
+            {{- if $cdnURL -}}
+                {{- $videoURL = printf "%s%s" $cdnURL .Params.video -}}
+            {{- else -}}
+                {{- $videoURL = .Params.video | absURL -}}
+            {{- end -}}
+        {{- end -}}
+        {{- if .Params.audio -}}
+            {{- if $cdnURL -}}
+                {{- $audioURL = printf "%s%s" $cdnURL .Params.audio -}}
+            {{- else -}}
+                {{- $audioURL = .Params.audio | absURL -}}
+            {{- end -}}
+        {{- end -}}
         {{- $item := dict
             "title" .Title
             "date" (.Date.Format "2006-01-02")
             "description" (default "" .Params.description)
-            "featured_image" (cond .Params.featured_image (.Params.featured_image | absURL) "")
-            "video" (cond .Params.video (.Params.video | absURL) "")
-            "audio" (cond .Params.audio (.Params.audio | absURL) "")
+            "featured_image" $featuredImage
+            "video" $videoURL
+            "audio" $audioURL
             "permalink" .Permalink -}}
         {{- $galleryItems = $galleryItems | append $item -}}
     {{- end -}}

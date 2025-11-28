@@ -18,26 +18,47 @@
 
                 <div class="gallery-single-content">
                     {{ if .Params.featured_image }}
+                    {{- $cdnURL := .Site.Params.cdnURL | default "" -}}
+                    {{- $imageURL := "" -}}
+                    {{- if $cdnURL -}}
+                        {{- $imageURL = printf "%s%s" $cdnURL .Params.featured_image -}}
+                    {{- else -}}
+                        {{- $imageURL = .Params.featured_image | absURL -}}
+                    {{- end -}}
                     <div class="gallery-single-image">
-                        <a data-fancybox href="{{ .Params.featured_image | absURL }}">
-                            <img src="{{ .Params.featured_image | absURL }}" alt="{{ .Title }}">
+                        <a data-fancybox href="{{ $imageURL }}">
+                            <img src="{{ $imageURL }}" alt="{{ .Title }}">
                         </a>
                     </div>
                     {{ end }}
 
                     {{ if .Params.video }}
+                    {{- $cdnURL := .Site.Params.cdnURL | default "" -}}
+                    {{- $videoURL := "" -}}
+                    {{- if $cdnURL -}}
+                        {{- $videoURL = printf "%s%s" $cdnURL .Params.video -}}
+                    {{- else -}}
+                        {{- $videoURL = .Params.video | absURL -}}
+                    {{- end -}}
                     <div class="gallery-single-video">
                         <video controls>
-                            <source src="{{ .Params.video | absURL }}" type="video/mp4">
+                            <source src="{{ $videoURL }}" type="video/mp4">
                             您的浏览器不支持视频播放。
                         </video>
                     </div>
                     {{ end }}
 
                     {{ if .Params.audio }}
+                    {{- $cdnURL := .Site.Params.cdnURL | default "" -}}
+                    {{- $audioURL := "" -}}
+                    {{- if $cdnURL -}}
+                        {{- $audioURL = printf "%s%s" $cdnURL .Params.audio -}}
+                    {{- else -}}
+                        {{- $audioURL = .Params.audio | absURL -}}
+                    {{- end -}}
                     <div class="gallery-single-audio">
                         <audio controls>
-                            <source src="{{ .Params.audio | absURL }}" type="audio/mpeg">
+                            <source src="{{ $audioURL }}" type="audio/mpeg">
                             您的浏览器不支持音频播放。
                         </audio>
                     </div>

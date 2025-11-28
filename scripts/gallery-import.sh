@@ -27,6 +27,8 @@ USE_EXIF=true
 DRY_RUN=false
 DATE_STRUCTURE=true  # 是否使用年月目录结构
 TITLE_PREFIX=""      # 标题前缀
+UPLOAD_R2=false      # 是否上传到 R2
+UPLOAD_LOCAL=true    # 是否保存到本地
 
 # 帮助信息
 show_help() {
@@ -43,13 +45,18 @@ show_help() {
   --no-exif             不从 EXIF 读取日期
   --flat                不使用年月目录结构
   --title-prefix TEXT   标题前缀
+  --r2                  直接上传到 R2（不保存到本地）
+  --r2-and-local        同时上传 R2 和保存本地
+  --local-only          仅本地存储（默认）
   -n, --dry-run         演习模式，不实际创建文件
   -h, --help            显示此帮助信息
 
 示例:
-  $0 ~/Pictures/photos                    # 导入照片目录
+  $0 ~/Pictures/photos                    # 导入照片目录（本地）
   $0 ~/Downloads/artwork --no-optimize    # 导入但不优化
   $0 ~/Pictures --title-prefix "旅行"      # 添加标题前缀
+  $0 ~/Pictures/new --r2                  # 直接上传到 R2
+  $0 ~/Pictures/all --r2-and-local        # 同时上传 R2 和本地
 
 EOF
 }
@@ -80,6 +87,21 @@ while [[ $# -gt 0 ]]; do
         --title-prefix)
             TITLE_PREFIX="$2"
             shift 2
+            ;;
+        --r2)
+            UPLOAD_R2=true
+            UPLOAD_LOCAL=false
+            shift
+            ;;
+        --r2-and-local)
+            UPLOAD_R2=true
+            UPLOAD_LOCAL=true
+            shift
+            ;;
+        --local-only)
+            UPLOAD_R2=false
+            UPLOAD_LOCAL=true
+            shift
             ;;
         -n|--dry-run)
             DRY_RUN=true
@@ -114,6 +136,8 @@ echo -e "  图片目录: ${GALLERY_IMAGES}"
 echo -e "  优化图片: ${OPTIMIZE}"
 echo -e "  使用 EXIF: ${USE_EXIF}"
 echo -e "  目录结构: $([ "$DATE_STRUCTURE" = true ] && echo "按年月分组" || echo "扁平结构")"
+echo -e "  上传 R2: ${UPLOAD_R2}"
+echo -e "  保存本地: ${UPLOAD_LOCAL}"
 [ -n "$TITLE_PREFIX" ] && echo -e "  标题前缀: ${TITLE_PREFIX}"
 echo -e "  演习模式: ${DRY_RUN}"
 echo ""
@@ -121,6 +145,35 @@ echo ""
 ##############################################################################
 # 辅助函数
 ##############################################################################
+
+# 上传文件到 R2
+upload_to_r2() {
+    local file="$1"
+    local bucket="zhurongshuo"
+
+    # 计算 R2 路径: static/images/gallery/photo.jpg -> images/gallery/photo.jpg
+    local r2_path="${file#static/}"
+
+    if [ "$DRY_RUN" = true ]; then
+        echo -e "${BLUE}  [DRY-RUN] 将上传到 R2: $r2_path${NC}"
+        return 0
+    fi
+
+    # 检查 wrangler CLI
+    if ! command -v wrangler &> /dev/null; then
+        echo -e "${RED}  ! wrangler CLI 未安装，跳过 R2 上传${NC}"
+        return 1
+    fi
+
+    # 上传文件
+    if wrangler r2 object put "$bucket/$r2_path" --file="$file" 2>/dev/null; then
+        echo -e "${GREEN}  ✓ 已上传到 R2: $r2_path${NC}"
+        return 0
+    else
+        echo -e "${RED}  ! R2 上传失败: $r2_path${NC}"
+        return 1
+    fi
+}
 
 # 生成 slug（URL 友好的文件名）
 generate_slug() {
@@ -304,34 +357,67 @@ while IFS= read -r source_file; do
     # 目标图片路径
     target_image="$GALLERY_IMAGES/$filename"
 
-    # 复制图片
+    # 复制/上传图片
     if [ "$DRY_RUN" = false ]; then
-        if [ ! -f "$target_image" ]; then
-            cp "$source_file" "$target_image"
-            echo -e "${GREEN}  ✓ 复制图片到: $target_image${NC}"
+        # 本地保存
+        if [ "$UPLOAD_LOCAL" = true ]; then
+            if [ ! -f "$target_image" ]; then
+                cp "$source_file" "$target_image"
+                echo -e "${GREEN}  ✓ 复制图片到: $target_image${NC}"
 
-            # 优化图片
-            if [ "$OPTIMIZE" = true ]; then
-                original_size=$(stat -f%z "$target_image" 2>/dev/null || echo 0)
+                # 优化图片
+                if [ "$OPTIMIZE" = true ]; then
+                    original_size=$(stat -f%z "$target_image" 2>/dev/null || echo 0)
 
-                # 根据格式优化
-                if [[ "$filename" =~ \.(jpg|jpeg|JPG|JPEG)$ ]]; then
-                    convert "$target_image" -strip -quality 85 -sampling-factor 4:2:0 "$target_image.tmp" 2>/dev/null
-                else
-                    convert "$target_image" -strip -define png:compression-level=9 "$target_image.tmp" 2>/dev/null
+                    # 根据格式优化
+                    if [[ "$filename" =~ \.(jpg|jpeg|JPG|JPEG)$ ]]; then
+                        convert "$target_image" -strip -quality 85 -sampling-factor 4:2:0 "$target_image.tmp" 2>/dev/null
+                    else
+                        convert "$target_image" -strip -define png:compression-level=9 "$target_image.tmp" 2>/dev/null
+                    fi
+
+                    new_size=$(stat -f%z "$target_image.tmp" 2>/dev/null || echo 0)
+
+                    if [ $new_size -lt $original_size ]; then
+                        mv "$target_image.tmp" "$target_image"
+                        echo -e "${GREEN}  ✓ 优化: $(numfmt --to=iec $original_size) → $(numfmt --to=iec $new_size)${NC}"
+                    else
+                        rm "$target_image.tmp"
+                    fi
                 fi
-
-                new_size=$(stat -f%z "$target_image.tmp" 2>/dev/null || echo 0)
-
-                if [ $new_size -lt $original_size ]; then
-                    mv "$target_image.tmp" "$target_image"
-                    echo -e "${GREEN}  ✓ 优化: $(numfmt --to=iec $original_size) → $(numfmt --to=iec $new_size)${NC}"
-                else
-                    rm "$target_image.tmp"
-                fi
+            else
+                echo -e "${YELLOW}  ! 图片已存在，跳过复制${NC}"
             fi
-        else
-            echo -e "${YELLOW}  ! 图片已存在，跳过复制${NC}"
+        fi
+
+        # 上传到 R2
+        if [ "$UPLOAD_R2" = true ]; then
+            # 如果只上传 R2（不保存本地），需要先优化到临时文件
+            if [ "$UPLOAD_LOCAL" = false ]; then
+                temp_file="/tmp/${filename}"
+                cp "$source_file" "$temp_file"
+
+                if [ "$OPTIMIZE" = true ]; then
+                    if [[ "$filename" =~ \.(jpg|jpeg|JPG|JPEG)$ ]]; then
+                        convert "$temp_file" -strip -quality 85 -sampling-factor 4:2:0 "$temp_file.tmp" 2>/dev/null
+                    else
+                        convert "$temp_file" -strip -define png:compression-level=9 "$temp_file.tmp" 2>/dev/null
+                    fi
+                    mv "$temp_file.tmp" "$temp_file" 2>/dev/null || true
+                fi
+
+                # 上传临时文件
+                # 注意：需要将临时文件移到 static/ 目录结构下，以便 upload_to_r2 正确计算路径
+                mkdir -p "$GALLERY_IMAGES"
+                mv "$temp_file" "$target_image"
+            fi
+
+            upload_to_r2 "$target_image"
+
+            # 如果只上传 R2，删除临时本地文件
+            if [ "$UPLOAD_LOCAL" = false ]; then
+                rm -f "$target_image"
+            fi
         fi
     fi
 
