@@ -32,16 +32,23 @@ show_help() {
     cat << EOF
 使用方法: $(basename "$0") [OPTIONS] <file_or_directory>
 
+上传文件到 Cloudflare R2，支持单文件或整个目录
+
 选项:
     -h, --help              显示帮助信息
     -d, --dry-run           预览模式，不实际上传
-    -i, --incremental       增量同步（跳过已存在的文件）
-    -v, --verbose           详细输出
+    -i, --incremental       增量同步（通过查询 R2 在线状态跳过已存在的文件）
+    -v, --verbose           详细输出（包括 R2 查询过程）
     --bucket NAME           指定 bucket 名称（默认：$BUCKET_NAME）
 
 环境变量:
     CLOUDFLARE_ACCOUNT_ID   Cloudflare 账户 ID
-    CLOUDFLARE_API_TOKEN    Cloudflare API Token（需要 R2 写权限）
+    CLOUDFLARE_API_TOKEN    Cloudflare API Token（需要 R2 读写权限）
+
+增量同步说明:
+    使用 --incremental 选项时，脚本会通过 wrangler r2 object head
+    命令查询 R2 在线状态，只上传不存在的文件，已存在的文件会被跳过。
+    这确保了同步的准确性，避免重复上传。
 
 示例:
     # 上传单个文件
@@ -50,10 +57,13 @@ show_help() {
     # 上传整个目录
     $(basename "$0") static/images/gallery/
 
-    # 增量同步（只上传新文件）
+    # 增量同步（只上传 R2 中不存在的文件）
     $(basename "$0") --incremental static/images/gallery/
 
-    # 预览模式
+    # 增量同步 + 详细输出（查看 R2 查询过程）
+    $(basename "$0") -i -v static/images/gallery/
+
+    # 预览模式（查看将要上传的文件）
     $(basename "$0") --dry-run static/images/
 
 EOF
@@ -122,11 +132,20 @@ upload_file() {
 }
 
 # 检查文件是否已存在于 R2
+# 注意：始终查询 R2 在线状态，不依赖本地缓存
 file_exists_in_r2() {
     local r2_path="$1"
 
-    wrangler r2 object get "$BUCKET_NAME/$r2_path" --file=/dev/null &> /dev/null
-    return $?
+    # 使用 wrangler r2 object head 检查对象是否存在（不下载内容，更高效）
+    # 如果 head 命令不可用，回退到 get 方法
+    if wrangler r2 object head "$BUCKET_NAME/$r2_path" &> /dev/null; then
+        return 0
+    else
+        # head 命令失败时，尝试使用 get 方法验证
+        # 注意：有些 wrangler 版本可能不支持 head 命令
+        wrangler r2 object get "$BUCKET_NAME/$r2_path" --file=/dev/null &> /dev/null
+        return $?
+    fi
 }
 
 # 处理单个文件
@@ -139,13 +158,19 @@ process_file() {
     # 移除 "static/" 前缀，保留后面的路径结构
     local r2_path="${file#static/}"
 
-    # 如果是增量模式，检查文件是否已存在
+    # 如果是增量模式，检查文件是否已存在（查询 R2 在线状态）
     if [ "$INCREMENTAL" = true ]; then
+        if [ "$VERBOSE" = true ]; then
+            log_info "检查 R2 在线状态: $r2_path"
+        fi
+
         if file_exists_in_r2 "$r2_path"; then
-            if [ "$VERBOSE" = true ]; then
-                log_info "跳过（已存在）: $r2_path"
-            fi
+            log_info "跳过（R2 已存在）: $r2_path"
             return 0
+        else
+            if [ "$VERBOSE" = true ]; then
+                log_info "文件不存在，准备上传: $r2_path"
+            fi
         fi
     fi
 
