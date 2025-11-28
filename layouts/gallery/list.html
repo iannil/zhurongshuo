@@ -30,7 +30,7 @@
         {{- if .Params.featured_image -}}
             {{- if $cdnURL -}}
                 {{- $featuredImage = printf "%s%s" $cdnURL .Params.featured_image -}}
-                {{- $thumbnailImage = printf "%s%s?w=300&q=75" $cdnURL .Params.featured_image -}}
+                {{- $thumbnailImage = printf "%s%s?w=600&q=75" $cdnURL .Params.featured_image -}}
             {{- else -}}
                 {{- $featuredImage = .Params.featured_image | absURL -}}
                 {{- $thumbnailImage = .Params.featured_image | absURL -}}
