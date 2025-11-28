@@ -71,7 +71,7 @@ check_r2_dependencies() {
         return 1
     fi
 
-    if [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+    if [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$CLOUDFLARE_R2_API_TOKEN" ]; then
         log_warn "缺少 Cloudflare 凭证，跳过 R2 同步"
         return 1
     fi
@@ -193,7 +193,7 @@ main() {
     echo ""
 
     # Step 2: 同步图片到 R2（在构建之前）
-    log_info "[2/5] 同步静态资源..."
+    log_info "[2/6] 同步静态资源..."
     if sync_images_to_r2; then
         log_success "✓ R2 同步完成"
     else
@@ -201,8 +201,17 @@ main() {
         exit 1
     fi
 
-    # Step 3: Hugo Build
-    log_info "[3/5] 构建站点..."
+    # Step 3: 部署 Cloudflare Worker
+    log_info "[3/6] 部署 Image Resizer Worker..."
+    if bash scripts/deploy-worker.sh; then
+        log_success "✓ Worker 部署成功"
+    else
+        log_warn "⚠ Worker 部署失败，继续构建站点"
+    fi
+    echo ""
+
+    # Step 4: Hugo Build
+    log_info "[4/6] 构建站点..."
     if hugo; then
         log_success "✓ 站点构建成功"
     else
@@ -211,8 +220,8 @@ main() {
     fi
     echo ""
 
-    # Step 4: Git Add & Commit
-    log_info "[4/5] 提交更改..."
+    # Step 5: Git Add & Commit
+    log_info "[5/6] 提交更改..."
     git add ./
     if git commit -m "$(date +'%Y%m%d%H%M%S') on $OS_NAME"; then
         log_success "✓ 更改已提交"
@@ -221,8 +230,8 @@ main() {
     fi
     echo ""
 
-    # Step 5: Git Push
-    log_info "[5/5] 推送到远程仓库..."
+    # Step 6: Git Push
+    log_info "[6/6] 推送到远程仓库..."
     if git push; then
         log_success "✓ 推送成功"
     else

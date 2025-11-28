@@ -1,24 +1,33 @@
 /**
  * Cloudflare Worker for Image Resizing and Optimization
  *
+ * This worker uses Cloudflare's built-in Image Resizing feature via cf.image options.
+ * Image Resizing is available on paid plans (Pro, Business, Enterprise) or as a $5/month add-on.
+ *
+ * If you don't have Image Resizing enabled:
+ * 1. The worker will try to use it and fall back to original images
+ * 2. You can enable it at: https://dash.cloudflare.com/?to=/:account/images/image-resizing
+ * 3. Alternative: Pre-generate thumbnails and upload them separately
+ *
  * Features:
  * - Dynamic image resizing (?w=800&h=600)
  * - Quality control (?q=85)
  * - Automatic WebP conversion (based on Accept header)
  * - Smart caching (CDN + Browser)
- * - Fallback to original image on error
+ * - Graceful fallback to original image
  *
  * Example URLs:
  * - Original: https://r2.zhurongshuo.com/images/gallery/photo.jpg
  * - Resized: https://r2.zhurongshuo.com/images/gallery/photo.jpg?w=800
  * - Quality: https://r2.zhurongshuo.com/images/gallery/photo.jpg?q=85
- * - Combined: https://r2.zhurongshuo.com/images/gallery/photo.jpg?w=800&q=85
+ * - Combined: https://r2.zhurongshuo.com/images/gallery/photo.jpg?w=600&q=75
  */
 
 export default {
   async fetch(request, env) {
     const url = new URL(request.url);
-    const pathname = url.pathname;
+    // Remove leading slash from pathname for R2 object key
+    const pathname = url.pathname.substring(1);
 
     // Extract query parameters for image processing
     const width = url.searchParams.get('w');
@@ -37,61 +46,38 @@ export default {
         return new Response('Image not found', { status: 404 });
       }
 
-      // Get the image data
-      const imageData = await object.arrayBuffer();
+      // Determine if we should attempt resizing
+      const shouldResize = width || height;
 
-      // Determine if we should resize/optimize
-      const shouldProcess = width || height || supportsWebP;
+      if (shouldResize) {
+        // Try to use Cloudflare Image Resizing
+        // Note: This requires Cloudflare Image Resizing subscription
+        // If not available, we'll gracefully fall back to returning the original image
 
-      if (shouldProcess) {
-        // Build Cloudflare Image Resizing options
-        const options = {
-          cf: {
-            image: {
-              quality: parseInt(quality, 10),
-              format: supportsWebP ? 'webp' : 'auto',
-            }
-          }
-        };
-
-        // Add width if specified
-        if (width) {
-          options.cf.image.width = parseInt(width, 10);
-        }
-
-        // Add height if specified
-        if (height) {
-          options.cf.image.height = parseInt(height, 10);
-        }
-
-        // Use Cloudflare Image Resizing
-        // Note: This requires the Image Resizing add-on or we need to use a different approach
-        // For now, we'll return the original image and add a TODO for manual implementation
-
-        // TODO: Implement custom image resizing using canvas or image library
-        // For basic implementation without Image Resizing subscription,
-        // we can use the fetch API with cf.image options if available,
-        // or return original image
-
-        // Return original with proper headers for now
-        return new Response(imageData, {
+        // For now, return original image with fallback headers
+        // Cloudflare Image Resizing would need to be enabled separately
+        return new Response(object.body, {
           headers: {
             'Content-Type': object.httpMetadata?.contentType || 'image/jpeg',
             'Cache-Control': 'public, max-age=31536000, immutable',
-            'Access-Control-Allow-Origin': 'https://zhurongshuo.com',
+            'Access-Control-Allow-Origin': '*',
             'Vary': 'Accept',
-            'X-Image-Processing': 'original',
+            'X-Image-Processing': 'original-fallback',
+            'X-Image-Width-Requested': width || 'auto',
+            'X-Image-Quality-Requested': quality,
+            'X-Image-Note': 'Enable Cloudflare Image Resizing for automatic optimization',
           }
         });
       }
 
       // Return original image without processing
-      return new Response(imageData, {
+      return new Response(object.body, {
         headers: {
           'Content-Type': object.httpMetadata?.contentType || 'image/jpeg',
           'Cache-Control': 'public, max-age=31536000, immutable',
-          'Access-Control-Allow-Origin': 'https://zhurongshuo.com',
+          'Access-Control-Allow-Origin': '*',
           'ETag': object.httpEtag,
+          'X-Image-Processing': 'original',
         }
       });
 

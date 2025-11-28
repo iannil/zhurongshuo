@@ -43,7 +43,7 @@ show_help() {
 
 环境变量:
     CLOUDFLARE_ACCOUNT_ID   Cloudflare 账户 ID
-    CLOUDFLARE_API_TOKEN    Cloudflare API Token（需要 R2 读写权限）
+    CLOUDFLARE_R2_API_TOKEN    Cloudflare API Token（需要 R2 读写权限）
 
 增量同步说明:
     使用 --incremental 选项时，脚本会通过 wrangler r2 object head
@@ -94,11 +94,11 @@ check_dependencies() {
         exit 1
     fi
 
-    if [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$CLOUDFLARE_API_TOKEN" ]; then
+    if [ -z "$CLOUDFLARE_ACCOUNT_ID" ] || [ -z "$CLOUDFLARE_R2_API_TOKEN" ]; then
         log_error "缺少 Cloudflare 凭证"
         log_info "请设置环境变量："
         log_info "  export CLOUDFLARE_ACCOUNT_ID=your_account_id"
-        log_info "  export CLOUDFLARE_API_TOKEN=your_api_token"
+        log_info "  export CLOUDFLARE_R2_API_TOKEN=your_api_token"
         exit 1
     fi
 }
