@@ -14,15 +14,62 @@
 # ./process_posts.sh
 
 # --- 配置 ---
+# 获取脚本所在目录的父目录（项目根目录）
+SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
+PROJECT_ROOT="$(dirname "$SCRIPT_DIR")"
+
 # 源目录，包含Markdown文章
-DOCS_DIR="./content/posts"
+DOCS_DIR="$PROJECT_ROOT/content/posts"
+# 归档目录
+ARCHIVE_DIR="$PROJECT_ROOT/archive"
 # 输出CSV文件的前缀和后缀
 CSV_PREFIX="祝融说_副本"
 CSV_SUFFIX=".csv"
 # 最终的CSV文件名，格式如: 祝融说_副本20231225.csv
-CSV_FILE="./archive/${CSV_PREFIX}$(date +%Y%m%d)${CSV_SUFFIX}"
+CSV_FILE="$ARCHIVE_DIR/${CSV_PREFIX}$(date +%Y%m%d)${CSV_SUFFIX}"
+# 保留天数
+KEEP_DAYS=7
 
 # --- 主逻辑 ---
+
+# 清理函数：删除过期的导出文件（保留最近N天的文件）
+cleanup_old_exports() {
+    echo "正在清理过期的导出文件..."
+
+    if [ ! -d "$ARCHIVE_DIR" ]; then
+        return
+    fi
+
+    # 计算截止时间（N天前）
+    local cutoff_date=$(date -v-${KEEP_DAYS}d +%Y%m%d 2>/dev/null || date -d "${KEEP_DAYS} days ago" +%Y%m%d 2>/dev/null)
+
+    if [ -z "$cutoff_date" ]; then
+        echo "警告: 无法计算截止日期，跳过清理" >&2
+        return
+    fi
+
+    local deleted_count=0
+
+    # 查找并删除过期的CSV文件
+    find "$ARCHIVE_DIR" -maxdepth 1 -type f -name "${CSV_PREFIX}[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]${CSV_SUFFIX}" | while read -r file; do
+        local filename=$(basename "$file")
+        # 提取文件名中的日期部分（YYYYMMDD）
+        local file_date=$(echo "$filename" | grep -oE '[0-9]{8}')
+
+        if [ -n "$file_date" ] && [ "$file_date" -lt "$cutoff_date" ]; then
+            if rm "$file"; then
+                echo "已删除过期文件: $filename"
+                deleted_count=$((deleted_count + 1))
+            fi
+        fi
+    done
+
+    if [ $deleted_count -gt 0 ]; then
+        echo "清理完成，共删除 $deleted_count 个过期文件"
+    else
+        echo "无过期文件需要清理"
+    fi
+}
 
 # 检查源目录是否存在
 if [ ! -d "$DOCS_DIR" ]; then
@@ -114,6 +161,9 @@ echo "数据提取完成，正在排序并生成CSV文件..."
 # 检查文件是否成功创建且非空
 if [ -s "$CSV_FILE" ]; then
     echo "文件写入成功: $CSV_FILE"
+
+    # 清理过期的导出文件
+    cleanup_old_exports
 else
     echo "文件写入失败..." >&2
     exit 1

@@ -1,7 +1,8 @@
 <?php
 
-$docs = './content/posts';
-$csv = './祝融说_副本'.date('Ymd').'.csv';
+$docs = dirname(__DIR__) . '/content/posts';
+$archiveDir = dirname(__DIR__) . '/archive';
+$csv = $archiveDir . '/祝融说_副本' . date('Ymd') . '.csv';
 $files = getFilesByExtension($docs, 'md');
 $data = [];
 
@@ -20,9 +21,55 @@ if (empty($data)) {
 }
 
 if (writeCsvWithoutFunction($data, $csv, false)) {
-    echo "文件写入成功...".PHP_EOL;
+    echo "文件写入成功: $csv".PHP_EOL;
+
+    // 删除过期的导出文件（保留最近7天的文件）
+    cleanupOldExports($archiveDir, 7);
 } else {
     echo "文件写入失败...".PHP_EOL;
+}
+
+/**
+ * 清理过期的导出文件
+ *
+ * @param string $dir 归档目录
+ * @param int $keepDays 保留天数
+ */
+function cleanupOldExports(string $dir, int $keepDays = 7): void
+{
+    if (!is_dir($dir)) {
+        return;
+    }
+
+    $cutoffTime = time() - ($keepDays * 86400);
+    $pattern = '/^祝融说_副本\d{8}\.csv$/';
+
+    $files = scandir($dir);
+    $deletedCount = 0;
+
+    foreach ($files as $file) {
+        if ($file === '.' || $file === '..') {
+            continue;
+        }
+
+        $filePath = $dir . '/' . $file;
+
+        // 只删除匹配导出文件命名模式的CSV文件
+        if (preg_match($pattern, $file) && is_file($filePath)) {
+            $fileTime = filemtime($filePath);
+
+            if ($fileTime < $cutoffTime) {
+                if (unlink($filePath)) {
+                    echo "已删除过期文件: $file" . PHP_EOL;
+                    $deletedCount++;
+                }
+            }
+        }
+    }
+
+    if ($deletedCount > 0) {
+        echo "清理完成，共删除 $deletedCount 个过期文件" . PHP_EOL;
+    }
 }
 
 /**

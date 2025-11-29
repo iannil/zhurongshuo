@@ -183,7 +183,7 @@ main() {
     echo ""
 
     # Step 1: Git Pull
-    log_info "[1/5] 拉取最新代码..."
+    log_info "[1/6] 拉取最新代码..."
     if git pull; then
         log_success "✓ 代码拉取成功"
     else
@@ -193,7 +193,7 @@ main() {
     echo ""
 
     # Step 2: 同步图片到 R2（在构建之前）
-    log_info "[2/6] 同步静态资源..."
+    log_info "[2/7] 同步静态资源..."
     if sync_images_to_r2; then
         log_success "✓ R2 同步完成"
     else
@@ -202,7 +202,7 @@ main() {
     fi
 
     # Step 3: 部署 Cloudflare Worker
-    log_info "[3/6] 部署 Image Resizer Worker..."
+    log_info "[3/7] 部署 Image Resizer Worker..."
     if bash scripts/deploy-worker.sh; then
         log_success "✓ Worker 部署成功"
     else
@@ -210,8 +210,17 @@ main() {
     fi
     echo ""
 
-    # Step 4: Hugo Build
-    log_info "[4/6] 构建站点..."
+    # Step 4: 导出内容到归档
+    log_info "[4/7] 导出内容到归档..."
+    if bash scripts/export.sh; then
+        log_success "✓ 内容导出成功"
+    else
+        log_warn "⚠ 内容导出失败，继续构建站点"
+    fi
+    echo ""
+
+    # Step 5: Hugo Build
+    log_info "[5/7] 构建站点..."
     if hugo; then
         log_success "✓ 站点构建成功"
     else
@@ -220,8 +229,8 @@ main() {
     fi
     echo ""
 
-    # Step 5: Git Add & Commit
-    log_info "[5/6] 提交更改..."
+    # Step 6: Git Add & Commit
+    log_info "[6/7] 提交更改..."
     git add ./
     if git commit -m "$(date +'%Y%m%d%H%M%S') on $OS_NAME"; then
         log_success "✓ 更改已提交"
@@ -230,8 +239,8 @@ main() {
     fi
     echo ""
 
-    # Step 6: Git Push
-    log_info "[6/6] 推送到远程仓库..."
+    # Step 7: Git Push
+    log_info "[7/7] 推送到远程仓库..."
     if git push; then
         log_success "✓ 推送成功"
     else
