@@ -117,6 +117,9 @@ upload_file() {
         log_info "上传: $local_path -> $r2_path"
     fi
 
+    # Set API token for wrangler
+    export CLOUDFLARE_API_TOKEN="${CLOUDFLARE_R2_API_TOKEN}"
+
     # 使用 wrangler 上传文件
     # 注意：这里使用 R2 的 S3 兼容 API，--remote 确保上传到远程 R2
     wrangler r2 object put "$BUCKET_NAME/$r2_path" --file="$local_path" --remote 2>&1 | \
@@ -136,16 +139,13 @@ upload_file() {
 file_exists_in_r2() {
     local r2_path="$1"
 
-    # 使用 wrangler r2 object head 检查对象是否存在（不下载内容，更高效）
-    # 如果 head 命令不可用，回退到 get 方法
-    if wrangler r2 object head "$BUCKET_NAME/$r2_path" &> /dev/null; then
-        return 0
-    else
-        # head 命令失败时，尝试使用 get 方法验证
-        # 注意：有些 wrangler 版本可能不支持 head 命令
-        wrangler r2 object get "$BUCKET_NAME/$r2_path" --file=/dev/null &> /dev/null
-        return $?
-    fi
+    # Set API token for wrangler
+    export CLOUDFLARE_API_TOKEN="${CLOUDFLARE_R2_API_TOKEN}"
+
+    # 使用 wrangler r2 object get 检查对象是否存在
+    # 注意：wrangler 的 r2 object head 命令不存在，使用 get --file=/dev/null 代替
+    wrangler r2 object get "$BUCKET_NAME/$r2_path" --file=/dev/null --remote &> /dev/null
+    return $?
 }
 
 # 处理单个文件

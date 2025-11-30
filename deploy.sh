@@ -83,20 +83,22 @@ check_r2_dependencies() {
 file_exists_in_r2() {
     local r2_path="$1"
 
-    # 使用 wrangler r2 object head 检查对象是否存在（不下载内容，更高效）
-    if wrangler r2 object head "$BUCKET_NAME/$r2_path" &> /dev/null; then
-        return 0
-    else
-        # head 命令失败时，尝试使用 get 方法验证
-        wrangler r2 object get "$BUCKET_NAME/$r2_path" --file=/dev/null &> /dev/null
-        return $?
-    fi
+    # Set API token for wrangler
+    export CLOUDFLARE_API_TOKEN="${CLOUDFLARE_R2_API_TOKEN}"
+
+    # 使用 wrangler r2 object get 检查对象是否存在
+    # 注意：wrangler 的 r2 object head 命令不存在，使用 get --file=/dev/null 代替
+    wrangler r2 object get "$BUCKET_NAME/$r2_path" --file=/dev/null --remote &> /dev/null
+    return $?
 }
 
 # 上传文件到 R2
 upload_to_r2() {
     local file="$1"
     local r2_path="$2"
+
+    # Set API token for wrangler
+    export CLOUDFLARE_API_TOKEN="${CLOUDFLARE_R2_API_TOKEN}"
 
     wrangler r2 object put "$BUCKET_NAME/$r2_path" --file="$file" --remote &> /dev/null
     return $?
