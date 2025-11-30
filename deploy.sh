@@ -195,7 +195,7 @@ main() {
     echo ""
 
     # Step 2: 同步 Gallery 图片并生成 Markdown
-    log_info "[2/7] 同步 Gallery 图片并生成页面..."
+    log_info "[2/6] 同步 Gallery 图片并生成页面..."
     if bash scripts/sync-gallery.sh; then
         log_success "✓ Gallery 同步完成"
     else
@@ -204,17 +204,8 @@ main() {
     fi
     echo ""
 
-    # Step 2.5: 同步其他静态资源到 R2
-    log_info "[2.5/7] 同步其他静态资源..."
-    if sync_images_to_r2; then
-        log_success "✓ R2 同步完成"
-    else
-        log_error "✗ R2 同步失败"
-        exit 1
-    fi
-
     # Step 3: 部署 Cloudflare Worker
-    log_info "[3/7] 部署 Image Resizer Worker..."
+    log_info "[3/6] 部署 Image Resizer Worker..."
     if bash scripts/deploy-worker.sh; then
         log_success "✓ Worker 部署成功"
     else
@@ -223,7 +214,7 @@ main() {
     echo ""
 
     # Step 4: 导出内容到归档
-    log_info "[4/7] 导出内容到归档..."
+    log_info "[4/6] 导出内容到归档..."
     if bash scripts/export.sh; then
         log_success "✓ 内容导出成功"
     else
@@ -232,7 +223,7 @@ main() {
     echo ""
 
     # Step 5: Hugo Build
-    log_info "[5/7] 构建站点..."
+    log_info "[5/6] 构建站点..."
     if hugo; then
         log_success "✓ 站点构建成功"
     else
@@ -241,8 +232,8 @@ main() {
     fi
     echo ""
 
-    # Step 6: Git Add & Commit
-    log_info "[6/7] 提交更改..."
+    # Step 6: Git Add & Commit & Push
+    log_info "[6/6] 提交并推送更改..."
     git add ./
     if git commit -m "$(date +'%Y%m%d%H%M%S') on $OS_NAME"; then
         log_success "✓ 更改已提交"
@@ -250,9 +241,6 @@ main() {
         log_warn "无新更改需要提交"
     fi
     echo ""
-
-    # Step 7: Git Push
-    log_info "[7/7] 推送到远程仓库..."
     if git push; then
         log_success "✓ 推送成功"
     else
