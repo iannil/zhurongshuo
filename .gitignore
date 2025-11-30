@@ -30,6 +30,10 @@ static/audio/gallery/
 static/images/gallery/
 static/videos/gallery/
 
+docs/audio/gallery/
+docs/images/gallery/
+docs/videos/gallery/
+
 # Logs and backups
 logs/
 backups/
