@@ -192,8 +192,18 @@ main() {
     fi
     echo ""
 
-    # Step 2: 同步图片到 R2（在构建之前）
-    log_info "[2/7] 同步静态资源..."
+    # Step 2: 同步 Gallery 图片并生成 Markdown
+    log_info "[2/7] 同步 Gallery 图片并生成页面..."
+    if bash scripts/sync-gallery.sh; then
+        log_success "✓ Gallery 同步完成"
+    else
+        log_error "✗ Gallery 同步失败"
+        exit 1
+    fi
+    echo ""
+
+    # Step 2.5: 同步其他静态资源到 R2
+    log_info "[2.5/7] 同步其他静态资源..."
     if sync_images_to_r2; then
         log_success "✓ R2 同步完成"
     else
