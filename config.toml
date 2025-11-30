@@ -87,12 +87,23 @@ pygmentscodefencesguesssyntax = true
   placeholder = " "
   visitor = true
 
-# Your socail's url
-[params.social]
-  game = "/about/"
-  book-open = "/books/"
-  trophy = "/practices/"
-  gallery = "/gallery/"
+# Your socail's url (ordered list)
+[[params.social]]
+  name = "book-open"
+  url = "/books/"
+  weight = 10
+[[params.social]]
+  name = "trophy"
+  url = "/practices/"
+  weight = 20
+[[params.social]]
+  name = "gallery"
+  url = "/gallery/"
+  weight = 30
+[[params.social]]
+  name = "game"
+  url = "/about/"
+  weight = 40
 
 [markup]
 [markup.goldmark]
