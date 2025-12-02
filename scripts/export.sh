@@ -32,42 +32,34 @@ KEEP_DAYS=7
 
 # --- 主逻辑 ---
 
-# 清理函数：删除过期的导出文件（保留最近N天的文件）
+# 清理函数：删除旧的导出文件（只保留最新的1个文件）
 cleanup_old_exports() {
-    echo "正在清理过期的导出文件..."
+    echo "正在清理旧的导出文件..."
 
     if [ ! -d "$ARCHIVE_DIR" ]; then
         return
     fi
 
-    # 计算截止时间（N天前）
-    local cutoff_date=$(date -v-${KEEP_DAYS}d +%Y%m%d 2>/dev/null || date -d "${KEEP_DAYS} days ago" +%Y%m%d 2>/dev/null)
-
-    if [ -z "$cutoff_date" ]; then
-        echo "警告: 无法计算截止日期，跳过清理" >&2
-        return
-    fi
-
     local deleted_count=0
+    local current_file=$(basename "$CSV_FILE")
 
-    # 查找并删除过期的CSV文件
+    # 查找并删除除当前文件外的所有旧备份文件
     find "$ARCHIVE_DIR" -maxdepth 1 -type f -name "${CSV_PREFIX}[0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]${CSV_SUFFIX}" | while read -r file; do
         local filename=$(basename "$file")
-        # 提取文件名中的日期部分（YYYYMMDD）
-        local file_date=$(echo "$filename" | grep -oE '[0-9]{8}')
 
-        if [ -n "$file_date" ] && [ "$file_date" -lt "$cutoff_date" ]; then
+        # 如果不是当前生成的文件，则删除
+        if [ "$filename" != "$current_file" ]; then
             if rm "$file"; then
-                echo "已删除过期文件: $filename"
+                echo "已删除旧备份: $filename"
                 deleted_count=$((deleted_count + 1))
             fi
         fi
     done
 
     if [ $deleted_count -gt 0 ]; then
-        echo "清理完成，共删除 $deleted_count 个过期文件"
+        echo "清理完成，共删除 $deleted_count 个旧备份"
     else
-        echo "无过期文件需要清理"
+        echo "无旧备份需要清理"
     fi
 }
 
