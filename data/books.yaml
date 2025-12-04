@@ -3,7 +3,7 @@
 
 collection:
   - volume: "第1卷"
-    # description: "世界是什么？"
+    # description: ""
     books:
       - slug: "reality-construction"
         title: "实在建构：从无限可能到有限确定"
@@ -32,7 +32,7 @@ collection:
         last_updated: "2025-10-19"
 
   - volume: "第2卷"
-    # description: "我们如何认识世界？"
+    # description: ""
     books:
       - slug: "the-breath-of-words"
         title: "词语的呼吸：语言如何塑造我们"
@@ -61,7 +61,7 @@ collection:
         last_updated: "2025-10-19"
 
   - volume: "第3卷"
-    # description: "我们该如何共处？"
+    # description: ""
     books:
       - slug: "the-multiple-realities-of-the-world"
         title: "世界的多重实在：主权国家作为建构者"
@@ -90,7 +90,7 @@ collection:
         last_updated: "2025-10-19"
 
   - volume: "第4卷"
-    # description: "我们该如何行动？"
+    # description: ""
     books:
       - slug: "the-minds-horizon"
         title: "心念视界：内在游戏"
@@ -117,6 +117,40 @@ collection:
         subtitle: "Creation from Nothing: Beauty, Art, and Innovation"
         version: "alpha"
         last_updated: "2025-10-19"
+
+  - volume: "第5卷"
+    # description: ""
+    books:
+      - slug: "reality-hijacking"
+        title: "实在劫持：精神控制与自我剥夺"
+        subtitle: "Reality Hijacking: Mind Control and Self-Deprivation"
+        version: "alpha"
+        last_updated: "2025-12-04"
+      - slug: "perfect-obedience"
+        title: "完美服从：基于共识的全景牢笼"
+        subtitle: "Perfect Obedience: The Panoramic Cage Based on Consensus"
+        version: "alpha"
+        last_updated: "2025-12-04"
+      - slug: "possibility-harvesting"
+        title: "可能性收割：作为资源的肉体与精神"
+        subtitle: "Possibility Harvesting: The Body and Mind as Resources"
+        version: "alpha"
+        last_updated: "2025-12-04"
+      - slug: "deconstructing-civilization-part-1"
+        title: "解构文明（上）：本体的分解"
+        subtitle: "Deconstructing Civilization (Part 1): The Decomposition of Ontology"
+        version: "alpha"
+        last_updated: "2025-12-04"
+      - slug: "deconstructing-civilization-part-2"
+        title: "解构文明（下）：柔性的战争"
+        subtitle: "Deconstructing Civilization (Part 2): The Flexible War"
+        version: "alpha"
+        last_updated: "2025-12-04"
+      - slug: "entropy-driven-chaos"
+        title: "熵增混沌：加速实在的崩塌"
+        subtitle: "Entropy-Driven Chaos: Accelerating the Collapse of Reality"
+        version: "alpha"
+        last_updated: "2025-12-04"
 
 # 部分标题配置
 part_titles:
