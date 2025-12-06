@@ -59,9 +59,9 @@ collection:
   - volume: "第4季"
     # description: ""
     practices:
-      - slug: "enterprise-ai-computing-platform"
-        title: "企业级人工智能算力平台：构建、运营与生态"
-        subtitle: "Enterprise AI Computing Platform: Construction, Operation, and Ecosystem"
+      - slug: "the-full-landscape-of-intelligent-computing-centers"
+        title: "智算中心全图景：构建、运营与生态"
+        subtitle: "The Full Landscape of Intelligent Computing Centers: Construction, Operation, and Ecosystem"
         version: "beta"
         last_updated: "2025-11-06"
       - slug: "intelligent-computing-center-operations-in-practice"
@@ -82,7 +82,7 @@ collection:
 
 # 部分标题配置
 part_titles:
-  enterprise-ai-computing-platform:
+  the-full-landscape-of-intelligent-computing-centers:
     part-01: "第一篇：顶层设计与战略布局"
     part-02: "第二篇：算力资源全生命周期管理"
     part-03: "第三篇：核心技术支撑与服务保障"
