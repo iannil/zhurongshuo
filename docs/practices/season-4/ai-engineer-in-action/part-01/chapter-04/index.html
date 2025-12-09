@@ -1,0 +1,268 @@
+<!doctype html><html lang=zh-cn><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge,chrome=1"><meta name=google-site-verification content="8_xpI-TS3tNV8UPug-Q6Ef3BhKTcy0WOG7dEdAcm2zk"><meta name=viewport content="width=device-width,initial-scale=1"><meta name=author content="祝融"><link rel=dns-prefetch href=//cdn.jsdelivr.net><link rel=preconnect href=https://cdn.jsdelivr.net crossorigin><link rel=dns-prefetch href=//www.googletagmanager.com><link rel=preconnect href=https://www.googletagmanager.com crossorigin><link rel=canonical href=https://zhurongshuo.com/practices/season-4/ai-engineer-in-action/part-01/chapter-04/><title>祝融说。 第四章：工程师的必修课：Linux、Docker与性能监控</title><meta property="og:title" content="第四章：工程师的必修课：Linux、Docker与性能监控"><meta property="og:url" content="https://zhurongshuo.com/practices/season-4/ai-engineer-in-action/part-01/chapter-04/"><meta property="og:site_name" content="祝融说。"><meta property="og:locale" content="zh_CN"><meta property="og:type" content="article"><meta property="article:published_time" content="2025-12-09T00:00:00+08:00"><meta property="article:modified_time" content="2025-12-09T00:00:00+08:00"><meta property="article:tag" content="书稿"><meta name=description content="在前三章中，我们已经走过了一段激动人心的旅程：从精通Python编程，到驾驭数据科学工具链，再到将AI模型构建成一个功能完备的在线API服务。至此，我们似乎已经拥有了一个可以工作的“产品原型”。然而，在真实的工业环境中，一个能在你的开发机（通常是Windows或macOS图形界面）上通过python app.py运行起来的应用，与一个能够在生产服务器上7x24小时稳定运行、服务成千上万用户的产品之间，还存在着巨大的鸿沟。
+"><meta property="og:description" content="在前三章中，我们已经走过了一段激动人心的旅程：从精通Python编程，到驾驭数据科学工具链，再到将AI模型构建成一个功能完备的在线API服务。至此，我们似乎已经拥有了一个可以工作的“产品原型”。然而，在真实的工业环境中，一个能在你的开发机（通常是Windows或macOS图形界面）上通过python app.py运行起来的应用，与一个能够在生产服务器上7x24小时稳定运行、服务成千上万用户的产品之间，还存在着巨大的鸿沟。
+"><meta property="og:image" content="https://zhurongshuo.com/images/favicon.ico"><meta name=twitter:card content="summary_large_image"><meta name=twitter:title content="第四章：工程师的必修课：Linux、Docker与性能监控"><meta name=twitter:description content="在前三章中，我们已经走过了一段激动人心的旅程：从精通Python编程，到驾驭数据科学工具链，再到将AI模型构建成一个功能完备的在线API服务。至此，我们似乎已经拥有了一个可以工作的“产品原型”。然而，在真实的工业环境中，一个能在你的开发机（通常是Windows或macOS图形界面）上通过python app.py运行起来的应用，与一个能够在生产服务器上7x24小时稳定运行、服务成千上万用户的产品之间，还存在着巨大的鸿沟。
+"><meta name=twitter:image content="https://zhurongshuo.com/images/favicon.ico"><meta name=keywords content="AI工程师实战：从Python基础到LLM应用与性能优化,第四章：工程师的必修课：Linux、Docker与性能监控"><link rel="shortcut icon" href=https://zhurongshuo.com/images/favicon.ico><link rel=stylesheet type=text/css media=screen href=https://zhurongshuo.com/css/normalize.css><link rel=stylesheet type=text/css media=screen href=https://zhurongshuo.com/css/animate-custom.css><link rel=stylesheet type=text/css media=screen href=https://zhurongshuo.com/css/zozo.css><link rel=stylesheet type=text/css media=screen href=https://zhurongshuo.com/css/remixicon-custom.css><link rel=stylesheet type=text/css media=screen href=https://zhurongshuo.com/css/highlight.css><script type=application/ld+json>{"@context":"https://schema.org","@type":"Article","headline":"第四章：工程师的必修课：Linux、Docker与性能监控","description":"在前三章中，我们已经走过了一段激动人心的旅程：从精通Python编程，到驾驭数据科学工具链，再到将AI模型构建成一个功能完备的在线API服务。至此，我们似乎已经拥有了一个可以工作的“产品原型”。然而，在真实的工业环境中，一个能在你的开发机（通常是Windows或macOS图形界面）上通过python app.py运行起来的应用，与一个能够在生产服务器上7x24小时稳定运行、服务成千上万用户的产品之间，还存在着巨大的鸿沟。\n","datePublished":"2025-12-09T00:00:00\u002b08:00","dateModified":"2025-12-09T00:00:00\u002b08:00","author":{"@type":"Person","name":"祝融"},"publisher":{"@type":"Organization","name":"祝融说。","logo":{"@type":"ImageObject","url":"https:\/\/zhurongshuo.com\/images\/favicon.ico"}},"image":"https:\/\/zhurongshuo.com\/images\/favicon.ico","mainEntityOfPage":{"@type":"WebPage","@id":"https:\/\/zhurongshuo.com\/practices\/season-4\/ai-engineer-in-action\/part-01\/chapter-04\/"},"keywords":"书稿"}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https:\/\/zhurongshuo.com\/"},{"@type":"ListItem","position":2,"name":"practices","item":"https:\/\/zhurongshuo.com\/practices/"},{"@type":"ListItem","position":3,"name":"第四章：工程师的必修课：Linux、Docker与性能监控","item":"https:\/\/zhurongshuo.com\/practices\/season-4\/ai-engineer-in-action\/part-01\/chapter-04\/"}]}</script></head><body><div class="main animate__animated animate__fadeInDown"><div class="nav_container animated fadeInDown"><div class=site_nav id=site_nav><ul><li><a href=https://zhurongshuo.com/>首页</a></li><li><a href=https://zhurongshuo.com/start/>开始</a></li><li><a href=https://zhurongshuo.com/advanced/>进阶rc</a></li><li><a href=https://zhurongshuo.com/posts/>归档</a></li><li><a href=https://zhurongshuo.com/tags/>标签</a></li><li><a href=https://zhurongshuo.com/about/>关于</a></li></ul></div><div class=menu_icon><a id=menu_icon><i class=ri-menu-line></i></a></div></div><div class="header animated fadeInDown"><div class=site_title_container><div class=site_title><h1><a href=https://zhurongshuo.com/><span class=web-font>祝融说。</span></a></h1></div><div class=description><p class=sub_title>法不净空，觉无性也。</p><div class=my_socials><a href=https://zhurongshuo.com/books/ title=book-open><i class=ri-book-open-line></i></a>
+<a href=https://zhurongshuo.com/practices/ title=trophy><i class=ri-trophy-line></i></a>
+<a href=https://zhurongshuo.com/gallery/ title=gallery><i class=ri-gallery-line></i></a>
+<a href=https://zhurongshuo.com/about/ title=game><i class=ri-game-line></i></a>
+<a href type=application/rss+xml title=rss target=_blank><i class=ri-rss-fill></i></a></div></div></div></div><div class=content><div class=post_page><div class="post animate__animated animate__fadeInDown"><div class="post_title post_detail_title"><h2><a href=https://zhurongshuo.com/practices/season-4/ai-engineer-in-action/part-01/chapter-04/>第四章：工程师的必修课：Linux、Docker与性能监控</a></h2><span class=date>2025.12.09</span></div><div class="post_content markdown"><p>在前三章中，我们已经走过了一段激动人心的旅程：从精通Python编程，到驾驭数据科学工具链，再到将AI模型构建成一个功能完备的在线API服务。至此，我们似乎已经拥有了一个可以工作的“产品原型”。然而，在真实的工业环境中，一个能在你的开发机（通常是Windows或macOS图形界面）上通过<code>python app.py</code>运行起来的应用，与一个能够在生产服务器上7x24小时稳定运行、服务成千上万用户的产品之间，还存在着巨大的鸿沟。</p><p>弥合这道鸿沟，需要我们掌握一套全新的技能，我们称之为AI工程师的“运维之道”。这并非传统意义上运维工程师的全部职责，而是指AI开发者为了确保其应用能够被顺利部署、高效运行和轻松维护所必须具备的底层系统能力。这套能力，是AI工程化中连接“开发”（Development）与“运维”（Operations）的桥梁，也是DevOps理念在AI领域的具体体现。</p><p>本章，我们将深入这片看似与“算法”无关，却对算法落地至关重要的领域。我们将学习：</p><ul><li>Linux高效工作流：生产服务器几乎无一例外地运行在Linux系统上。我们将告别图形界面，学习如何在纯命令行的“黑客帝国”中高效穿行。掌握Shell脚本和常用命令，将让你能够自动化处理繁琐任务，如同拥有了“魔法咒语”。</li><li>虚拟环境深度解析：AI项目往往依赖于众多特定版本的库。我们将深入理解为何需要环境隔离，并对比<code>venv</code>和<code>Conda</code>这两种主流虚拟环境管理工具的优劣与适用场景，彻底告别“依赖地狱”。</li><li>Docker容器化：Docker是近年来软件开发领域最具革命性的技术之一。它能将我们的AI应用及其所有依赖（代码、库、系统工具、配置文件）打包成一个轻量、可移植的“集装箱”。我们将学习如何使用Docker来解决“在我机器上能跑”这一经典难题，实现一次构建、处处运行。</li><li>系统性能分析：当你的模型推理变慢，或者服务器负载飙高时，你不能束手无策。我们将学习使用<code>top</code>、<code>htop</code>、<code>nvidia-smi</code>等工具，像一名侦探一样去监控系统资源，分析CPU、内存、GPU的瓶颈所在，为性能优化提供数据支撑。</li></ul><p>最后，我们将通过一个实战项目——将上一章的Flask异步图像分类应用Docker化，并实现一键部署——将本章所有技能融会贯通。我们将编写<code>Dockerfile</code>，构建镜像，并通过<code>docker-compose</code>一键启动包含Flask应用、Celery Worker和Redis在内的整个服务栈。</p><p>掌握本章内容，你将获得一种“掌控全局”的能力。你将不再仅仅是一个算法的实现者，而是一个能够端到端地交付、部署和维护健壮AI系统的全能工程师。这套“内功”将极大地提升你的工程成熟度和解决实际问题的能力，让你在团队中脱颖而出。现在，让我们开启这场通往系统底层的探索之旅。</p><h2 id=41-linux高效工作流shell脚本与常用命令精通>4.1 Linux高效工作流：Shell脚本与常用命令精通</h2><p>对于许多习惯了图形用户界面（GUI）的开发者来说，初次接触纯命令行的Linux服务器可能会感到一丝畏惧。然而，命令行界面（CLI）一旦熟练，其效率和能力远非GUI所能比拟。</p><h3 id=411-基础中的基础文件系统导航与操作>4.1.1 基础中的基础：文件系统导航与操作</h3><p><code>pwd</code> (Print Working Directory)：显示你当前所在的目录路径。
+<code>ls</code> (List)：列出当前目录下的文件和文件夹。
+<code>ls -l</code>：以长格式显示，包含权限、所有者、大小、修改日期等详细信息。
+<code>ls -a</code>：显示所有文件，包括以<code>.</code>开头的隐藏文件（如<code>.bashrc</code>）。
+<code>ls -lh</code>：<code>-h</code>表示<code>human-readable</code>，以K, M, G等单位显示文件大小，更易读。
+<code>cd</code> (Change Directory)：切换目录。
+<code>cd /path/to/directory</code>：切换到指定绝对路径。
+<code>cd relative/path</code>：切换到相对路径。
+<code>cd ..</code>：切换到上一级目录。
+<code>cd ~</code> 或 <code>cd</code>：切换到当前用户的家目录。
+<code>cd -</code>：切换到上一次所在的目录。
+<code>mkdir</code> (Make Directory)：创建新目录。
+<code>mkdir my_project</code>
+<code>mkdir -p a/b/c</code>：<code>-p</code>表示<code>parents</code>，递归创建多级目录。
+<code>touch</code> (Touch)：创建一个空文件，或更新一个已存在文件的时间戳。
+<code>touch new_file.txt</code>
+<code>cp</code> (Copy)：复制文件或目录。
+<code>cp source.txt destination.txt</code>
+<code>cp -r source_dir/ destination_dir/</code>：<code>-r</code>表示<code>recursive</code>，用于复制目录。
+<code>mv</code> (Move)：移动或重命名文件/目录。
+<code>mv old_name.txt new_name.txt</code> (重命名)
+<code>mv file.txt target_dir/</code> (移动)
+<code>rm</code> (Remove)：删除文件或目录。这是一个危险的命令，没有回收站！
+<code>rm file.txt</code>
+<code>rm -r directory/</code>：删除目录。
+<code>rm -rf directory/</code>：<code>-f</code>表示<code>force</code>，强制删除，不进行任何提示。使用前请三思！</p><h3 id=412-文本处理三剑客grep-sed-awk>4.1.2 文本处理三剑客：<code>grep</code>, <code>sed</code>, <code>awk</code></h3><p>在处理日志文件、数据文件时，这三个命令是无价之宝。</p><p><code>grep</code> (Global Regular Expression Print)：强大的文本搜索工具。
+<code>grep "error" server.log</code>：在<code>server.log</code>中搜索包含"error"的行。
+<code>grep -i "error"</code>：<code>-i</code>表示忽略大小写。
+<code>grep -r "my_function" ./src</code>：<code>-r</code>表示在<code>src</code>目录及其子目录中递归搜索。
+<code>grep -v "debug"</code>：<code>-v</code>表示反向匹配，显示不包含"debug"的行。
+<code>grep -E "^[0-9]{3}"</code>：<code>-E</code>表示使用扩展正则表达式。</p><p><code>sed</code> (Stream Editor)：流编辑器，用于对文本进行替换、删除、插入等操作。
+<code>sed 's/old_string/new_string/g' file.txt</code>：将<code>file.txt</code>中所有的<code>old_string</code>替换为<code>new_string</code>。<code>g</code>表示全局替换。
+<code>sed '/^#/d' config.conf</code>：删除<code>config.conf</code>中所有以<code>#</code>开头的注释行。</p><p><code>awk</code>：一个强大的文本分析工具，它将每一行视为一条记录，按字段（默认以空格分隔）进行处理。
+<code>ls -l | awk '{print $9, $5}'</code>：打印<code>ls -l</code>输出的第9列（文件名）和第5列（文件大小）。
+<code>cat access.log | awk '$9 == "404" {print $7}'</code>：在<code>access.log</code>中，打印所有HTTP状态码（第9个字段）为404的请求路径（第7个字段）。</p><h3 id=413-管道与重定向->4.1.3 管道（<code>|</code>）与重定向（<code>></code>, <code>>></code>）</h3><p>这是命令行强大组合能力的核心。
+管道 <code>|</code>：将前一个命令的标准输出（stdout）作为后一个命令的标准输入（stdin）。
+<code>cat server.log | grep "ERROR" | wc -l</code>：这个命令链做了三件事：1. <code>cat</code>读取日志文件内容并输出到stdout；2. <code>grep</code>从stdin接收内容，筛选出含"ERROR"的行并输出到stdout；3. <code>wc -l</code>从stdin接收内容，统计行数。最终得到错误日志的总行数。</p><p>输出重定向 <code>></code> 和 <code>>></code>：
+<code>ls -l > file_list.txt</code>：将<code>ls -l</code>的输出写入<code>file_list.txt</code>，会覆盖文件原有内容。
+<code>echo "New log entry" >> server.log</code>：将字符串追加到<code>server.log</code>的末尾，不会覆盖。</p><p>输入重定向 <code>&lt;</code>：
+<code>wc -l &lt; file.txt</code>：将<code>file.txt</code>的内容作为<code>wc -l</code>的输入。</p><h3 id=414-shell脚本自动化你的工作流>4.1.4 Shell脚本：自动化你的工作流</h3><p>Shell脚本就是将一系列Linux命令按顺序写入一个文本文件，然后让系统执行它。它是实现自动化运维、部署、数据处理的基石。</p><p>一个简单的备份脚本 <code>backup.sh</code>：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=cp>#!/bin/bash
+</span></span></span><span class=line><span class=cl><span class=cp></span>
+</span></span><span class=line><span class=cl><span class=c1># 这是一个shebang，告诉系统使用/bin/bash来解释这个脚本</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 定义变量</span>
+</span></span><span class=line><span class=cl><span class=nv>SOURCE_DIR</span><span class=o>=</span><span class=s2>&#34;/path/to/my_project/src&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>BACKUP_DIR</span><span class=o>=</span><span class=s2>&#34;/path/to/backups&#34;</span>
+</span></span><span class=line><span class=cl><span class=nv>TIMESTAMP</span><span class=o>=</span><span class=k>$(</span>date +<span class=s2>&#34;%Y%m%d_%H%M%S&#34;</span><span class=k>)</span>
+</span></span><span class=line><span class=cl><span class=nv>BACKUP_FILENAME</span><span class=o>=</span><span class=s2>&#34;backup_</span><span class=si>${</span><span class=nv>TIMESTAMP</span><span class=si>}</span><span class=s2>.tar.gz&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 打印日志</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;开始备份...&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;源目录: </span><span class=si>${</span><span class=nv>SOURCE_DIR</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;目标文件: </span><span class=si>${</span><span class=nv>BACKUP_DIR</span><span class=si>}</span><span class=s2>/</span><span class=si>${</span><span class=nv>BACKUP_FILENAME</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 使用tar命令创建压缩包</span>
+</span></span><span class=line><span class=cl><span class=c1># -c: create, -z: gzip, -v: verbose, -f: file</span>
+</span></span><span class=line><span class=cl>tar -czvf <span class=s2>&#34;</span><span class=si>${</span><span class=nv>BACKUP_DIR</span><span class=si>}</span><span class=s2>/</span><span class=si>${</span><span class=nv>BACKUP_FILENAME</span><span class=si>}</span><span class=s2>&#34;</span> <span class=s2>&#34;</span><span class=si>${</span><span class=nv>SOURCE_DIR</span><span class=si>}</span><span class=s2>&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 检查上一个命令是否成功</span>
+</span></span><span class=line><span class=cl><span class=k>if</span> <span class=o>[</span> <span class=nv>$?</span> -eq <span class=m>0</span> <span class=o>]</span><span class=p>;</span> <span class=k>then</span>
+</span></span><span class=line><span class=cl>    <span class=nb>echo</span> <span class=s2>&#34;备份成功！&#34;</span>
+</span></span><span class=line><span class=cl><span class=k>else</span>
+</span></span><span class=line><span class=cl>    <span class=nb>echo</span> <span class=s2>&#34;备份失败！&#34;</span>
+</span></span><span class=line><span class=cl>    <span class=nb>exit</span> <span class=m>1</span>
+</span></span><span class=line><span class=cl><span class=k>fi</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=c1># 删除7天前的旧备份</span>
+</span></span><span class=line><span class=cl>find <span class=s2>&#34;</span><span class=si>${</span><span class=nv>BACKUP_DIR</span><span class=si>}</span><span class=s2>&#34;</span> -name <span class=s2>&#34;backup_*.tar.gz&#34;</span> -mtime +7 -exec rm <span class=o>{}</span> <span class=se>\;</span>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;已清理7天前的旧备份。&#34;</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=nb>echo</span> <span class=s2>&#34;所有操作完成。&#34;</span>
+</span></span></code></pre></div><p>如何运行？</p><ol><li>赋予执行权限：<code>chmod +x backup.sh</code></li><li>执行脚本：<code>./backup.sh</code></li></ol><p>在AI项目中，Shell脚本常用于：
+自动化部署：拉取最新代码、安装依赖、重启服务。
+数据预处理：批量下载数据、解压、调用Python脚本进行处理。
+定时任务（Cron Job）：设置定时任务，例如每天凌晨执行模型再训练或数据备份脚本。</p><h3 id=415-其他高频命令>4.1.5 其他高频命令</h3><p><code>ssh</code> (Secure Shell)：远程登录到另一台Linux服务器。<code>ssh user@hostname</code>。
+<code>scp</code> (Secure Copy)：在本地和远程服务器之间安全地复制文件。<code>scp local_file.txt user@hostname:/remote/path/</code>。
+<code>find</code>：按条件查找文件。<code>find . -name "*.py"</code>。
+<code>tar</code>：打包和解包文件。<code>tar -czvf archive.tar.gz directory/</code> (打包)，<code>tar -xzvf archive.tar.gz</code> (解包)。
+<code>curl</code> / <code>wget</code>：从网络下载文件或测试API。
+<code>htop</code> / <code>top</code>：实时监控系统进程和资源使用（详见4.4节）。
+<code>df -h</code>：查看磁盘空间使用情况。
+<code>du -sh *</code>：查看当前目录下各文件/文件夹的大小。
+<code>tail -f logfile.log</code>：实时跟踪日志文件的最新输出。</p><h2 id=42-虚拟环境深度解析从venv到conda>4.2 虚拟环境深度解析：从venv到Conda</h2><h3 id=421-为什么需要虚拟环境-依赖地狱>4.2.1 为什么需要虚拟环境？—— “依赖地狱”</h3><p>想象一个场景：
+项目A，是一个老项目，依赖于<code>TensorFlow 1.15</code>和<code>Python 3.6</code>。
+项目B，是你正在开发的新项目，需要<code>TensorFlow 2.8</code>和<code>Python 3.9</code>。</p><p>如果你在系统的全局Python环境中，通过<code>pip install</code>来安装这些库，会发生什么？当你为项目B安装<code>TensorFlow 2.8</code>时，它会覆盖掉项目A所依赖的<code>TensorFlow 1.15</code>，导致项目A无法运行。这就是典型的“依赖地狱”。</p><p>虚拟环境就是为了解决这个问题而生的。它会为每个项目创建一个独立的、隔离的Python环境。在这个环境中，你可以安装任意版本的库，而不会影响到全局环境或其他项目。</p><h3 id=422-venvpython官方的轻量级选择>4.2.2 <code>venv</code>：Python官方的轻量级选择</h3><p><code>venv</code>是自Python 3.3起内置于标准库的虚拟环境管理工具。它轻量、简单，是纯Python项目的首选。</p><p>工作流程：</p><ol><li><p>创建环境：在一个项目目录下，运行：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>python3 -m venv venv
+</span></span></code></pre></div><p>这会创建一个名为<code>venv</code>的文件夹，里面包含了Python解释器的副本和标准库。</p></li><li><p>激活环境：
+在Linux/macOS上：<code>source venv/bin/activate</code>
+在Windows上：<code>.\venv\Scripts\activate</code>
+激活后，你的命令行提示符前面会出现<code>(venv)</code>字样，表示你现在处于这个虚拟环境中。此时，你使用的<code>python</code>和<code>pip</code>命令都是指向<code>venv</code>文件夹内的版本。</p></li><li><p>安装依赖：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pip install flask numpy pandas
+</span></span></code></pre></div><p>这些库会被安装到<code>venv/lib/pythonX.X/site-packages/</code>目录下，而不是全局环境。</p></li><li><p>生成依赖列表：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>pip freeze &gt; requirements.txt
+</span></span></code></pre></div><p>这会将当前环境中所有已安装的库及其版本号记录到<code>requirements.txt</code>文件中。这个文件是项目可复现性的关键。</p></li><li><p>在另一台机器上复现环境：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>python3 -m venv venv
+</span></span><span class=line><span class=cl><span class=nb>source</span> venv/bin/activate
+</span></span><span class=line><span class=cl>pip install -r requirements.txt
+</span></span></code></pre></div></li><li><p>退出环境：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>deactivate
+</span></span></code></pre></div></li></ol><p><code>venv</code>的优点：内置、轻量、标准。
+<code>venv</code>的缺点：它只能隔离Python包，无法管理Python解释器本身的版本，也无法管理非Python的依赖（如CUDA、cuDNN）。</p><h3 id=423-condaai与数据科学领域的全能环境管理器>4.2.3 <code>Conda</code>：AI与数据科学领域的全能环境管理器</h3><p><code>Conda</code>是一个开源的、跨平台的包管理和环境管理系统。它最初是为Anaconda发行版创建的，但现在可以独立安装（Miniconda）。对于AI和数据科学项目，<code>Conda</code>通常是比<code>venv</code>更好的选择。</p><p><code>Conda</code>的核心优势：</p><ol><li><p>管理Python版本：<code>Conda</code>可以轻松地创建和切换不同版本的Python环境。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>conda create --name tf1_env <span class=nv>python</span><span class=o>=</span>3.6
+</span></span><span class=line><span class=cl>conda create --name torch_env <span class=nv>python</span><span class=o>=</span>3.9
+</span></span></code></pre></div></li><li><p>管理非Python包：这是<code>Conda</code>的“杀手级”特性。它可以安装和管理C/C++库、CUDA工具包、cuDNN、MKL等AI项目强依赖的底层库。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 创建一个环境，同时安装指定版本的Python, PyTorch, 和 CUDA</span>
+</span></span><span class=line><span class=cl>conda create --name my_gpu_env <span class=nv>python</span><span class=o>=</span>3.9 pytorch torchvision torchaudio <span class=nv>cudatoolkit</span><span class=o>=</span>11.3 -c pytorch
+</span></span></code></pre></div><p>这一个命令就解决了复杂的GPU环境配置问题，极大地简化了环境搭建。</p></li><li><p>更强大的依赖解析：<code>Conda</code>在安装包时，会进行更复杂的依赖关系求解，以确保所有包之间的兼容性，减少冲突。</p></li></ol><p>工作流程：</p><ol><li><p>创建环境：<code>conda create --name myenv python=3.9</code></p></li><li><p>激活环境：<code>conda activate myenv</code></p></li><li><p>安装依赖：<code>conda install numpy pandas matplotlib scikit-learn</code></p></li><li><p>生成依赖列表：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>conda env <span class=nb>export</span> &gt; environment.yml
+</span></span></code></pre></div><p><code>environment.yml</code>文件比<code>requirements.txt</code>更强大，它记录了环境名、所有包（包括Python和非Python包）及其版本，以及包的来源渠道（channel）。</p></li><li><p>复现环境：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>conda env create -f environment.yml
+</span></span></code></pre></div></li><li><p>退出环境：<code>conda deactivate</code></p></li><li><p>查看/删除环境：<code>conda env list</code>, <code>conda env remove --name myenv</code></p></li></ol><p><code>venv</code> vs <code>Conda</code>，如何选择？
+纯Python Web后端、工具脚本等：使用<code>venv</code>，因为它更轻量、更标准。
+数据科学、机器学习、深度学习项目：强烈推荐使用<code>Conda</code>，因为它能完美地处理复杂的非Python依赖，特别是GPU相关的库。</p><h2 id=43-docker容器化打包部署与隔离你的ai应用>4.3 Docker容器化：打包、部署与隔离你的AI应用</h2><h3 id=431-虚拟机-vs-容器理解docker的革命性>4.3.1 虚拟机 vs 容器：理解Docker的革命性</h3><p>在Docker出现之前，如果想隔离应用，我们通常使用虚拟机（Virtual Machine, VM）。VM会在宿主操作系统（Host OS）之上，通过Hypervisor虚拟化一整套硬件（CPU, 内存, 硬盘），然后再安装一个完整的客户操作系统（Guest OS），最后在Guest OS里运行我们的应用。这种方式隔离性极好，但缺点是笨重、资源开销大、启动慢。</p><p>Docker容器（Container）则是一种更轻量级的虚拟化技术。它不虚拟化硬件和操作系统内核，而是直接共享宿主机的内核。容器内只打包了应用本身和它所需要的库、二进制文件。这使得容器极其轻量、资源占用小、启动速度极快（秒级甚至毫秒级）。</p><p>核心概念：
+镜像（Image）：一个只读的模板，包含了运行应用所需的一切：代码、运行时、库、环境变量和配置文件。镜像是分层的，可以基于其他镜像构建（例如，基于官方的Python 3.9镜像）。
+容器（Container）：镜像的一个可运行实例。你可以从同一个镜像启动任意多个容器，它们之间相互隔离。
+Dockerfile：一个文本文件，里面包含了一系列指令，用于告诉Docker如何一步步地构建一个镜像。
+仓库（Repository）：用于存放和分发镜像的地方，最著名的是Docker Hub。</p><h3 id=432-dockerfile为你的ai应用制作蓝图>4.3.2 <code>Dockerfile</code>：为你的AI应用制作“蓝图”</h3><p><code>Dockerfile</code>是Docker的核心。让我们为上一章的鸢尾花分类Flask应用编写一个<code>Dockerfile</code>。</p><p>项目结构：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>simple_flask_app/
+</span></span><span class=line><span class=cl>├── app.py
+</span></span><span class=line><span class=cl>├── iris_model.pkl
+</span></span><span class=line><span class=cl>├── requirements.txt
+</span></span><span class=line><span class=cl>└── Dockerfile
+</span></span></code></pre></div><p><code>requirements.txt</code>内容：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>Flask==2.2.2
+</span></span><span class=line><span class=cl>numpy==1.23.5
+</span></span><span class=line><span class=cl>scikit-learn==1.2.0
+</span></span></code></pre></div><p><code>Dockerfile</code>内容：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=line><span class=cl><span class=c># 1. 选择一个基础镜像</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 我们选择官方的Python 3.9 slim版本，它比较小巧</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>FROM</span><span class=w> </span><span class=s>python:3.9-slim</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 2. 设置工作目录</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 在容器内创建一个/app目录，并将其设置为后续命令的执行目录</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>WORKDIR</span><span class=w> </span><span class=s>/app</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 3. 复制依赖文件</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 将requirements.txt复制到容器的/app目录下</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>COPY</span> requirements.txt .<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 4. 安装依赖</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 在容器内运行pip install命令。--no-cache-dir可以减小镜像体积</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>RUN</span> pip install --no-cache-dir -r requirements.txt<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 5. 复制应用代码和模型文件</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 将当前目录下的所有文件复制到容器的/app目录下</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>COPY</span> . .<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 6. 暴露端口</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 告诉Docker，容器内的应用将监听5000端口</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>EXPOSE</span><span class=w> </span><span class=s>5000</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 7. 定义启动命令</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 当容器启动时，执行这个命令。</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 使用gunicorn作为生产级的WSGI服务器，而不是Flask的开发服务器</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># CMD [&#34;python&#34;, &#34;app.py&#34;] # 开发时可以用这个</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>CMD</span> <span class=p>[</span><span class=s2>&#34;gunicorn&#34;</span><span class=p>,</span> <span class=s2>&#34;--bind&#34;</span><span class=p>,</span> <span class=s2>&#34;0.0.0.0:5000&#34;</span><span class=p>,</span> <span class=s2>&#34;app:app&#34;</span><span class=p>]</span><span class=err>
+</span></span></span></code></pre></div><p><em>注意：为了使用<code>gunicorn</code>，你需要先<code>pip install gunicorn</code>并更新<code>requirements.txt</code>。</em></p><h3 id=433-构建与运行容器>4.3.3 构建与运行容器</h3><ol><li><p>构建镜像：在<code>Dockerfile</code>所在的目录下，运行：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># -t 表示tag，为镜像命名，格式为 name:tag</span>
+</span></span><span class=line><span class=cl>docker build -t iris-classifier:1.0 .
+</span></span></code></pre></div><p>最后的<code>.</code>表示使用当前目录作为构建上下文。Docker会按照<code>Dockerfile</code>中的指令，一步步执行并构建镜像。</p></li><li><p>查看镜像：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker images
+</span></span></code></pre></div><p>你会看到刚刚创建的<code>iris-classifier:1.0</code>镜像。</p></li><li><p>运行容器：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># -d: 后台运行 (detached)</span>
+</span></span><span class=line><span class=cl><span class=c1># -p 8080:5000: 端口映射，将宿主机的8080端口映射到容器的5000端口</span>
+</span></span><span class=line><span class=cl><span class=c1># --name: 为容器命名</span>
+</span></span><span class=line><span class=cl>docker run -d -p 8080:5000 --name iris_app iris-classifier:1.0
+</span></span></code></pre></div></li><li><p>测试服务：现在，你可以在宿主机上，通过<code>8080</code>端口来访问服务了！</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>curl -X POST http://localhost:8080/predict <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>-H <span class=s2>&#34;Content-Type: application/json&#34;</span> <span class=se>\
+</span></span></span><span class=line><span class=cl><span class=se></span>-d <span class=s1>&#39;{&#34;features&#34;: [5.1, 3.5, 1.4, 0.2]}&#39;</span>
+</span></span></code></pre></div></li><li><p>管理容器：
+<code>docker ps</code>：查看正在运行的容器。
+<code>docker logs iris_app</code>：查看容器的日志输出。
+<code>docker stop iris_app</code>：停止容器。
+<code>docker rm iris_app</code>：删除容器。</p></li></ol><p>Docker解决了环境一致性的终极问题。你只需要将<code>Dockerfile</code>连同代码一起提交到代码库，任何一个安装了Docker的开发者或服务器，都可以通过<code>docker build</code>和<code>docker run</code>，完美地复现出与你一模一样的运行环境。</p><h2 id=44-系统性能分析使用top-htop-nvidia-smi定位瓶颈>4.4 系统性能分析：使用<code>top</code>, <code>htop</code>, <code>nvidia-smi</code>定位瓶颈</h2><h3 id=441-cpu与内存监控top-和-htop>4.4.1 CPU与内存监控：<code>top</code> 和 <code>htop</code></h3><p>当服务器变慢时，首先要看的就是CPU和内存。
+<code>top</code>：Linux系统自带的实时性能监控工具。
+在终端输入<code>top</code>，你会看到一个动态更新的界面。
+第一部分（摘要区）：
+<code>load average</code>: 系统负载。三个数值分别代表过去1、5、15分钟的平均负载。如果这个值持续高于你的CPU核心数，说明系统过载。
+<code>%Cpu(s)</code>: CPU使用率 breakdown。<code>us</code>(user), <code>sy</code>(system), <code>id</code>(idle)是关键。<code>id</code>很低说明CPU很忙。
+<code>MiB Mem</code> / <code>MiB Swap</code>: 物理内存和交换空间的使用情况。
+第二部分（进程列表）：
+<code>PID</code>: 进程ID。
+<code>USER</code>: 进程所有者。
+<code>%CPU</code>: 进程占用的CPU百分比。
+<code>%MEM</code>: 进程占用的内存百分比。
+<code>COMMAND</code>: 进程名。
+常用交互：按<code>P</code>按CPU排序，按<code>M</code>按内存排序，按<code>q</code>退出。</p><p><code>htop</code>：<code>top</code>的增强版，更美观、更易用。需要手动安装（<code>sudo apt-get install htop</code>）。
+提供了彩色的、图形化的CPU和内存使用条。
+可以用鼠标或方向键选择进程。
+按<code>F4</code>过滤进程，按<code>F5</code>显示树状结构，按<code>F9</code>杀死进程。
+对于AI工程师来说，<code>htop</code>通常是首选。</p><h3 id=442-gpu监控nvidia-smi>4.4.2 GPU监控：<code>nvidia-smi</code></h3><p>对于深度学习任务，GPU是核心资源。<code>nvidia-smi</code>（NVIDIA System Management Interface）是监控NVIDIA GPU状态的权威工具。</p><p>在终端输入<code>nvidia-smi</code>，你会看到一个信息表：
+Driver Version / CUDA Version：驱动和CUDA版本。
+GPU Name / Fan / Temp / Perf / Pwr:Usage/Cap：GPU型号、风扇转速、温度、性能状态、当前功耗/总功耗。温度过高（>85°C）需要警惕。
+Memory-Usage：这是最重要的部分。显示了已用显存 / 总显存。如果显存被占满，新的GPU任务将无法运行（CUDA out of memory error）。
+GPU-Util：GPU利用率百分比。如果你的模型正在训练，这个值应该很高（接近100%）。如果很低，说明可能存在数据加载瓶颈（CPU在准备数据，GPU在等待）。
+Processes：显示正在使用该GPU的进程列表，包括进程ID和占用的显存量。这对于找出是哪个程序占用了GPU资源至关重要。</p><p>持续监控：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl><span class=c1># 每秒刷新一次nvidia-smi的输出</span>
+</span></span><span class=line><span class=cl>watch -n <span class=m>1</span> nvidia-smi
+</span></span></code></pre></div><p>通过持续监控<code>nvidia-smi</code>，你可以清晰地看到模型训练或推理过程中GPU的动态变化，从而判断GPU是否被充分利用，或者是否存在显存泄漏等问题。</p><h2 id=45-实战项目将flask应用docker化并实现一键部署>4.5 实战项目：将Flask应用Docker化并实现一键部署</h2><p>现在，我们将把上一章构建的、包含Flask、Celery和Redis的异步图像分类应用，完整地进行Docker化，并使用<code>docker-compose</code>来实现一键启动整个服务栈。</p><h3 id=451-docker-compose编排多容器应用>4.5.1 <code>docker-compose</code>：编排多容器应用</h3><p>我们的应用包含三个服务：Web应用（Flask）、任务队列（Celery Worker）、消息中间件（Redis）。手动一个一个地<code>docker run</code>来启动和管理它们非常繁琐，而且还需要处理它们之间的网络连接问题。</p><p><code>docker-compose</code>正是解决这个问题的工具。它允许我们使用一个YAML文件（<code>docker-compose.yml</code>）来定义和配置一个多容器的应用。</p><h3 id=452-项目改造与dockerfile编写>4.5.2 项目改造与Dockerfile编写</h3><p>项目结构：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback><span class=line><span class=cl>dockerized_async_app/
+</span></span><span class=line><span class=cl>├── app/
+</span></span><span class=line><span class=cl>│   ├── __init__.py
+</span></span><span class=line><span class=cl>│   ├── routes.py
+</span></span><span class=line><span class=cl>│   └── tasks.py
+</span></span><span class=line><span class=cl>├── celery_worker.py
+</span></span><span class=line><span class=cl>├── config.py
+</span></span><span class=line><span class=cl>├── Dockerfile          # 用于构建app和worker的镜像
+</span></span><span class=line><span class=cl>├── docker-compose.yml  # 编排文件
+</span></span><span class=line><span class=cl>├── imagenet_class_index.json
+</span></span><span class=line><span class=cl>├── requirements.txt
+</span></span><span class=line><span class=cl>└── run.py
+</span></span></code></pre></div><ol><li>修改<code>config.py</code>以适应Docker网络
+在Docker Compose创建的网络中，服务之间可以通过服务名直接通信。我们需要将<code>localhost</code>修改为Redis服务的名字（我们将在<code>docker-compose.yml</code>中定义为<code>redis</code>）。</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-python data-lang=python><span class=line><span class=cl><span class=c1># config.py</span>
+</span></span><span class=line><span class=cl><span class=kn>import</span> <span class=nn>os</span>
+</span></span><span class=line><span class=cl>
+</span></span><span class=line><span class=cl><span class=k>class</span> <span class=nc>Config</span><span class=p>:</span>
+</span></span><span class=line><span class=cl>    <span class=c1># 从环境变量获取Redis的主机名，如果不存在则默认为localhost</span>
+</span></span><span class=line><span class=cl>    <span class=c1># 这使得配置在本地和Docker中都能工作</span>
+</span></span><span class=line><span class=cl>    <span class=n>REDIS_HOST</span> <span class=o>=</span> <span class=n>os</span><span class=o>.</span><span class=n>environ</span><span class=o>.</span><span class=n>get</span><span class=p>(</span><span class=s1>&#39;REDIS_HOST&#39;</span><span class=p>,</span> <span class=s1>&#39;localhost&#39;</span><span class=p>)</span>
+</span></span><span class=line><span class=cl>    <span class=n>CELERY_BROKER_URL</span> <span class=o>=</span> <span class=sa>f</span><span class=s1>&#39;redis://</span><span class=si>{</span><span class=n>REDIS_HOST</span><span class=si>}</span><span class=s1>:6379/0&#39;</span>
+</span></span><span class=line><span class=cl>    <span class=n>CELERY_RESULT_BACKEND</span> <span class=o>=</span> <span class=sa>f</span><span class=s1>&#39;redis://</span><span class=si>{</span><span class=n>REDIS_HOST</span><span class=si>}</span><span class=s1>:6379/0&#39;</span>
+</span></span></code></pre></div><ol start=2><li>编写<code>Dockerfile</code>
+这个<code>Dockerfile</code>将用于构建我们的Flask应用和Celery Worker的通用镜像。</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-dockerfile data-lang=dockerfile><span class=line><span class=cl><span class=c># Dockerfile</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>FROM</span><span class=w> </span><span class=s>python:3.9-slim</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>WORKDIR</span><span class=w> </span><span class=s>/app</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>COPY</span> requirements.txt .<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 安装PyTorch时指定CPU版本，可以大幅减小镜像体积</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 如果需要在GPU上运行，需要选择nvidia/cuda基础镜像并安装GPU版PyTorch</span><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>RUN</span> pip install --no-cache-dir -r requirements.txt<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=k>COPY</span> . .<span class=err>
+</span></span></span><span class=line><span class=cl><span class=err>
+</span></span></span><span class=line><span class=cl><span class=err></span><span class=c># 这个镜像可以用于启动Web服务或Worker，启动命令将在docker-compose中指定</span><span class=err>
+</span></span></span></code></pre></div><p><em>注意：<code>requirements.txt</code>应包含<code>flask</code>, <code>celery</code>, <code>redis</code>, <code>torch</code>, <code>torchvision</code>, <code>pillow</code>, <code>gunicorn</code>。</em></p><ol start=3><li>编写<code>docker-compose.yml</code>
+这是项目的核心编排文件。</li></ol><div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=line><span class=cl><span class=c># docker-compose.yml</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>version</span><span class=p>:</span><span class=w> </span><span class=s1>&#39;3.8&#39;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w></span><span class=nt>services</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Redis服务</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>redis</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;redis:alpine&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ports</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s2>&#34;6379:6379&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Flask Web应用服务</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>web</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w> </span><span class=l>. </span><span class=w> </span><span class=c># 使用当前目录的Dockerfile进行构建</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>ports</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=s2>&#34;5000:5000&#34;</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>environment</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>REDIS_HOST=redis </span><span class=w> </span><span class=c># 设置环境变量，指向redis服务</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>depends_on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>redis </span><span class=w> </span><span class=c># 确保在web启动前，redis服务已经启动</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>command</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s2>&#34;gunicorn&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;--bind&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;0.0.0.0:5000&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;run:app&#34;</span><span class=p>]</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=c># Celery Worker服务</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>  </span><span class=nt>worker</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>build</span><span class=p>:</span><span class=w> </span><span class=l>.</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>environment</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>REDIS_HOST=redis</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>depends_on</span><span class=p>:</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>      </span>- <span class=l>redis</span><span class=w>
+</span></span></span><span class=line><span class=cl><span class=w>    </span><span class=nt>command</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s2>&#34;celery&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;-A&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;celery_worker.celery&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;worker&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;-l&#34;</span><span class=p>,</span><span class=w> </span><span class=s2>&#34;info&#34;</span><span class=p>]</span><span class=w>
+</span></span></span></code></pre></div><p>这个文件定义了三个服务：
+<code>redis</code>: 直接使用官方的<code>redis:alpine</code>镜像。
+<code>web</code>: 使用我们自己的<code>Dockerfile</code>构建。它将容器的5000端口映射到宿主机的5000端口，并通过环境变量告诉应用Redis的主机名是<code>redis</code>。<code>command</code>覆盖了<code>Dockerfile</code>中的<code>CMD</code>，指定了启动Gunicorn的命令。
+<code>worker</code>: 同样使用我们的<code>Dockerfile</code>构建。它不暴露任何端口，因为它只在内部网络与Redis通信。<code>command</code>指定了启动Celery Worker的命令。</p><h3 id=453-一键部署与测试>4.5.3 一键部署与测试</h3><p>现在，部署整个应用只需要一个命令！在<code>docker-compose.yml</code>所在的目录下运行：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose up --build
+</span></span></code></pre></div><p><code>--build</code>：强制重新构建镜像（第一次运行时需要）。
+<code>docker-compose up</code>会按照<code>depends_on</code>的顺序，依次启动所有服务。你会看到来自三个容器的日志交错输出。</p><p>如果想在后台运行，使用：</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>docker-compose up -d --build
+</span></span></code></pre></div><p>测试：
+服务启动后，一切都和之前一样。你可以通过<code>localhost:5000</code>来访问你的API。</p><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=line><span class=cl>curl -X POST http://localhost:5000/predict -F <span class=s2>&#34;image=@path/to/your/image.jpg&#34;</span>
+</span></span></code></pre></div><p>发起任务后，你可以在<code>docker-compose up</code>的日志中，看到Celery Worker接收并处理任务的输出。</p><p>管理：
+<code>docker-compose ps</code>：查看由compose管理的所有容器的状态。
+<code>docker-compose logs -f web</code>：实时跟踪<code>web</code>服务的日志。
+<code>docker-compose down</code>：停止并删除由compose创建的所有容器、网络。</p><h2 id=本章小结>本章小结</h2><p>在本章中，我们深入到了AI工程师的“引擎室”，掌握了一系列至关重要的底层工程技能。</p><p>我们从Linux命令行开始，学习了如何像一个“极客”一样高效地操作服务器。接着，我们通过虚拟环境解决了项目依赖管理的难题，确保了开发环境的纯净与可复现。</p><p>然后，我们迎来了本章的高潮——Docker容器化。通过<code>Dockerfile</code>和<code>docker-compose</code>，我们学会了将一个复杂的多组件AI应用，打包成一个标准的、可移植的“软件集装箱”。这不仅彻底解决了“环境一致性”这一千古难题，更为后续的CI/CD、微服务和大规模部署（如Kubernetes）奠定了基础。</p><p>最后，我们学习了如何使用系统性能监控工具，为我们的应用进行“体检”，在出现性能问题时能够有据可查，精准定位瓶颈。</p><p>完成本章的学习和实战后，你已经不再仅仅是一个算法开发者。你具备了将一个AI应用从代码，稳健、可靠、高效地交付到生产环境的能力。你理解了隔离、可复现性、自动化这些现代软件工程的核心思想。这套“运维之道”的内功，将使你在面对任何复杂的部署挑战时，都充满信心。至此，我们已经完成了“基础内功篇”的全部修炼，你已经拥有了成为一名优秀AI工程师所需要的坚实地基。在接下来的篇章中，我们将在这块坚实的地基上，开始构建更加宏伟的“核心能力大厦”——深入大语言模型的腹地。</p></div><div class=post_footer><div class=meta><div class=info><span class="field tags"><i class=ri-stack-line></i>
+<a href=https://zhurongshuo.com/tags/%E4%B9%A6%E7%A8%BF/>书稿</a></span></div></div></div></div><div class=doc_comments></div></div></div></div><a id=back_to_top href=# class=back_to_top><i class=ri-arrow-up-s-line></i></a><footer class=footer><div class=powered_by><a href=https://varkai.com>Designed by VarKai, </a><a href=http://www.gohugo.io/>Proudly published with Hugo,</a></div><div class=footer_slogan><span>法不净空，觉无性也。</span></div><div class=powered_by style=margin-top:10px;font-size:14px><a href=https://zhurongshuo.com/>Copyright © 2010-2025 祝融说 zhurongshuo.com All Rights Reserved.</a></div></footer><script defer src=https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin=anonymous></script><link href=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.css rel=stylesheet integrity="sha256-7qiTu3a8qjjWtcX9w+f2ulVUZSUdCZFEK62eRlmLmCE=" crossorigin=anonymous><script defer src=https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js integrity="sha256-yt2kYMy0w8AbtF89WXb2P1rfjcP/HTHLT7097U8Y5b8=" crossorigin=anonymous></script><script defer src=https://zhurongshuo.com/js/zozo.js></script><script type=text/javascript async src="https://cdn.jsdelivr.net/npm/mathjax@2.7.8/MathJax.js?config=TeX-AMS-MML_HTMLorMML">MathJax.Hub.Config({tex2jax:{inlineMath:[["$","$"],["\\(","\\)"]],displayMath:[["$$","$$"],["[[","]]"]],processEscapes:!0,processEnvironments:!0,skipTags:["script","noscript","style","textarea","pre"],TeX:{equationNumbers:{autoNumber:"AMS"},extensions:["AMSmath.js","AMSsymbols.js"]}}}),MathJax.Hub.Queue(function(){var e,t=MathJax.Hub.getAllJax();for(e=0;e<t.length;e+=1)t[e].SourceElement().parentNode.className+=" has-jax"})</script><style>code.has-jax{font:inherit;font-size:100%;background:inherit;border:inherit;color:#515151}</style><script async src="https://www.googletagmanager.com/gtag/js?id=G-KKJ5ZEG1NB"></script><script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-KKJ5ZEG1NB")</script></body></html>

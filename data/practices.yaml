@@ -78,7 +78,7 @@ collection:
         title: "AI工程师实战：从Python基础到LLM应用与性能优化"
         subtitle: "AI Engineer in Action: From Python Fundamentals to LLM Applications and Performance Optimization"
         version: "beta"
-        last_updated: "2025-12-04"
+        last_updated: "2025-12-09"
       - slug: "growth-blueprint"
         title: "增长蓝图：低代码驱动的数字化转型下半场"
         subtitle: "Growth Blueprint: The Second Half of Low-Code-Driven Digital Transformation"
@@ -105,6 +105,11 @@ part_titles:
     part-02: "第二部分：集群构建与虚拟化"
     part-03: "第三部分：应用平台与运维"
     part-04: "第四部分：实践案例与总结"
+
+  ai-engineer-in-action:
+    part-01: "第一篇：基础内功篇——万丈高楼平地起"
+    part-02: "第二篇：核心能力篇——深入大语言模型腹地"
+    part-03: "第三篇：高级进阶篇——从优秀到卓越的必经之路"
 
   fundamentals-of-remote-work:
     part-01: "第一部分：思维跃迁——远程协作的底层逻辑"
