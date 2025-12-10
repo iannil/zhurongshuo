@@ -505,18 +505,18 @@ print(f"最佳交叉验证准确率: {grid_search.best_score_:.4f}")
 1. 问题定义：预测泰坦尼克号乘客的生还情况（一个二分类问题）。
 2. 数据获取：使用 `Pandas` 的 `read_csv` 加载数据。
 3. 探索性数据分析（EDA） & 数据清洗：
-    使用 `.info()`, `.describe()`, `.isnull().sum()` 快速了解数据概况。
-    使用 `Matplotlib` 和 `Seaborn` 进行了深入的可视化分析，发现了年龄、性别、船票等级等关键因素与生还的强相关性。
-    基于分析结果，对缺失值进行了合理的填充（中位数、众数），并删除了无用列。
+    1. 使用 `.info()`, `.describe()`, `.isnull().sum()` 快速了解数据概况。
+    2. 使用 `Matplotlib` 和 `Seaborn` 进行了深入的可视化分析，发现了年龄、性别、船票等级等关键因素与生还的强相关性。
+    3. 基于分析结果，对缺失值进行了合理的填充（中位数、众数），并删除了无用列。
 4. 特征工程：
-    创建了 `FamilySize`, `Title` 等新特征。
-    将 `Sex`, `Embarked` 等类别特征转换为模型可以理解的数值格式（数值映射、独热编码）。
+    1. 创建了 `FamilySize`, `Title` 等新特征。
+    2. 将 `Sex`, `Embarked` 等类别特征转换为模型可以理解的数值格式（数值映射、独热编码）。
 5. 模型构建与训练：
-    使用 `Scikit-learn` 的 `train_test_split` 划分数据集。
-    遵循 `fit`/`predict` 的统一API，快速实现了逻辑回归和随机森林两个基线模型。
+    1. 使用 `Scikit-learn` 的 `train_test_split` 划分数据集。
+    2. 遵循 `fit`/`predict` 的统一API，快速实现了逻辑回归和随机森林两个基线模型。
 6. 模型评估与优化：
-    使用 `accuracy_score` 和 `classification_report` 评估了模型在验证集上的性能。
-    学习了使用 `GridSearchCV` 进行超参数调优，以寻找更优的模型配置。
+    1. 使用 `accuracy_score` 和 `classification_report` 评估了模型在验证集上的性能。
+    2. 学习了使用 `GridSearchCV` 进行超参数调优，以寻找更优的模型配置。
 
 最终交付：
 

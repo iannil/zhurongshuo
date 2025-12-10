@@ -1,17 +1,1 @@
 User-agent: *
-Disallow: /admin/
-Disallow: /private/
-Disallow: /.cloudflare/
-Disallow: /docs/
-Allow: /css/
-Allow: /js/
-Allow: /fonts/
-
-# Sitemap
-Sitemap: https://zhurongshuo.com/sitemap.xml
-
-# Crawl control - optimized for CDN caching
-Crawl-delay: 1
-
-# Cache-friendly for Cloudflare
-# This file will be cached by CDN

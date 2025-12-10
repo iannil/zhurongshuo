@@ -14,10 +14,12 @@ slug: "chapter-09"
 要将LLM从一个强大的“语言模型”真正升级为能够解决现实世界问题的“智能助理”，我们必须打破这层壁垒，让它与外部世界连接起来。本章，我们将专注于实现这一目标的两种核心技术范式：检索增强生成（Retrieval-Augmented Generation, RAG）和智能体（Agent）。
 
 RAG：为LLM装上“外挂知识库”
-    我们知道，LLM存在“幻觉”和“知识过时”的问题。RAG架构正是为了解决这一痛点而生。它的核心思想是，在让LLM回答问题之前，先从一个外部的、可信的、可实时更新的知识库（如公司文档、产品手册、数据库）中，检索（Retrieve）出最相关的信息片段，然后将这些信息作为上下文增强（Augment）到Prompt中，最后让LLM基于这些可靠的信息进行生成（Generate）。RAG就像是为LLM配备了一个功能强大的“搜索引擎”和“开放式书架”，使其能够回答基于私有或实时知识的问题，极大地提升了答案的准确性和时效性。
+
+我们知道，LLM存在“幻觉”和“知识过时”的问题。RAG架构正是为了解决这一痛点而生。它的核心思想是，在让LLM回答问题之前，先从一个外部的、可信的、可实时更新的知识库（如公司文档、产品手册、数据库）中，检索（Retrieve）出最相关的信息片段，然后将这些信息作为上下文增强（Augment）到Prompt中，最后让LLM基于这些可靠的信息进行生成（Generate）。RAG就像是为LLM配备了一个功能强大的“搜索引擎”和“开放式书架”，使其能够回答基于私有或实时知识的问题，极大地提升了答案的准确性和时效性。
 
 Agent：赋予LLM“思考”与“行动”的能力
-    如果说RAG是让LLM“读万卷书”，那么Agent就是让LLM“行万里路”。一个Agent系统将LLM从一个被动的文本生成器，提升为一个主动的、有目标的任务执行者。它以LLM为核心“大脑”，通过一个“思考-行动-观察”的循环，来决策下一步该做什么。它可以被赋予一系列工具（Tools），如调用计算器、查询天气API、执行代码、搜索网络等。当面对一个复杂任务时，Agent会自主地进行任务分解，选择并使用合适的工具，观察结果，并根据结果进行下一步的思考和行动，直到最终完成任务。
+
+如果说RAG是让LLM“读万卷书”，那么Agent就是让LLM“行万里路”。一个Agent系统将LLM从一个被动的文本生成器，提升为一个主动的、有目标的任务执行者。它以LLM为核心“大脑”，通过一个“思考-行动-观察”的循环，来决策下一步该做什么。它可以被赋予一系列工具（Tools），如调用计算器、查询天气API、执行代码、搜索网络等。当面对一个复杂任务时，Agent会自主地进行任务分解，选择并使用合适的工具，观察结果，并根据结果进行下一步的思考和行动，直到最终完成任务。
 
 本章，我们将深入这两种激动人心的技术：
 
@@ -32,10 +34,11 @@ Agent：赋予LLM“思考”与“行动”的能力
 RAG是一种将信息检索（Information Retrieval）与语言模型生成（Language Model Generation）相结合的架构，旨在通过引入外部知识来增强LLM的回答质量。
 
 RAG的核心优势：
-缓解幻觉：LLM被强制要求基于提供的上下文来回答，而不是凭空捏造。
-知识实时更新：你无需重新训练昂贵的LLM，只需更新外部知识库，模型就能接触到最新的信息。
-可追溯性与可解释性：可以向用户展示答案是基于哪些源文档生成的，提高了答案的可信度。
-数据安全：私有数据存储在自己的知识库中，无需用其训练模型，降低了数据泄露的风险。
+
+- 缓解幻觉：LLM被强制要求基于提供的上下文来回答，而不是凭空捏造。
+- 知识实时更新：你无需重新训练昂贵的LLM，只需更新外部知识库，模型就能接触到最新的信息。
+- 可追溯性与可解释性：可以向用户展示答案是基于哪些源文档生成的，提高了答案的可信度。
+- 数据安全：私有数据存储在自己的知识库中，无需用其训练模型，降低了数据泄露的风险。
 
 一个典型的RAG流程包含两个阶段：数据索引（Indexing）和检索与生成（Retrieval & Generation）。
 
@@ -46,29 +49,39 @@ RAG 流程示意图
 这个阶段是离线进行的，目的是将你的原始文档（如PDF, TXT, Markdown, HTML等）处理成一个可供快速检索的格式。
 
 第一步：加载与切分（Load & Split）
+
 原始文档通常很长，无法直接放入LLM的上下文窗口。因此，第一步就是将长文档切分成更小的、有意义的文本块（Chunks）。
 
 加载器（Loaders）：使用如`LlamaIndex`或`LangChain`中的文档加载器，可以轻松地读取各种格式的文件。
+
 切分器（Splitters）：
-    固定大小切分（Fixed-size Chunking）：最简单的方法，按固定字符数（如1000个字符）切分，并设置一定的重叠（Overlap，如100个字符），以保证语义的连续性。
-    递归字符切分（Recursive Character Text Splitter）：一种更智能的方法。它会尝试按一系列分隔符（如`\n\n`, `\n`, ` `）来切分，优先保持段落、句子的完整性。
-    语义切分（Semantic Chunking）：更高级的方法，通过分析文本块之间的语义相似度来决定切分点，力求每个Chunk都是一个语义完整的单元。
+
+- 固定大小切分（Fixed-size Chunking）：最简单的方法，按固定字符数（如1000个字符）切分，并设置一定的重叠（Overlap，如100个字符），以保证语义的连续性。
+- 递归字符切分（Recursive Character Text Splitter）：一种更智能的方法。它会尝试按一系列分隔符（如`\n\n`, `\n`, ` `）来切分，优先保持段落、句子的完整性。
+- 语义切分（Semantic Chunking）：更高级的方法，通过分析文本块之间的语义相似度来决定切分点，力求每个Chunk都是一个语义完整的单元。
 
 切分的艺术：
-Chunk的大小是一个关键超参数。
-太小：可能丢失重要的上下文信息，导致检索到的片段过于零散。
-太大：可能包含太多与查询无关的噪声，增加了LLM处理的负担。
-一个常见的起点是512到1024个token。
+
+- Chunk的大小是一个关键超参数。
+- 太小：可能丢失重要的上下文信息，导致检索到的片段过于零散。
+- 太大：可能包含太多与查询无关的噪声，增加了LLM处理的负担。
+- 一个常见的起点是512到1024个token。
 
 第二步：向量化（Embedding）
+
 切分完成后，我们需要将每个文本块（Chunk）转换为一个向量（Vector），这个过程称为嵌入（Embedding）。这个向量是文本块在多维语义空间中的坐标。
 
 嵌入模型（Embedding Model）：我们使用一个预训练好的句子转换模型（Sentence Transformer）来完成这个任务。这些模型专门用于将文本映射到能够捕捉其语义的稠密向量空间。
+
 如何选择嵌入模型？
-    MTEB排行榜（Massive Text Embedding Benchmark）：这是评估嵌入模型性能的黄金标准。
-    主流选择：
-        英文：`BAAI/bge-large-en-v1.5` (当前性能领先), `sentence-transformers/all-MiniLM-L6-v2` (轻量高效)。
-        中文/多语言：`BAAI/bge-m3` (强大的多语言模型), `infgrad/stella-base-zh-v2` (优秀的中文模型)。
+
+MTEB排行榜（Massive Text Embedding Benchmark）：这是评估嵌入模型性能的黄金标准。
+
+主流选择：
+
+- 英文：`BAAI/bge-large-en-v1.5` (当前性能领先), `sentence-transformers/all-MiniLM-L6-v2` (轻量高效)。
+- 中文/多语言：`BAAI/bge-m3` (强大的多语言模型), `infgrad/stella-base-zh-v2` (优秀的中文模型)。
+
 实现：使用`sentence-transformers`库或Hugging Face的`transformers`库可以轻松加载和使用这些模型。
 
 ```python
@@ -86,7 +99,6 @@ embeddings = model.encode(chunks)
 print(embeddings.shape) # (2, 768) -> 2个文本块，每个都是768维的向量
 ```
 
-
 ### 9.1.2 向量数据库选型与应用
 
 现在我们有了一大堆文本块和它们对应的向量。当用户提出一个问题时，我们需要找到与问题最“相似”的文本块。在一个拥有数百万文本块的知识库中，逐个计算相似度是不可行的。这时，向量数据库（Vector Database）就派上用场了。
@@ -94,14 +106,18 @@ print(embeddings.shape) # (2, 768) -> 2个文本块，每个都是768维的向�
 向量数据库专门用于高效地存储和检索高维向量。它的核心技术是近似最近邻搜索（Approximate Nearest Neighbor, ANN）。
 
 工作原理（简述）：
+
 ANN算法通过构建特殊的索引结构（如IVF, HNSW），来避免全量搜索。它不能保证100%找到最相似的向量，但在牺牲极小的精度的前提下，将搜索速度提升了几个数量级，这对于实时应用是完全可以接受的。
 
 主流向量数据库选型：
 
 1. 内存型/本地型库：
+
     FAISS (Facebook AI Similarity Search)：由Facebook AI开发的高性能向量相似度搜索库。它是一个C++库，有Python接口。功能强大，速度极快，但本身不提供数据库的管理功能，更像一个“搜索引擎库”。
     ChromaDB：一个为AI应用设计的开源向量数据库。它非常易于使用，提供了简单的Python API，支持本地持久化存储，非常适合快速原型开发和中小型项目。
+
 2. 服务端/分布式数据库：
+
     Pinecone, Weaviate, Milvus：这些是功能更全面的、可作为独立服务部署的向量数据库。它们支持分布式扩展、元数据过滤、实时索引更新等高级功能，适合大规模生产环境。
 
 使用ChromaDB示例：
@@ -139,7 +155,6 @@ print(results['documents'])
 # [['RAG stands for Retrieval-Augmented Generation.', 'It enhances LLMs with external knowledge.']]
 ```
 
-
 ### 9.1.3 从检索到生成的完整流程
 
 现在我们已经打通了索引和检索，可以串联起整个RAG的第二阶段了。
@@ -154,7 +169,7 @@ print(results['documents'])
 
 1. 构建Prompt：将检索到的文本块 `retrieved_chunks` 和用户的原始问题 `query`，一起组合成一个精心设计的Prompt。
 
-    ```
+    ```text
     Context information is below.
     ---------------------
     {context_str}  <-- 将retrieved_chunks拼接成一个字符串
@@ -177,23 +192,24 @@ print(results['documents'])
 
 ReAct (Reasoning and Acting) 是当前Agent系统最核心、最基础的思想框架之一。它将LLM的思考过程显式地分解为一个“Thought -> Action -> Observation”的循环。
 
-Thought (思考)：LLM分析当前的任务目标和已有的信息，进行推理，并决定下一步应该采取什么行动。这个思考过程是LLM自己生成的、对人类可读的文本。
-Action (行动)：根据思考，LLM决定调用一个工具（Tool），并指定调用该工具所需的输入（Action Input）。例如，`Action: Calculator, Action Input: 2+2`。
-Observation (观察)：Agent系统执行这个Action（例如，运行计算器得到结果`4`），并将工具返回的结果作为“观察”信息，反馈给LLM。
+- Thought (思考)：LLM分析当前的任务目标和已有的信息，进行推理，并决定下一步应该采取什么行动。这个思考过程是LLM自己生成的、对人类可读的文本。
+- Action (行动)：根据思考，LLM决定调用一个工具（Tool），并指定调用该工具所需的输入（Action Input）。例如，`Action: Calculator, Action Input: 2+2`。
+- Observation (观察)：Agent系统执行这个Action（例如，运行计算器得到结果`4`），并将工具返回的结果作为“观察”信息，反馈给LLM。
 
 LLM接收到这个Observation后，开始新一轮的循环：根据新的观察结果进行下一步的Thought，决定下一个Action，直到它认为任务已经完成，并生成最终的答案。
 
 ReAct示例（简化版）：
+
 任务: "爱因斯坦的年龄的平方是多少？"
 
-Thought 1: 我需要先知道爱因斯坦的年龄。我没有这个信息，所以我需要搜索。
-Action 1: `Search("爱因斯坦的年龄")`
-Observation 1: "阿尔伯特·爱因斯坦（1879年3月14日—1955年4月18日），享年76岁。"
-Thought 2: 我现在知道爱因斯坦的年龄是76岁。任务要求计算年龄的平方，即76的平方。我需要一个计算器来完成这个计算。
-Action 2: `Calculator("76^2")`
-Observation 2: "5776"
-Thought 3: 我已经得到了计算结果5776。我已经完成了任务的所有步骤，可以给出最终答案了。
-Final Answer: 爱因斯坦年龄的平方是5776。
+- Thought 1: 我需要先知道爱因斯坦的年龄。我没有这个信息，所以我需要搜索。
+- Action 1: `Search("爱因斯坦的年龄")`
+- Observation 1: "阿尔伯特·爱因斯坦（1879年3月14日—1955年4月18日），享年76岁。"
+- Thought 2: 我现在知道爱因斯坦的年龄是76岁。任务要求计算年龄的平方，即76的平方。我需要一个计算器来完成这个计算。
+- Action 2: `Calculator("76^2")`
+- Observation 2: "5776"
+- Thought 3: 我已经得到了计算结果5776。我已经完成了任务的所有步骤，可以给出最终答案了。
+- Final Answer: 爱因斯坦年龄的平方是5776。
 
 通过这个循环，LLM将一个复杂的、需要外部信息的任务，分解成了多个简单的、可执行的步骤，并利用工具来弥补自身能力的不足。
 
@@ -201,8 +217,8 @@ Final Answer: 爱因斯坦年龄的平方是5776。
 
 从零实现一个Agent系统非常复杂，需要处理Prompt模板、工具调用、输出解析、循环控制等大量细节。幸运的是，`LangChain`和`LlamaIndex`这两个强大的开源框架，极大地简化了Agent的开发。
 
-LangChain：一个功能全面、非常灵活的LLM应用开发框架。它提供了构建Agent所需的各种组件（LLM接口、Prompt模板、输出解析器、工具等），并允许你像搭积木一样自由组合。它的学习曲线相对陡峭，但自由度高。
-LlamaIndex：最初专注于RAG，但现在也发展出了强大的Agent能力。它的抽象层次更高，通常能用更少的代码实现一个功能完备的RAG或Agent系统，非常适合快速上手。
+- LangChain：一个功能全面、非常灵活的LLM应用开发框架。它提供了构建Agent所需的各种组件（LLM接口、Prompt模板、输出解析器、工具等），并允许你像搭积木一样自由组合。它的学习曲线相对陡峭，但自由度高。
+- LlamaIndex：最初专注于RAG，但现在也发展出了强大的Agent能力。它的抽象层次更高，通常能用更少的代码实现一个功能完备的RAG或Agent系统，非常适合快速上手。
 
 使用LangChain创建一个简单Agent的流程：
 
@@ -218,17 +234,19 @@ LlamaIndex：最初专注于RAG，但现在也发展出了强大的Agent能力�
 工具是Agent与外部世界交互的桥梁。任何可以被程序化调用的功能，都可以被封装成一个工具。
 
 常见的工具类型：
-计算器：执行数学运算。
-搜索引擎：通过API（如Google Search API, Tavily）进行网络搜索。
-Python REPL：执行Python代码，能力极强但风险也高。
-数据库查询：连接数据库，执行SQL查询。
-API调用：调用任何第三方API（如天气、股票、地图等）。
-RAG检索器：将我们之前构建的RAG检索器本身，也封装成一个工具。当Agent认为需要从私有知识库中查找信息时，就可以调用这个工具。
+
+- 计算器：执行数学运算。
+- 搜索引擎：通过API（如Google Search API, Tavily）进行网络搜索。
+- Python REPL：执行Python代码，能力极强但风险也高。
+- 数据库查询：连接数据库，执行SQL查询。
+- API调用：调用任何第三方API（如天气、股票、地图等）。
+- RAG检索器：将我们之前构建的RAG检索器本身，也封装成一个工具。当Agent认为需要从私有知识库中查找信息时，就可以调用这个工具。
 
 在LangChain中，定义一个工具通常需要：
-`name`: 工具的名称，LLM会通过这个名字来决定调用哪个工具。
-`description`: 极其重要。对工具功能的清晰描述。LLM完全依赖这个描述来理解工具的用途和何时使用它。
-`func`: 工具背后实际执行的Python函数。
+
+- `name`: 工具的名称，LLM会通过这个名字来决定调用哪个工具。
+- `description`: 极其重要。对工具功能的清晰描述。LLM完全依赖这个描述来理解工具的用途和何时使用它。
+- `func`: 工具背后实际执行的Python函数。
 
 ```python
 from langchain.tools import tool
@@ -245,7 +263,6 @@ def get_weather(city: str) -> str:
 # Agent就可以通过 'get_weather' 这个名字来使用这个工具了。
 ```
 
-
 ## 9.3 实战项目一：构建一个基于公司文档的智能问答机器人（RAG）
 
 项目目标：假设我们有一些关于公司政策的Markdown文档，我们将构建一个RAG系统，让员工可以就这些政策进行提问。
@@ -255,8 +272,10 @@ def get_weather(city: str) -> str:
 第一步：准备数据和环境
 
 1. 创建一些`.md`文件，如`policy_leave.md`, `policy_expense.md`。
+
     `policy_leave.md`: "公司提供每年15天的带薪年假。申请年假需提前两周通过HR系统提交。"
     `policy_expense.md`: "员工的出差交通费可以报销。乘坐飞机需选择经济舱。出租车费用需提供发票。"
+
 2. 安装库: `pip install langchain chromadb sentence-transformers`
 
 第二步：索引数据
@@ -402,7 +421,9 @@ print("最终回答:", response2["output"])
 ```
 
 当你运行`agent_run.py`时，`verbose=True`会让你清晰地看到ReAct的每一步：
+
 对于问题1，LLM会Thought: "我需要查询北京的天气"，然后Action: `get_weather("北京")`。
+
 对于问题2，LLM会Thought: "我需要计算3的5次方"，然后Action: `calculator("35")`。
 
 这完美地展示了Agent如何根据任务需求，自主地选择和使用正确的工具。
